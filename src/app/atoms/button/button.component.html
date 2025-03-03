@@ -1,0 +1,39 @@
+<button
+  class="font-bold py-2 px-4 transition duration-300 ease-in-out rounded-lg"
+  [ngClass]="{
+    border: outline(),
+    'text-white': !outline(),
+    'bg-blue-500 hover:bg-blue-400': !outline() && color() === 'primary',
+    'bg-yellow-500 hover:bg-yellow-400': !outline() && color() === 'warning',
+    'bg-cyan-500  hover:bg-cyan-400': !outline() && color() === 'info',
+    'bg-red-500   hover:bg-red-400': !outline() && color() === 'danger',
+    'bg-gray-500  hover:bg-gray-400': !outline() && color() === 'secondary',
+    'border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white':
+      outline() && color() === 'primary',
+    'border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-white':
+      outline() && color() === 'warning',
+    'border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-white':
+      outline() && color() === 'info',
+    'border-red-500 text-red-500 hover:bg-red-500 hover:text-white':
+      outline() && color() === 'danger',
+    'border-gray-500 text-gray-500 hover:bg-gray-500 hover:text-white':
+      outline() && color() === 'secondary',
+    'hover:text-white': outline()
+  }"
+>
+
+
+@if(icon() && iconPosition() === 'left'){
+  <fa-icon [icon]="icon()!" class="mr-1"></fa-icon>
+  }
+
+  {{ label() }}
+
+  <ng-content></ng-content>
+
+  @if(icon() && iconPosition() === 'right'){
+  <fa-icon [icon]="icon()!" class="ml-1"></fa-icon>
+  }
+
+
+</button>
