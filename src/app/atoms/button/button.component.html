@@ -1,39 +1,34 @@
 <button
-  class="font-bold py-2 px-4 transition duration-300 ease-in-out rounded-lg"
+  class="font-bold py-2 px-4 transition m-4 duration-300 ease-in-out rounded-lg flex items-center justify-center"
   [ngClass]="{
-    border: outline(),
-    'text-white': !outline(),
-    'bg-blue-500 hover:bg-blue-400': !outline() && color() === 'primary',
-    'bg-yellow-500 hover:bg-yellow-400': !outline() && color() === 'warning',
-    'bg-cyan-500  hover:bg-cyan-400': !outline() && color() === 'info',
-    'bg-red-500   hover:bg-red-400': !outline() && color() === 'danger',
-    'bg-gray-500  hover:bg-gray-400': !outline() && color() === 'secondary',
-    'border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white':
-      outline() && color() === 'primary',
-    'border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-white':
-      outline() && color() === 'warning',
-    'border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-white':
-      outline() && color() === 'info',
-    'border-red-500 text-red-500 hover:bg-red-500 hover:text-white':
-      outline() && color() === 'danger',
-    'border-gray-500 text-gray-500 hover:bg-gray-500 hover:text-white':
-      outline() && color() === 'secondary',
-    'hover:text-white': outline()
+    'w-full': fullWidth,
+    'cursor-not-allowed opacity-50': disabled,
+    'border': outline,
+    'text-white': !outline,
+    'bg-[#334EAC]': color === 'primary',
+    'bg-[#F9FCFF]': !outline && color === 'secondary',
+    'bg-white hover:bg-yellow-400': !outline && color === 'warning',
+    'bg-cyan-500 hover:bg-cyan-400': !outline && color === 'info',
+    'bg-red-500 hover:bg-red-400': !outline && color === 'danger',
+    'border-none': color === 'primary',
+    'border-[#334EAC] text-[#334EAC]': outline && color === 'secondary',
+    'border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-white': outline && color === 'warning',
+    'border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-white': outline && color === 'info',
+    'border-red-500 text-red-500 hover:bg-red-500 hover:text-white': outline && color === 'danger',
+    
   }"
+  [disabled]="disabled"
+  (click)="onClick()"
 >
 
+  <!-- Ícono a la izquierda -->
+  <fa-icon *ngIf="icon && iconPosition === 'left'" [icon]="icon" class="mr-1"></fa-icon>
 
-@if(icon() && iconPosition() === 'left'){
-  <fa-icon [icon]="icon()!" class="mr-1"></fa-icon>
-  }
-
-  {{ label() }}
-
+  <!-- Texto -->
+  {{ label }}
   <ng-content></ng-content>
 
-  @if(icon() && iconPosition() === 'right'){
-  <fa-icon [icon]="icon()!" class="ml-1"></fa-icon>
-  }
-
+  <!-- Ícono a la derecha -->
+  <fa-icon *ngIf="icon && iconPosition === 'right'" [icon]="icon" class="ml-1"></fa-icon>
 
 </button>

@@ -1,33 +1,33 @@
 import { CommonModule } from '@angular/common';
-import { Component, input, output } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import {
   FontAwesomeModule,
   IconDefinition,
 } from '@fortawesome/angular-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-button',
+  standalone: true,
   imports: [CommonModule, FontAwesomeModule],
   templateUrl: './button.component.html',
-  styleUrl: './button.component.scss'
 })
 export class ButtonComponent {
+// Entradas (@Input) para personalizar el botón
+  @Input() color: 'primary' | 'warning' | 'info' | 'danger' | 'secondary' = 'primary';
+  @Input() outline: boolean = false;
+  @Input() label: string = '';
+  @Input() icon: IconDefinition | null = null;
+  @Input() iconPosition: 'left' | 'right' = 'left';
+  @Input() fullWidth: boolean = false;
+  @Input() disabled: boolean = false;
 
-  readonly color = input<'primary' | 'warning' | 'info' | 'danger' | 'secondary'>('primary');
-  readonly outline = input<boolean>(false);
-  readonly label = input<string>('');
+  @Output() click = new EventEmitter<void>();
+// Salida (@Output) para emitir eventos
 
-  click= output<void>();
-
-  readonly icon = input<IconDefinition | null>(faTrash);
-
-  readonly iconPosition = input<'left' | 'right'>('left');
-
+// Método que se ejecuta al hacer clic
   onClick() {
-    this.click.emit();
+    if (!this.disabled) {
+      this.click.emit();// Emite el evento solo si no está deshabilitado
+    }
   }
-
-
-
 }
