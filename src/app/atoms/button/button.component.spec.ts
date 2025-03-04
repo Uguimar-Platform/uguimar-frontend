@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ButtonComponent } from './button.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 describe('ButtonComponent', () => {
   let component: ButtonComponent;
@@ -8,9 +9,8 @@ describe('ButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ButtonComponent]
-    })
-    .compileComponents();
+      imports: [ButtonComponent, FontAwesomeModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ButtonComponent);
     component = fixture.componentInstance;
@@ -18,6 +18,7 @@ describe('ButtonComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).toBeTruthy(); // Verifica que el componente se crea
   });
+
 });
