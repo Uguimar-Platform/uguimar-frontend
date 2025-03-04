@@ -1,45 +1,32 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import {
-  FontAwesomeModule,
-  IconDefinition,
-} from '@fortawesome/angular-fontawesome';
+import { Component, input, output, ChangeDetectionStrategy } from '@angular/core';
+import { FontAwesomeModule, IconDefinition } from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-button',
   standalone: true,
   imports: [CommonModule, FontAwesomeModule],
   templateUrl: './button.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent {
-// Entradas (@Input) para personalizar el botón
-  @Input() color: 'primary' | 'warning' | 'info' | 'danger' | 'secondary' = 'primary';
-  @Input() outline: boolean = false;
-  @Input() label: string = '';
-  @Input() icon: IconDefinition | null = null;
-  @Input() iconPosition: 'left' | 'right' = 'left';
-  @Input() fullWidth: boolean = false;
-  @Input() disabled: boolean = false;
-  @Input() type: 'button' | 'submit' | 'reset' = 'button';
-  @Input() set preset(value: 'submit' | 'reset' | null) {
-    if (value === 'submit') {
-      this.color = 'primary';
-      this.type = 'submit';
-    } else if (value === 'reset') {
-      this.color = 'primary';
-      this.type = 'reset';
-    }
-  }
-  // Propiedad para los presets
+  // Inputs como signals
+  color = input<'primary' | 'warning' | 'info' | 'danger' | 'secondary'>('primary');
+  outline = input<boolean>(false);
+  label = input<string>('');
+  icon = input<IconDefinition | null>(null);
+  iconPosition = input<'left' | 'right'>('left');
+  fullWidth = input<boolean>(false);
+  disabled = input<boolean>(false);
+  type = input<'button' | 'submit' | 'reset'>('button');
+
+  // Output
+  click = output<void>();
 
 
-  @Output() click = new EventEmitter<void>();
-// Salida (@Output) para emitir eventos
-
-// Método que se ejecuta al hacer clic
   onClick() {
-    if (!this.disabled) {
-      this.click.emit();// Emite el evento solo si no está deshabilitado
+    if (!this.disabled()) {
+      this.click.emit();
     }
   }
 }

@@ -1,35 +1,27 @@
 <button
   class="font-bold py-2 px-4 transition m-4 duration-300 ease-in-out rounded-lg flex items-center justify-center"
   [ngClass]="{
-    'w-full': fullWidth,
-    'cursor-not-allowed opacity-50': disabled,
-    'border': outline,
-    'text-white': !outline,
-    'bg-[#334EAC]': color === 'primary',
-    'bg-[#F9FCFF]': !outline && color === 'secondary',
-    'bg-white hover:bg-yellow-400': !outline && color === 'warning',
-    'bg-cyan-500 hover:bg-cyan-400': !outline && color === 'info',
-    'bg-red-500 hover:bg-red-400': !outline && color === 'danger',
-    'border-none': color === 'primary',
-    'border-[#334EAC] text-[#334EAC]': outline && color === 'secondary',
-    'border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-white': outline && color === 'warning',
-    'border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-white': outline && color === 'info',
-    'border-red-500 text-red-500 hover:bg-red-500 hover:text-white': outline && color === 'danger',
-    
+    'w-full': fullWidth(),
+    'cursor-not-allowed opacity-50': disabled(),
+    'border': outline(),
+    'text-white': !outline(),
+    'bg-[#334EAC] hover:bg-[#081F5C]': color() === 'primary',
+    'bg-[#F9FCFF]': !outline() && color() === 'secondary',
+    'bg-white hover:bg-yellow-400': !outline() && color() === 'warning',
+    'bg-cyan-500 hover:bg-cyan-400': !outline() && color() === 'info',
+    'bg-red-500 hover:bg-red-400': !outline() && color() === 'danger',
+    'border-none': color() === 'primary',
+    'border-[#334EAC] text-[#334EAC]': outline() && color() === 'secondary',
+    'border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-white': outline() && color() === 'warning',
+    'border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-white': outline() && color() === 'info',
+    'border-red-500 text-red-500 hover:bg-red-500 hover:text-white': outline() && color() === 'danger'
   }"
-  [attr.type]="type"
-  [disabled]="disabled"
+  [attr.type]="type()"
+  [disabled]="disabled()"
   (click)="onClick()"
 >
-
-  <!-- Ícono a la izquierda -->
-  <fa-icon *ngIf="icon && iconPosition === 'left'" [icon]="icon" class="mr-1"></fa-icon>
-
-  <!-- Texto -->
-  {{ label }}
+  <fa-icon *ngIf="icon() && iconPosition() === 'left'" [icon]="icon() || 'default-icon'" class="mr-1"></fa-icon>
+  {{ label() }}
   <ng-content></ng-content>
-
-  <!-- Ícono a la derecha -->
-  <fa-icon *ngIf="icon && iconPosition === 'right'" [icon]="icon" class="ml-1"></fa-icon>
-
+  <fa-icon *ngIf="icon() && iconPosition() === 'right'" [icon]="icon() || 'default-icon'" class="ml-1"></fa-icon>
 </button>
