@@ -11,14 +11,14 @@ import { FontAwesomeModule, IconDefinition } from '@fortawesome/angular-fontawes
 })
 export class ButtonComponent {
   // Inputs como signals
-  color = input<'primary' | 'warning' | 'info' | 'danger' | 'secondary'>('primary');
-  outline = input<boolean>(false);
-  label = input<string>('');
-  icon = input<IconDefinition | null>(null);
-  iconPosition = input<'left' | 'right'>('left');
-  fullWidth = input<boolean>(false);
-  disabled = input<boolean>(false);
-  type = input<'button' | 'submit' | 'reset'>('button');
+  readonly color = input<'primary' | 'warning' | 'info' | 'danger' | 'secondary'>('primary');
+  readonly outline = input<boolean>(false);
+  readonly label = input<string>('');
+  readonly icon = input<IconDefinition | null>(null);
+  readonly iconPosition = input<'left' | 'right'>('left');
+  readonly fullWidth = input<boolean>(false);
+  readonly disabled = input<boolean>(false);
+  readonly type = input<'button' | 'submit' | 'reset'>('button');
 
   // Output
   click = output<void>();
