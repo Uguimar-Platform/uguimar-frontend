@@ -17,6 +17,7 @@
     'border-red-500 text-red-500 hover:bg-red-500 hover:text-white': outline && color === 'danger',
     
   }"
+  [attr.type]="type"
   [disabled]="disabled"
   (click)="onClick()"
 >
