@@ -1,19 +1,18 @@
 import { Component } from '@angular/core';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { InputAtomComponent } from './atoms/input/input.component';
+import { faPlus, faUser, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { ButtonComponent } from './atoms/button/button.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [InputAtomComponent],
+  imports: [ButtonComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  /*   styleUrl: './app.component.scss' */
 })
 export class AppComponent {
   title = 'frontend';
-
+  faUser = faUser;
   plus = faPlus;
-
+  faTrash = faTrash;
   status: number = 2;
 
   open() {
