@@ -1,4 +1,4 @@
-import { Component, Input, forwardRef } from '@angular/core';
+import { Component, Input, forwardRef, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormsModule,
@@ -7,10 +7,10 @@ import {
 } from '@angular/forms';
 
 @Component({
-  selector: 'app-input-atom',
+  selector: 'app-input',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './input-atom.component.html',
+  templateUrl: './input.component.html',
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -20,13 +20,13 @@ import {
   ],
 })
 export class InputAtomComponent implements ControlValueAccessor {
-  @Input() type: string = 'text';
-  @Input() placeholder: string = '';
-  @Input() label: string = '';
-  @Input() disabled: boolean = false;
-  @Input() width: string = '100%';
-  @Input() height: string = '40px';
-  @Input() backgroundColor: string = '#ffffff';
+  readonly type = input('text');
+  readonly placeholder = input('');
+  readonly label = input('');
+  readonly disabled = input(false);
+  readonly width = input('100%');
+  readonly height = input('40px');
+  readonly backgroundColor = input('#ffffff');
 
   value: string = '';
   onChange: (value: string) => void = () => {};
@@ -42,10 +42,6 @@ export class InputAtomComponent implements ControlValueAccessor {
 
   registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
-  }
-
-  setDisabledState(isDisabled: boolean): void {
-    this.disabled = isDisabled;
   }
 
   onInputChange(event: Event): void {
