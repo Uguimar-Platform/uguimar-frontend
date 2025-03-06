@@ -1,6 +1,8 @@
 
 import { Component, input, output, EventEmitter } from '@angular/core';
-
+/**
+ * This component customizable select component with support for id, name, value, checked, disabled, label, class, and emits change events.
+ */
 
 @Component({
   selector: 'app-select',
@@ -18,6 +20,9 @@ export class SelectComponent {
   readonly class = input('');
   readonly change = new EventEmitter<string>();
 
+  /**
+   * Emits a change event if the select is not disabled.
+   */
   emitChange() {
     if (!this.disabled()) {
       this.change.emit(this.value());
