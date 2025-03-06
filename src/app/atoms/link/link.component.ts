@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
@@ -7,7 +8,7 @@ import { RouterModule } from '@angular/router';
  */
 @Component({
   selector: 'app-link', // Defines the component's selector to be used in templates.
-  imports: [RouterModule], // Imports RouterModule to enable routing functionality.
+  imports: [CommonModule, RouterModule], // Imports RouterModule to enable routing functionality.
   templateUrl: './link.component.html', // Specifies the HTML template for the component.
   styleUrl: './link.component.scss' // Defines the stylesheet for component styling.
 })
@@ -23,4 +24,17 @@ export class LinkComponent {
    * Default value is an empty string.
    */
   @Input() route: string = '';
+
+  /**
+   * The color of the link text.
+   * Available options: 'primary', 'warning', 'info', 'danger', 'secondary'.
+   * Default value is 'primary'.
+   */
+  @Input() color: 'primary' | 'warning' | 'info' | 'danger' | 'secondary' = 'primary';
+
+  /**
+   * Determines whether the link text should be underlined.
+   * Default value is true.
+   */
+  @Input()underline: boolean = true;
 }
