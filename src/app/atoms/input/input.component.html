@@ -1,14 +1,23 @@
 <div class="flex flex-col w-full">
-    <label *@if="label()" class="text-sm font-medium text-gray-600 mb-1">
+  <div class="flex items-center gap-2 mb-1">
+
+    @if (labelIcon()) {
+    <fa-icon [icon]="labelIcon()!" class="text-gray-500"></fa-icon>
+    }
+    
+    <label class="text-sm font-medium text-gray-600">
       {{ label() }}
     </label>
-
-    <input
-      [type]="type()"
-      [placeholder]="placeholder()"
-      class="border border-gray-200 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-      [style.width]="width()"
-      [style.height]="height()"
-    />
-
   </div>
+
+  <input
+    [type]="type()"
+    [placeholder]="placeholder()"
+    class="border-none bg-[#E7F1FF] rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+    [ngClass]="customClass()"
+    [style.width]="width()"
+    [style.height]="height()"
+    (input)="onInputChange($event)"
+    [value]="value"
+    [disabled]="disabled()" />
+</div>

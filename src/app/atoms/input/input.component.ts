@@ -1,5 +1,8 @@
+import { CommonModule } from '@angular/common';
 import { Component, forwardRef, input } from '@angular/core';
 import { FormsModule, NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 /**
  * This component allows you to display a configurable input field.
@@ -8,7 +11,7 @@ import { FormsModule, NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/f
 @Component({
   selector: 'app-input',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule, FontAwesomeModule],
   templateUrl: './input.component.html',
   providers: [
     {
@@ -19,6 +22,7 @@ import { FormsModule, NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/f
   ],
 })
 export class InputComponent implements ControlValueAccessor {
+  
   readonly type = input('text');
   readonly placeholder = input('');
   readonly label = input('');
@@ -26,6 +30,8 @@ export class InputComponent implements ControlValueAccessor {
   readonly width = input('100%');
   readonly height = input('40px');
   readonly backgroundColor = input('#ffffff');
+  readonly customClass = input<string | Record<string, boolean>>('');
+  readonly labelIcon = input<IconDefinition | null>(null);
 
   value: string = '';
   onChange: (value: string) => void = () => {};
