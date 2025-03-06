@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './create-dropdown.component.scss'
 })
 export class CreateDropdownComponent {
-  
+
 }
