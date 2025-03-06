@@ -1,17 +1,12 @@
-
-<app-button 
-label="bienvenido"
-type="submit">
-</app-button>
-<app-button
-type="submit"
-  label="Crea tu cuenta"
-  [outline]="true"
-  color="secondary"
-></app-button>
-<app-button 
-  label="Enviar" 
-  type="reset"
-></app-button>
-
-
+<!-- Componente personalizado de etiqueta con varias propiedades -->
+<app-label-atom
+  text="Nombre de usuario"
+  forId="usernameInput"
+  color="#555"
+  fontSize="14px"
+  fontWeight="bold"
+  textAlign="center"
+  on="fa fa-user"
+  conPosition="left"
+  ustomClass="my-custom-label"
+></app-label-atom>

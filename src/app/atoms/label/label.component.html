@@ -1,0 +1,21 @@
+<label
+  [for]="forId"
+  [ngStyle]="{
+    color: color,
+    fontSize: fontSize,
+    fontWeight: fontWeight,
+    textAlign: textAlign
+  }"
+>
+  <ng-container>
+    @if (icon && iconPosition === 'left') {
+    <i [class]="icon"></i>
+    }
+
+    {{ text }}
+
+    @if (icon && iconPosition === 'right') {
+    <i [class]="icon"></i>
+    }
+  </ng-container>
+</label>
