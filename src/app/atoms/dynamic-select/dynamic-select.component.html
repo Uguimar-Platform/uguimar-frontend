@@ -1,6 +1,6 @@
 <div class="dynamic-select">
         <label class="dynamic-select-label">Seleccionar</label>
-        <input type="text" class="dynamic-select-input" placeholder="Selecciona temas..." [(ngModel)]="routeInput" (input)="eventInput()">
+        <input type="text" class="dynamic-select-input" placeholder="Selecciona temas..." [(ngModel)]="routeInput">
 
         <div class="options">
                 @for (opt of selectedRoute; track $index) {

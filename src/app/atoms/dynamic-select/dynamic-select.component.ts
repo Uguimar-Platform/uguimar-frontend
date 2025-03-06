@@ -1,4 +1,4 @@
-import { Component, input, InputSignal, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, effect, input, InputSignal, OnChanges, signal, SimpleChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { RoutesNavDynamicSelect } from '../../interfaces/RoutesNavDynamicSelect';
@@ -12,20 +12,27 @@ import { RoutesNavDynamicSelect } from '../../interfaces/RoutesNavDynamicSelect'
       styleUrl: './dynamic-select.component.scss'
 })
 export class DynamicSelectComponent {
-      protected routeInput = "";
+      protected routeInput = signal<string>("");
 
       public arrayRoutes = input.required<RoutesNavDynamicSelect[]>();
 
       protected selectedRoute: RoutesNavDynamicSelect[] = [];
 
-      protected eventInput() {
-            if (!this.routeInput) {
+      constructor() {
+            effect(() => {
+                const valueInput = this.routeInput();
+                this.eventInput(valueInput);
+            });
+        }
+        
+      protected eventInput(valueFilter:string) {
+            if (!valueFilter) {
                   this.selectedRoute = [];
                   return;
             }
             // Filter the array based on what the user types
             const filteredRoutes = this.arrayRoutes().filter(route =>
-                  route.value.toLowerCase().includes(this.routeInput.toLowerCase())
+                  route.value.toLowerCase().includes(valueFilter.toLowerCase())
             );
 
             // update the selectedRoute arrayRoutes
