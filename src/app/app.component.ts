@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 import { faPlus, faUser,faTrash } from '@fortawesome/free-solid-svg-icons';
 import { ButtonComponent } from './atoms/button/button.component';
+import { DynamicSelectComponent } from './atoms/dynamic-select/dynamic-select.component';
 
 @Component({
   selector: 'app-root',
-  imports: [ButtonComponent],
+  imports: [
+    ButtonComponent,
+    DynamicSelectComponent
+  ],
   templateUrl: './app.component.html',
 /*   styleUrl: './app.component.scss' */
 })
