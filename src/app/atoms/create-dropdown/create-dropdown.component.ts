@@ -1,22 +1,58 @@
-/**
- * This is the CreateDropdownComponent, a basic Angular component
- * that serves as a foundation for a dropdown feature.
- */
-
+//Importing necessary modules from Angular
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
+
+
 @Component({
-  selector: 'app-create-dropdown', // Defines the custom HTML tag for this component
-  imports: [CommonModule], // Currently, no external modules are imported
-  templateUrl: './create-dropdown.component.html', // Path to the HTML template for the component
-  styleUrl: './create-dropdown.component.scss' // Path to the SCSS file for styling the component
+/**
+ * @component CreateDropdownComponent
+ * @description 
+ * This component represents a dropdown selection menu. It dynamically 
+ * loads a predefined list of options based on user categories.
+ */
+  
+  selector: 'app-create-dropdown',
+  /**  
+   * @selector 'app-create-dropdown'
+   * Defines the custom HTML tag for this component, allowing it to be 
+   * used in templates as <app-create-dropdown>.
+   */
+  
+  imports: [CommonModule],
+  /**  
+   * @imports [CommonModule]
+   * Includes CommonModule to provide built-in Angular directives 
+   * such as *ngFor and *ngIf.
+   */
+  
+  templateUrl: './create-dropdown.component.html',
+  /**  
+   * @templateUrl './create-dropdown.component.html'
+   * Links the HTML file that defines the component's structure.
+   */
+  
+  styleUrl: './create-dropdown.component.scss'
+  /**  
+   * @styleUrl './create-dropdown.component.scss'
+   * Links the SCSS file that contains the component's styles.
+   */
 })
+
+//Component class definition
 export class CreateDropdownComponent {
   options = [
+  /**
+   * @property options
+   * @type {Array<{ id: number, name: string }>}
+   * @description 
+   * Predefined list of dropdown options representing different 
+   * age categories for user selection.
+   */
+    
     {
-      id : 1,
-      name : 'Adulto (+18 años)'
+      id : 1, //Unique identifier for the option
+      name : 'Adulto (+18 años)' //Label displayed in the dropdown
     },
     {
       id : 2,
