@@ -1,64 +1,67 @@
+/* Parent container for dynamic select component */
 .dynamic-select {
-        width: 420px;
-        padding: 16px;
-        border-radius: 10px;
-        font-family: "Poppins", sans-serif;
+        width: 420px;                           /* Fixed width of container */
+        padding: 16px;                          /* Inner spacing */
+        border-radius: 10px;                    /* Rounded corners */
+        font-family: "Poppins", sans-serif;     /* Primary font */
 
+        /* Styles for select field label */
         &-label {
-                display: block;
-                font-size: 16px;
-                /* Aumenté el tamaño */
-                font-weight: 700;
-                color: #081F5C;
-                margin-bottom: 10px;
+                display: block;                 /* Make label fill the entire line */
+                font-size: 16px;                /* Font size */
+                font-weight: 700;               /* Font weight */
+                color: #081F5C;               /* Text color */
+                margin-bottom: 10px;            /* Bottom margin to separate from input field */
         }
 
+        /* Styles for text input field */
         &-input {
-                width: 100%;
-                padding: 12px 0px;
-                /* Más padding para mejor interacción */
-                border: 2px solid #7096D1;
-                border-radius: 8px;
-                outline: none;
-                font-size: 16px;
-                background: white;
-                transition: 0.3s ease-in-out;
-
+                width: 100%;                    /* Takes up the entire available width */
+                padding: 12px 0px;              /* Inner spacing */
+                border: 2px solid #7096D1;    /* Border with specific color */
+                border-radius: 8px;             /* Rounded edges */
+                outline: none;                  /* Remove outline on focus */
+                font-size: 16px;                /* Font size */
+                background: white;            /* White background */
+                transition: 0.3s ease-in-out;   /* Smooth transition for effects */
+        
+                /* Styles when input field is focused */
                 &:focus {
-                        border-color: #334EAC;
-                        box-shadow: 0 0 6px rgba(51, 78, 172, 0.5);
+                        border-color: #334EAC;                          /* Change border color */
+                        box-shadow: 0 0 6px rgba(51, 78, 172, 0.5);     /* Shadow on hover */
                 }
         }
 }
 
-
+/* Container for select options */
 .options {
-        border: 1px solid #E7E7E7;
-        border-radius: 8px;
-        background: white;
-        max-height: 180px;
-        /* Un poco más alto */
-        overflow-y: auto;
-        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12);
+        border: 1px solid #E7E7E7;                      /* Subtle border */
+        border-radius: 8px;                               /* Rounded edges */
+        background: white;                              /* White background */
+        max-height: 180px;                                /* Max height with scroll */
+        overflow-y: auto;                                 /* Enable vertical scrolling if needed */
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12);    /* Shadow to highlight */
 }
 
+/* Styles for each option inside the option container */
 .option {
-        display: block;
-        text-decoration: none;
-        color: black;
-        padding: 10px 14px;
-        /* Más espacio */
-        font-size: 16px;
-        cursor: pointer;
-        transition: 0.2s;
-
+        display: block;                         /* Makes each option fill the entire line */
+        text-decoration: none;                  /* Removes underline from links */
+        color: black;                         /* Text color */
+        padding: 10px 14px;                     /* Inner spacing */
+        font-size: 16px;                        /* Font size */
+        cursor: pointer;                        /* Changes the cursor to a hand when hovering over the option */
+        transition: 0.2s;                       /* Smooth transition for effects */
+        
+        /* Styles when hovering over an option. */
         &:hover {
-                background: #D0E3FF;
-                color: #081F5C;
+                background: #D0E3FF;          /* Changes the background on hover */
+                color: #081F5C;               /* Change text color */
         }
-
+        
+        /* Styles when an option is clicked */
         &:active {
-                background: #334EAC;
-                color: white;
+                background: #334EAC;          /* Change background on click */
+                color: white;                 /* Change text color */
         }
 }

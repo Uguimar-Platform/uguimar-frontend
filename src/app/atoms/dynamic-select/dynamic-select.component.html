@@ -1,9 +1,19 @@
+<!-- Parent container for the dynamic select component. -->
 <div class="dynamic-select">
+
+        <!-- Label for the select field. -->
         <label class="dynamic-select-label">Seleccionar</label>
+
+        <!-- Text input field with two-way binding to routeInput.n variable-->
         <input type="text" class="dynamic-select-input" placeholder="Selecciona temas..." [(ngModel)]="routeInput">
 
+        <!-- Dynamic options container -->
         <div class="options">
+
+                <!-- Loop to iterate over the selectedRoute array and generate options -->
                 @for (opt of selectedRoute; track $index) {
+
+                        <!-- Each option is a link that redirects to the route specified in opt.option -->
                         <a class="option" [routerLink]="opt.option">{{opt.value}}</a>
                 }
         </div>
