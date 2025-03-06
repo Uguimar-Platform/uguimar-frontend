@@ -1,1 +1,10 @@
-<p>dynamic-select works!</p>
+<div class="dynamic-select">
+        <label class="dynamic-select-label">Seleccionar</label>
+        <input type="text" class="dynamic-select-input" placeholder="Selecciona temas..." [(ngModel)]="routeInput" (input)="eventInput()">
+
+        <div class="options">
+                @for (opt of selectedRoute; track $index) {
+                        <a class="option" [routerLink]="opt.option">{{opt.value}}</a>
+                }
+        </div>
+</div>
