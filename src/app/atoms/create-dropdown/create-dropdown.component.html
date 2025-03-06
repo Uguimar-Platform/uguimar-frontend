@@ -1,27 +1,30 @@
-<!--
-This HTML code defines a <select> element with two options: "Adult (+18 years)" and "Children (< 18 years)".
-
-Applied styles (Tailwind CSS):
-- Blue border (border-blue-700) with a thickness of 2px (border-2).
-- Rounded borders (rounded-full) and internal spacing (px-2, py-2).
-- Horizontal margin (mx-3) and bold text (font-bold).
-
-Options:
-- "Adult (+18 years)" with value "1".
-- "Children (< 18 years)" with value "2".
-
-This element can be used in forms to capture the user's age.
+<!--  
+  Component: Dropdown Selection  
+  This select element provides a dropdown menu for user selection.  
+  It dynamically loads options from the 'options' array using Angular's *ngFor directive.  
 -->
-
 <select 
   class="btn__select" 
 >
+  <!--  
+    Default option displayed before user selection  
+    @value Empty string, indicating no selection initially  
+  -->
   <option value="">-- Seleccione --</option>
+
+  <!--  
+    Iterates through the 'options' array and creates dropdown items dynamically  
+    @param option Each object from the 'options' array  
+    @binding value Binds the option's ID as the select value  
+  -->
   <option 
     *ngFor="let option of options" 
     [value]="option.id"
   >
+    <!--  
+      Displays the name of the option in the dropdown  
+      @binding option.name The text content of each option  
+    -->
     {{ option.name }}
   </option>
 </select>
-
