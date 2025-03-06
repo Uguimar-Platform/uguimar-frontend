@@ -1,21 +1,16 @@
 <label
-  [for]="forId"
-  [ngStyle]="{
-    color: color,
-    fontSize: fontSize,
-    fontWeight: fontWeight,
-    textAlign: textAlign
+
+  [attr.for]="forId()"
+
+  class="py-2 px-2 m-2"
+
+  [ngClass]="{
+
+    'text-[#081F5C]': color() === 'blue-dark',
+    'Font-normal': fontWeight() === 'normal',
+    'text-left': textAlign() === 'left',
+    'text-base': fontSize() === 'text-base',
   }"
->
-  <ng-container>
-    @if (icon && iconPosition === 'left') {
-    <i [class]="icon"></i>
-    }
-
-    {{ text }}
-
-    @if (icon && iconPosition === 'right') {
-    <i [class]="icon"></i>
-    }
-  </ng-container>
+>{{ text() }}
 </label>
+
