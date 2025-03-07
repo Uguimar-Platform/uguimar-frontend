@@ -1,37 +1,55 @@
-/**
- * This file contains unit tests for the CreateDropdownComponent
- * using Angular's testing framework.
- */
-
+//Import necessary modules for testing
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CreateDropdownComponent } from './create-dropdown.component';
-
 /**
- * Test suite for the CreateDropdownComponent.
- */
+*@testSuize CreateDropdownComponent
+*@description
+*Holds an instance of the CreateDropdownComponent to be tested.
+*/
+
+
 describe('CreateDropdownComponent', () => {
-  let component: CreateDropdownComponent; // Instance of the component being tested
-  let fixture: ComponentFixture<CreateDropdownComponent>; // Representation of the component in the DOM
-
-  /**
-   * Setup before running tests.
-   * Initializes the test environment and compiles the component.
+  let component: CreateDropdownComponent;
+  /** 
+   * @property component 
+   * Holds an instance of the CreateDropdownComponent to be tested.
    */
+  
+  let fixture: ComponentFixture<CreateDropdownComponent>;
+  /** 
+   * @property fixture 
+   * Represents the testing environment for the component.
+   */
+  
   beforeEach(async () => {
+  /**
+   * @lifecycleHook beforeEach
+   * @description 
+   * Initializes the testing module and sets up the component instance before each test.
+   */
     await TestBed.configureTestingModule({
-      imports: [CreateDropdownComponent] // Import the component into the test environment
+      imports: [CreateDropdownComponent]
+      /**  
+       * @imports [CreateDropdownComponent]
+       * Declares the component within the testing module.
+       */
     })
-    .compileComponents(); // Compile the declared components in the test module
+    .compileComponents(); //Compiles the component and its dependencies.
 
-    fixture = TestBed.createComponent(CreateDropdownComponent); // Create an instance of the component
-    component = fixture.componentInstance; // Assign the instance to the component variable
-    fixture.detectChanges(); // Trigger Angular's change detection
+    //Create an instance of the component for testing.
+    fixture = TestBed.createComponent(CreateDropdownComponent);
+    component = fixture.componentInstance;
+
+    //Trigger change detection to reflect component initialization.
+    fixture.detectChanges();
   });
 
-  /**
-   * Basic unit test: verifies that the component is created successfully.
-   */
   it('should create', () => {
-    expect(component).toBeTruthy(); // Expect the component to exist (not be null or undefined)
+  /**
+  *@test should create the component
+  *@description
+  *Ensures that the CreateDropdownComponent is successfully instantianed.
+  */
+    expect(component).toBeTruthy();
   });
 });
