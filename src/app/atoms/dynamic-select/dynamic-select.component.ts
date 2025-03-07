@@ -31,6 +31,7 @@ import { RoutesNavDynamicSelect } from '../../interfaces/RoutesNavDynamicSelect'
 */
 export class DynamicSelectComponent {
 
+      // Signal that stores the value entered by the user in the input field.
       protected routeInput = signal<string>("");
 
       public arrayRoutes = input.required<RoutesNavDynamicSelect[]>();
