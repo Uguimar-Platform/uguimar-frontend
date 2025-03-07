@@ -16,6 +16,7 @@ It is responsible for verifying the validity of the JWT token and assigning the 
   selector: 'app-label', // Nombre del selector que se usará en el HTML
   imports: [CommonModule], // Importa CommonModule para utilizar directivas comunes
   templateUrl: './label.component.html', // Ruta del archivo de plantilla HTML
+  styleUrls: ['./label.component.scss'], // Rutas de los archivos de estilos CSS
   changeDetection: ChangeDetectionStrategy.OnPush, // Estrategia de detección de cambios eficiente
 })
 export class LabelComponent {
@@ -39,9 +40,12 @@ export class LabelComponent {
     | 'blue-dark'
     | 'blue-medium'
     | 'blue-light'
-    | 'light-blue'
-    | 'almost-white'
-    | 'gray'
+    | 'blue-lightest'
+    | 'blue-lighter'
+    | 'blue-faint'
+    | 'grey-light'
+    | 'white'
+    | 'black'
   >('primary');
 
   /** Cursor pointer para indicar que es un elemento interactivo.
@@ -53,13 +57,28 @@ export class LabelComponent {
    * @param 'text-base'
    */
   readonly fontSize = input<
-    'text-xs' | 'text-sm' | 'text-base' | 'text-lg' | 'text-xl' | 'text-2xl'
+    | 'text-xs'
+    | 'text-sm'
+    | 'text-base'
+    | 'text-lg'
+    | 'text-xl'
+    | 'text-2xl'
+    | '12px'
+    | '16px'
+    | '20px'
+    | '48px'
+    | '60px'
   >('text-base');
 
   /** Estilo de la fuente: normal o cursiva.
    * @param 'normal'
    */
   readonly fontStyle = input<'normal' | 'italic'>('normal');
+
+  /** Familia de la fuente del label.
+   * @param 'Onest'
+   */
+  readonly fontFamily = input<'Onest' | 'Poppins'>('Poppins');
 
   /** Decoración del texto (ninguno, subrayado, tachado).
    * @param 'none'

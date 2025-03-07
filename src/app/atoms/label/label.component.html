@@ -2,23 +2,38 @@
   [attr.for]="forId()"
   class="py-2 px-2 m-2"
   [ngClass]="{
-    'text-[#081F5C]': color() === 'blue-dark',
+    'text-081F5C': color() === 'blue-dark',
+    'text-334EAC': color() === 'blue-light',
+    'text-ffffff': color() === 'white',
+    'text-000000': color() === 'black',
+    'text-7096D1': color() === 'blue-medium',
+    'text-D0E3FF': color() === 'blue-lightest',
+    'text-E7F1FF': color() === 'blue-lighter',
+    'text-F9FCFF': color() === 'blue-faint',
+    'text-E7E7E7': color() === 'grey-light',
     'font-normal': fontWeight() === 'normal',
-    'text-left': textAlign() === 'left',
-    'text-base': fontSize() === 'text-base',
-    'cursor-pointer': cursorPointer,
-    italic: fontStyle() === 'italic',
-    underline: textDecoration() === 'underline',
-    'line-through': textDecoration() === 'line-through',
     'font-bold': fontWeight() === 'bold',
     'font-lighter': fontWeight() === 'lighter',
+    'text-left': textAlign() === 'left',
     'text-center': textAlign() === 'center',
     'text-right': textAlign() === 'right',
     'text-xs': fontSize() === 'text-xs',
     'text-sm': fontSize() === 'text-sm',
+    'text-base': fontSize() === 'text-base',
     'text-lg': fontSize() === 'text-lg',
     'text-xl': fontSize() === 'text-xl',
-    'text-2xl': fontSize() === 'text-2xl'
+    'text-2xl': fontSize() === 'text-2xl',
+    'text-12px': fontSize() === '12px',
+    'text-16px': fontSize() === '16px',
+    'text-20px': fontSize() === '20px',
+    'text-48px': fontSize() === '48px',
+    'text-60px': fontSize() === '60px',
+    'cursor-pointer': cursorPointer,
+    italic: fontStyle() === 'italic',
+    underline: textDecoration() === 'underline',
+    'line-through': textDecoration() === 'line-through',
+    'font-onest': fontFamily() === 'Onest',
+    'font-poppins': fontFamily() === 'Poppins'
   }"
 >
   {{ text() }}

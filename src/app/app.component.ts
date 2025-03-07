@@ -7,7 +7,7 @@ import { LabelComponent } from './atoms/label/label.component';
   selector: 'app-root',
   imports: [ButtonComponent, LabelComponent],
   templateUrl: './app.component.html',
-  /*   styleUrl: './app.component.scss' */
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'frontend';
