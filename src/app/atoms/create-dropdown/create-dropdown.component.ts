@@ -56,11 +56,11 @@ export class CreateDropdownComponent {
     },
     {
       id : 2,
-      name : 'Joven (13-17 años)'
+      name : 'Joven (11-17 años)'
     },
     {
       id : 3,
-      name : 'Niño (0-12 años)'
+      name : 'Niño (6-10 años)'
     }
   ]);
 }
