@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LabelComponent } from '../atoms/label/label.component';
+import { LabelComponent } from '../../../atoms/label/label.component';
 
 describe('LabelComponent', () => {
   let component: LabelComponent;

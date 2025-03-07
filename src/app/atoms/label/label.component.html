@@ -1,16 +1,11 @@
 <label
-
   [attr.for]="forId()"
-
   class="py-2 px-2 m-2"
-
   [ngClass]="{
-
     'text-[#081F5C]': color() === 'blue-dark',
     'Font-normal': fontWeight() === 'normal',
     'text-left': textAlign() === 'left',
     'text-base': fontSize() === 'text-base',
   }"
->{{ text() }}
+  >{{ text() }}
 </label>
-
