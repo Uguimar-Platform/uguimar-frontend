@@ -30,16 +30,15 @@ import { RoutesNavDynamicSelect } from '../../interfaces/RoutesNavDynamicSelect'
 */
 export class DynamicSelectComponent {
 
-      // Signal that stores the value entered by the user in the input field.
-      protected routeInput = signal<string>("");
+      public arrayRoutes = input.required<RoutesNavDynamicSelect[]>();
+      public placeholder = input<string>("Buscar...");
       // width and height properties are of size
       public width = input<string>("");
       public height = input<string>("");
-      public placeholder = input<string>("Buscar...");
-      public arrayRoutes = input.required<RoutesNavDynamicSelect[]>();
+      // Signal that stores the value entered by the user in the input field.
+      protected routeInput = signal<string>("");
 
       protected selectedRoute: RoutesNavDynamicSelect[] = [];
-
 
       /** 
       * Component constructor.
@@ -57,7 +56,6 @@ export class DynamicSelectComponent {
                   this.eventInput(valueInput);
             });
       }
-
 
       /**
       * Method that filters routes based on user input. 
@@ -80,5 +78,4 @@ export class DynamicSelectComponent {
 
             this.selectedRoute = filteredRoutes;
       }
-
 }
