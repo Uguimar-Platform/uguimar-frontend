@@ -16,6 +16,6 @@ faUser = faUser;
   status:number=2;
 
   open() {
-    console.log("open");
-  } 
+    console.log('open');
+  }
 }
