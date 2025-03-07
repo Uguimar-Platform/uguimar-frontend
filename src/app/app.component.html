@@ -1,11 +1,18 @@
-<app-button label="bienvenido" type="submit"> </app-button>
+
+<app-button 
+label="bienvenido"
+type="submit">
+</app-button>
 <app-button
-  type="submit"
+type="submit"
   label="Crea tu cuenta"
   [outline]="true"
   color="secondary"
 ></app-button>
-<app-button label="Enviar" type="reset"></app-button>
+<app-button 
+  label="Enviar" 
+  type="reset"
+></app-button>
 
 <dynamic-select 
       [arrayRoutes]="arrayRoutes" 
@@ -23,7 +30,3 @@
   [cursorPointer]="true"
 >
 </app-label>
-
-<label class="cursor-pointer text-2xl text-red-500 hover:text-blue-500"
-  >Pedro</label
->

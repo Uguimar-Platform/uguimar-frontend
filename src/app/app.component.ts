@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
-import { faPlus, faUser, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faUser,faTrash } from '@fortawesome/free-solid-svg-icons';
 import { ButtonComponent } from './atoms/button/button.component';
 import { DynamicSelectComponent } from './atoms/dynamic-select/dynamic-select.component';
 import { RoutesNavDynamicSelect } from './interfaces/RoutesNavDynamicSelect';
 
 @Component({
   selector: 'app-root',
-  imports: [ButtonComponent, LabelComponent],
+  imports: [ButtonComponent],
   templateUrl: './app.component.html',
-  /*   styleUrl: './app.component.scss' */
+/*   styleUrl: './app.component.scss' */
 })
 export class AppComponent {
   title = 'frontend';
-  faUser = faUser;
-  plus = faPlus;
+faUser = faUser;
+  plus=faPlus;
   faTrash = faTrash;
   status: number = 2;
   public arrayRoutes: RoutesNavDynamicSelect[] = [
@@ -60,5 +60,6 @@ export class AppComponent {
   ]
   open() {
     console.log('open');
+
   }
 }
