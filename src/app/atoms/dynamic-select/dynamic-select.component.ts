@@ -3,56 +3,78 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { RoutesNavDynamicSelect } from '../../interfaces/RoutesNavDynamicSelect';
 
-/* Component that represents a dynamic selector with search and navigation functionality.*/
+
+/** 
+ * Component that represents a dynamic selector with search and navigation functionality.
+ * 
+ * Module for handling forms and two-way data binding.
+ * Directive for handling route links in Angular.
+*/
 @Component({
       selector: 'dynamic-select',
       imports: [
-            FormsModule,      // Module for handling forms and two-way data binding.
-            RouterLink        // Directive for handling route links in Angular.
+            FormsModule,
+            RouterLink
       ],
       templateUrl: './dynamic-select.component.html',
       styleUrl: './dynamic-select.component.scss'
 })
 
+
+/** 
+ * Signal that stores the value entered by the user in the input field.
+ * 
+ * Input property that receives an array of routes for the dynamic selector.
+ * @input array Routes - Array of avDynamicSelect Routes objects representing the available routes.
+ * 
+ * Array that stores the routes filtered based on user input.
+*/
 export class DynamicSelectComponent {
 
-      // Signal that stores the value entered by the user in the input field.
       protected routeInput = signal<string>("");
 
-      // Input property that receives an array of routes for the dynamic selector.
       public arrayRoutes = input.required<RoutesNavDynamicSelect[]>();
 
-      // Array that stores the routes filtered based on user input.
       protected selectedRoute: RoutesNavDynamicSelect[] = [];
 
 
-      /* Component constructor.
-         Used to initialize the effect that reacts to changes in `routeInput`.
+      /** 
+      * Component constructor.
+      * Used to initialize the effect that reacts to changes in `routeInput`.
+      * 
+      * 
+      * Effect that is executed whenever `routeInput` changes.
+      * Gets the current value of `routeInput`.
+      * Calls `eventInput` with the current value.
       */
       constructor() {
             
-            // Effect that is executed whenever `routeInput` changes.
             effect(() => {
-                const valueInput = this.routeInput(); // Gets the current value of `routeInput`.
-                this.eventInput(valueInput);          // Calls `eventInput` with the current value.
+                const valueInput = this.routeInput(); 
+                this.eventInput(valueInput);          
             });
       }
+
       
-      /* Method that filters routes based on user input. */  
+      /**
+      * Method that filters routes based on user input. 
+      * @param valueFilter - Value entered by the user to filter the routes.
+      * 
+      * If there is no filter value, the array of selected routes is emptied.
+      * Filters routes based on the value entered by the user.
+      * Updates the array of selected routes with the filtered routes.
+      */ 
       protected eventInput(valueFilter:string) {
 
-            // If there is no filter value, the array of selected routes is emptied.
             if (!valueFilter) {
                   this.selectedRoute = [];
                   return;
             }
 
-            // Filters routes based on the value entered by the user.
             const filteredRoutes = this.arrayRoutes().filter(route =>
                   route.value.toLowerCase().includes(valueFilter.toLowerCase())
             );
 
-            // Updates the array of selected routes with the filtered routes.
             this.selectedRoute = filteredRoutes;
       }
 
