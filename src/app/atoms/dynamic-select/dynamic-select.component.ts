@@ -16,6 +16,9 @@ import { RoutesNavDynamicSelect } from '../../interfaces/RoutesNavDynamicSelect'
 
 export class DynamicSelectComponent {
 
+      // signal for component width
+      public width = input<string>("w-[130px]");
+  
       // Signal that stores the value entered by the user in the input field.
       protected routeInput = signal<string>("");
 
