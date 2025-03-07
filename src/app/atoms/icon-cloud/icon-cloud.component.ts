@@ -1,17 +1,6 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-
-/**
- * Interface that represents the structure of a 3D icon,
- * including its position, scale, opacity, and identifier.
- */
-interface Icon {
-  x: number;
-  y: number;
-  z: number;
-  scale: number;
-  opacity: number;
-  id: number;
-}
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild, computed, input } from '@angular/core';
+import { Icon, TargetRotation } from './interface.icon-cloud';
+import { DEFAULT_TECH_SLUGS } from './icon-cloud.constants';
 
 /**
  * Component that represents a 3D icon cloud.
@@ -21,34 +10,25 @@ interface Icon {
 @Component({
   selector: 'app-icon-cloud',
   standalone: true,
-  template: `
-    <div class="flex flex-col items-center">
-      <!-- Canvas where the 3D icon cloud is drawn -->
-      <canvas
-        #canvas
-        width="400"
-        height="400"
-        (mousedown)="handleMouseDown($event)"
-        (mousemove)="handleMouseMove($event)"
-        (mouseup)="handleMouseUp()"
-        (mouseleave)="handleMouseUp()"
-        class="w-[400px] h-[400px] rounded-lg"
-        aria-label="Interactive 3D Icon Cloud"
-        role="img"
-      ></canvas>
-      <!-- Paragraph text below the canvas -->
-      <p class="text-[#081F5C] text-center max-w-[400px] text-xl leading-6 text-gray-700">
-        Aprende, crece y destaca con cursos prácticos y accesibles en un solo lugar.
-      </p>
-    </div>
-  `,
+  templateUrl: './icon-cloud.component.html',
 })
-export class IconCloudComponent implements OnInit {
+export class IconCloudComponent implements OnInit, OnDestroy {
   /**
    * List of image URLs to be drawn as icons on the canvas.
    * If not provided, the default 'slugs' list will be used.
    */
-  @Input() images?: string[];
+  imageUrls = input<string[]>([]);
+
+  /**
+   * Computed signal that either uses provided images or defaults to slugs
+   */
+  images = computed(() => {
+    const providedImages = this.imageUrls();
+    if (providedImages.length > 0) {
+      return providedImages;
+    }
+    return this.slugs.map(slug => `https://cdn.simpleicons.org/${slug}/${slug}`);
+  });
 
   /**
    * Reference to the <canvas> element where the icon cloud is rendered.
@@ -75,15 +55,7 @@ export class IconCloudComponent implements OnInit {
    * Object describing the target rotation when an icon is clicked,
    * along with the start time and the animation duration.
    */
-  private targetRotation: {
-    x: number;
-    y: number;
-    startX: number;
-    startY: number;
-    distance: number;
-    startTime: number;
-    duration: number;
-  } | null = null;
+  private targetRotation: TargetRotation | null = null;
 
   /** Animation frame identifier. */
   private animationFrameId?: number;
@@ -104,54 +76,16 @@ export class IconCloudComponent implements OnInit {
    * List of slugs used to automatically generate
    * icon URLs if no external list is provided.
    */
-  private slugs = [
-    'typescript',
-    'javascript',
-    'dart',
-    'java',
-    'react',
-    'flutter',
-    'android',
-    'html5',
-    'css3',
-    'nodedotjs',
-    'express',
-    'nextdotjs',
-    'prisma',
-    'amazonaws',
-    'postgresql',
-    'firebase',
-    'nginx',
-    'vercel',
-    'testinglibrary',
-    'jest',
-    'cypress',
-    'docker',
-    'git',
-    'jira',
-    'github',
-    'gitlab',
-    'visualstudiocode',
-    'androidstudio',
-    'sonarqube',
-    'figma',
-  ];
+  private slugs = DEFAULT_TECH_SLUGS;
 
   constructor() {}
 
   /**
    * Lifecycle hook that runs when the component is initialized.
-   * If no images are provided, they are generated using the 'slugs' list.
-   * Then, the offscreen canvases for each icon are initialized,
+   * The offscreen canvases for each icon are initialized,
    * the icon positions are computed, and the animation begins.
    */
   ngOnInit() {
-    // If no images are provided externally, use the default slugs
-    if (!this.images || this.images.length === 0) {
-      this.images = this.slugs.map(
-        (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`
-      );
-    }
     this.initializeIconCanvases();
     this.generateIconPositions();
     this.startAnimation();
@@ -171,13 +105,14 @@ export class IconCloudComponent implements OnInit {
    * Also marks 'imagesLoaded' when the image has been successfully loaded.
    */
   private initializeIconCanvases() {
-    if (!this.images) return;
+    const imageUrls = this.images();
+    if (!imageUrls.length) return;
 
     // Initialize a boolean array indicating if each image has loaded
-    this.imagesLoaded = new Array(this.images.length).fill(false);
+    this.imagesLoaded = new Array(imageUrls.length).fill(false);
 
     // For each image, create an in-memory canvas and clip it into a circle
-    this.iconCanvases = this.images.map((url, index) => {
+    this.iconCanvases = imageUrls.map((url, index) => {
       const offscreen = document.createElement('canvas');
       offscreen.width = 40;
       offscreen.height = 40;
@@ -213,7 +148,8 @@ export class IconCloudComponent implements OnInit {
    * It uses a distribution of points over a sphere.
    */
   private generateIconPositions() {
-    const numIcons = this.images?.length || 20;
+    const imageUrls = this.images();
+    const numIcons = imageUrls.length || 20;
     const offset = 2 / numIcons;
     // Use the phi factor to distribute points uniformly on the sphere
     const increment = Math.PI * (3 - Math.sqrt(5));
@@ -424,14 +360,15 @@ export class IconCloudComponent implements OnInit {
         ctx.globalAlpha = opacity;
 
         // Draw the icon's offscreen canvas if available
-        if (this.images && this.iconCanvases[index]) {
+        const imageUrls = this.images();
+        if (imageUrls.length && this.iconCanvases[index]) {
           ctx.drawImage(this.iconCanvases[index], -20, -20, 40, 40);
         }
 
         // If the image hasn't loaded yet,
         // draw a circle with the icon's number
         if (
-          this.images &&
+          imageUrls.length &&
           this.iconCanvases[index] &&
           this.imagesLoaded[index]
         ) {
