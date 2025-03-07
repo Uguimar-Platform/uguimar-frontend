@@ -13,7 +13,7 @@ import { RoutesNavDynamicSelect } from '../../interfaces/RoutesNavDynamicSelect'
 @Component({
       selector: 'dynamic-select',
       imports: [
-            FormsModule,
+
             RouterLink
       ],
       templateUrl: './dynamic-select.component.html',
