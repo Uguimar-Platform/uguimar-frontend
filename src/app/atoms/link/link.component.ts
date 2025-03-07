@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NgClass } from '@angular/common';  
+import { NgClass } from '@angular/common';
 /**
  * LinkComponent is a reusable component that renders a navigational link.
  * It allows customization of the displayed label, target route, and appearance.
@@ -14,26 +14,25 @@ import { NgClass } from '@angular/common';
 export class LinkComponent {
   /**
    * The label to be displayed for the link.
-   * Default value is 'Enlace'.
+   * @param {string} label - Text displayed for the link (Default: 'Enlace')
    */
   readonly label = input<string>('Enlace');
 
   /**
    * The route path to navigate when the link is clicked.
-   * Default value is an empty string.
+   * @param {string} route - Path used for navigation (Default: '')
    */
   readonly route = input<string>('');
 
   /**
    * The color of the link text.
-   * Available options: 'primary', 'warning', 'info', 'danger', 'secondary'.
-   * Default value is 'primary'.
+   * @param {'primary' | 'warning' | 'info' | 'danger' | 'secondary'} color - Color of the link (Default: 'primary')
    */
   readonly color = input<'primary' | 'warning' | 'info' | 'danger' | 'secondary'>('primary');
 
   /**
    * Determines whether the link text should be underlined.
-   * Default value is true.
+   * @param {boolean} underline - Whether the link should have an underline (Default: true)
    */
   readonly underline = input<boolean>(true);
 }
