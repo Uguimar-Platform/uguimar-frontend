@@ -13,9 +13,10 @@
   >
   <!--  
     Dynamic option generation  
-    @directive *ngFor Iterates over the 'options' array  
-    @binding [value] Binds the option's ID as the select value  
-    @description Each option is dynamically generated from the provided list  
+    @directive @For Loops through the 'options' array and creates an option for each element.
+    @binding [value] Assigns the unique 'id' of each option as the value attribute.
+    @description Ensures that each option in the dropdown is dynamically created based on the available data.
+    @function options() Returns an array containing objects with 'id' and 'name' properties.
   -->
     
     {{ option.name }}
