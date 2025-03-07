@@ -15,7 +15,7 @@ faUser = faUser;
   faTrash = faTrash;
   status:number=2;
 
-  open(){
+  open() {
     console.log("open");
   } 
 }
