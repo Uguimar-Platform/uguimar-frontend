@@ -1,15 +1,10 @@
-<label class="flex items-center gap-2 cursor-pointer relative group">
-    <input
-        type="radio"
-        [id]="id()"
-        [name]="name()"
-        [value]="value()"
-        [checked]="checked()"
-        [disabled]="disabled()"
-        (change)="emitChange()"
-        class="hidden peer"
-    />
-    <div class="w-2.5 h-2.5 border-2 border-gray-400 rounded-full flex items-center justify-center transition-all 
-                duration-300 peer-checked:bg-[#081F5C] peer-checked:border-[#081F5C] group-hover:border-[#7096D1]"></div>
-    <span [class]="class()">{{ label() }}</span>
-</label>
+<select 
+    [id]="id()" 
+    [name]="name()" 
+    [value]="value()" 
+    [disabled]="disabled()" 
+    (change)="emitChange()" 
+    [class]="class()"
+>
+{{ label() }}
+</select>
