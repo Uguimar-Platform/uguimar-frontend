@@ -1,30 +1,28 @@
-<!--  
-  Component: Dropdown Selection  
-  This select element provides a dropdown menu for user selection.  
-  It dynamically loads options from the 'options' array using Angular's *ngFor directive.  
--->
 <select 
   class="btn__select" 
 >
-  <!--  
-    Default option displayed before user selection  
-    @value Empty string, indicating no selection initially  
-  -->
   <option value="">-- Seleccione --</option>
-
-  <!--  
-    Iterates through the 'options' array and creates dropdown items dynamically  
-    @param option Each object from the 'options' array  
-    @binding value Binds the option's ID as the select value  
+  <!--
+    Default option
+    @value "" to indicate no selection initially
+    @decription Dysplays a placeholder text before user selection
   -->
   <option 
     *ngFor="let option of options" 
     [value]="option.id"
   >
-    <!--  
-      Displays the name of the option in the dropdown  
-      @binding option.name The text content of each option  
-    -->
+  <!--  
+    Dynamic option generation  
+    @directive *ngFor Iterates over the 'options' array  
+    @binding [value] Binds the option's ID as the select value  
+    @description Each option is dynamically generated from the provided list  
+  -->
+    
     {{ option.name }}
+    <!--  
+      Option label  
+      @binding {{ option.name }} Displays the name property as the visible text  
+    -->
+    
   </option>
 </select>
