@@ -1,4 +1,4 @@
-import { Component, effect, input, InputSignal, OnChanges, signal, SimpleChanges } from '@angular/core'; 
+import { Component, effect, input, InputSignal, OnChanges, signal, SimpleChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { RoutesNavDynamicSelect } from '../../interfaces/RoutesNavDynamicSelect';
@@ -20,7 +20,6 @@ import { RoutesNavDynamicSelect } from '../../interfaces/RoutesNavDynamicSelect'
       styleUrl: './dynamic-select.component.scss'
 })
 
-
 /** 
  * Signal that stores the value entered by the user in the input field.
  * 
@@ -33,7 +32,10 @@ export class DynamicSelectComponent {
 
       // Signal that stores the value entered by the user in the input field.
       protected routeInput = signal<string>("");
-
+      // width and height properties are of size
+      public width = input<string>("");
+      public height = input<string>("");
+      public placeholder = input<string>("Buscar...");
       public arrayRoutes = input.required<RoutesNavDynamicSelect[]>();
 
       protected selectedRoute: RoutesNavDynamicSelect[] = [];
@@ -49,14 +51,14 @@ export class DynamicSelectComponent {
       * Calls `eventInput` with the current value.
       */
       constructor() {
-            
+
             effect(() => {
-                const valueInput = this.routeInput(); 
-                this.eventInput(valueInput);          
+                  const valueInput = this.routeInput();
+                  this.eventInput(valueInput);
             });
       }
 
-      
+
       /**
       * Method that filters routes based on user input. 
       * @param valueFilter - Value entered by the user to filter the routes.
@@ -64,8 +66,8 @@ export class DynamicSelectComponent {
       * If there is no filter value, the array of selected routes is emptied.
       * Filters routes based on the value entered by the user.
       * Updates the array of selected routes with the filtered routes.
-      */ 
-      protected eventInput(valueFilter:string) {
+      */
+      protected eventInput(valueFilter: string) {
 
             if (!valueFilter) {
                   this.selectedRoute = [];

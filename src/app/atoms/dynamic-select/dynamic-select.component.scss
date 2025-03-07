@@ -1,65 +1,30 @@
-/* Parent container for dynamic select component */
 .dynamic-select {
-        border-radius: 10px;                    /* Rounded corners */
-        font-family: "Poppins", sans-serif;     /* Primary font */
+        @apply rounded-[10px] font-[sans-serif];
 
-        /* Styles for select field label */
-        &-label {
-                display: block;                 /* Make label fill the entire line */
-                font-size: 16px;                /* Font size */
-                font-weight: 700;               /* Font weight */
-                color: #081F5C;               /* Text color */
-                margin-bottom: 10px;            /* Bottom margin to separate from input field */
-        }
-
-        /* Styles for text input field */
         &-input {
-                width: 100%;                    /* Takes up the entire available width */
-                padding: 12px 0px;              /* Inner spacing */
-                border: 2px solid #7096D1;    /* Border with specific color */
-                border-radius: 8px;             /* Rounded edges */
-                outline: none;                  /* Remove outline on focus */
-                font-size: 16px;                /* Font size */
-                background: white;            /* White background */
-                transition: 0.3s ease-in-out;   /* Smooth transition for effects */
-        
-                /* Styles when input field is focused */
+                @apply w-full h-full py-[12px] pl-[6px] rounded-[8px] text-[16px] bg-[white] box-border;
+                @apply border-2 outline-none border-[#7096D1] transition-all duration-300;
+
                 &:focus {
-                        border-color: #334EAC;                          /* Change border color */
-                        box-shadow: 0 0 6px rgba(51, 78, 172, 0.5);     /* Shadow on hover */
+                        box-shadow: 0 0 6px rgba(51, 78, 172, 0.5);
                 }
         }
-}
 
-/* Container for select options */
-.options {
-        border: 1px solid #E7E7E7;                      /* Subtle border */
-        border-radius: 8px;                               /* Rounded edges */
-        background: white;                              /* White background */
-        max-height: 180px;                                /* Max height with scroll */
-        overflow-y: auto;                                 /* Enable vertical scrolling if needed */
-        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12);    /* Shadow to highlight */
-}
-
-/* Styles for each option inside the option container */
-.option {
-        display: block;                         /* Makes each option fill the entire line */
-        text-decoration: none;                  /* Removes underline from links */
-        color: black;                         /* Text color */
-        padding: 10px 14px;                     /* Inner spacing */
-        font-size: 16px;                        /* Font size */
-        cursor: pointer;                        /* Changes the cursor to a hand when hovering over the option */
-        transition: 0.2s;                       /* Smooth transition for effects */
-        
-        /* Styles when hovering over an option. */
-        &:hover {
-                background: #D0E3FF;          /* Changes the background on hover */
-                color: #081F5C;               /* Change text color */
+        .options {
+                @apply border-[1px] border-[#E7E7E7] rounded-[8px] bg-[white];
+                @apply max-h-[180px] overflow-y-auto;
+                box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12);
         }
-        
-        /* Styles when an option is clicked */
-        &:active {
-                background: #334EAC;          /* Change background on click */
-                color: white;                 /* Change text color */
+
+        .option {
+                @apply block no-underline text-[#000] py-[10px] px-[14px] text-[16px] cursor-pointer duration-200;
+
+                &:hover {
+                        @apply bg-[#D0E3FF] text-[#081F5C];
+                }
+
+                &:active {
+                        @apply bg-[#334EAC] text-[#fff];
+                }
         }
 }
