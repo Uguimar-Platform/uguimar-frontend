@@ -5,21 +5,18 @@ import { DynamicSelectComponent } from './atoms/dynamic-select/dynamic-select.co
 import { RoutesNavDynamicSelect } from './interfaces/RoutesNavDynamicSelect';
 
 @Component({
-      selector: 'app-root',
-      imports: [
-            ButtonComponent,
-            DynamicSelectComponent
-      ],
-      templateUrl: './app.component.html',
-      /*   styleUrl: './app.component.scss' */
+  selector: 'app-root',
+  imports: [ButtonComponent, LabelComponent],
+  templateUrl: './app.component.html',
+  /*   styleUrl: './app.component.scss' */
 })
 export class AppComponent {
-      title = 'frontend';
-      faUser = faUser;
-      plus = faPlus;
-      faTrash = faTrash;
-      status: number = 2;
-      public arrayRoutes: RoutesNavDynamicSelect[] = [
+  title = 'frontend';
+  faUser = faUser;
+  plus = faPlus;
+  faTrash = faTrash;
+  status: number = 2;
+  public arrayRoutes: RoutesNavDynamicSelect[] = [
             {
                   "option": "",
                   "value": "https://www.ejemplo.com/inicio"
@@ -60,8 +57,8 @@ export class AppComponent {
                   "option": "",
                   "value": "https://www.ejemplo.com/soporte"
             }
-      ]
-      open() {
-            console.log("open");
-      }
+  ]
+  open() {
+    console.log('open');
+  }
 }
