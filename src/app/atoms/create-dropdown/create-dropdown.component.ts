@@ -1,6 +1,6 @@
 //Importing necessary modules from Angular
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 
 
@@ -41,7 +41,7 @@ import { Component } from '@angular/core';
 
 //Component class definition
 export class CreateDropdownComponent {
-  options = [
+  options = signal([
   /**
    * @property options
    * @type {Array<{ id: number, name: string }>}
@@ -62,6 +62,5 @@ export class CreateDropdownComponent {
       id : 3,
       name : 'Niño (0-12 años)'
     }
-  ]
-
+  ]);
 }
