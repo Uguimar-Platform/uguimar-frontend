@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { faPlus, faUser, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { ButtonComponent } from './atoms/button/button.component';
+import { LabelComponent } from './atoms/label/label.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [ButtonComponent],
+  imports: [ButtonComponent, LabelComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

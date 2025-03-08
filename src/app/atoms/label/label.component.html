@@ -2,20 +2,22 @@
   [attr.for]="forId()"
   class="py-2 px-2 m-2 flex"
   [ngClass]="{
-    'text-xs': fontSize() === 'text-xs',
-    'text-sm': fontSize() === 'text-sm',
-    'text-base': fontSize() === 'text-base',
-    'text-lg': fontSize() === 'text-lg',
-    'text-xl': fontSize() === 'text-xl',
-    'text-2xl': fontSize() === 'text-2xl',
-    'text-3xl': fontSize() === 'text-3xl',
-    'text-4xl': fontSize() === 'text-4xl',
-    'text-5xl': fontSize() === 'text-5xl',
-    'font-bold': fontWeight() === 'font-bold',
-    'font-medium': fontWeight() === 'font-medium',
-    'font-black': fontWeight() === 'font-black',
-    'font-light': fontWeight() === 'font-light',
-    'font-regular': fontWeight() === 'font-regular',
+    'text-black': color() === 'black',
+    'text-white': color() === 'white',
+    'text-[#081F5C]': color() === 'blue-dark',
+    'text-[#334EAC]': color() === 'blue-medium',
+    'text-[#7096D1]': color() === 'blue-light',
+    'text-[#D0E3FF]': color() === 'blue-lightest',
+    'text-[#E7F1FF]': color() === 'blue-lighter',
+    'text-[#F9FCFF]': color() === 'blue-faint',
+    'text-[#E7E7E7]': color() === 'grey-light',
+
+
+    'font-poppins': fontFamily() === 'font-poppins',
+    'font-onest': fontFamily() === 'font-onest',
+    'font-blackMango': fontFamily() === 'font-blackMango',
+    'font-sfProDisplay': fontFamily() === 'font-sfProDisplay',
+    
   }"
 >
   {{ text() }}
