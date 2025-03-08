@@ -16,7 +16,6 @@ It is responsible for verifying the validity of the JWT token and assigning the 
   selector: 'app-label', // Nombre del selector que se usará en el HTML
   imports: [CommonModule], // Importa CommonModule para utilizar directivas comunes
   templateUrl: './label.component.html', // Ruta del archivo de plantilla HTML
-  styleUrls: ['./label.component.scss'], // Rutas de los archivos de estilos CSS
   changeDetection: ChangeDetectionStrategy.OnPush, // Estrategia de detección de cambios eficiente
 })
 export class LabelComponent {
@@ -55,19 +54,19 @@ export class LabelComponent {
    * @param 'text-base'
    */
   readonly fontSize = input<
-    | 'text-xs'    // 0.75rem (12px)
-    | 'text-sm'    // 0.875rem (14px)
-    | 'text-base'  // 1rem (16px)
-    | 'text-lg'    // 1.125rem (18px)
-    | 'text-xl'    // 1.25rem (20px)
-    | 'text-2xl'   // 1.5rem (24px)
-    | 'text-3xl'   // 1.875rem (30px)
-    | 'text-4xl'   // 2.25rem (36px)
-    | 'text-5xl'   // 3rem (48px)
-    | 'text-6xl'   // 3.75rem (60px)
-    | 'text-7xl'   // 4.5rem (72px)
-    | 'text-8xl'   // 6rem (96px)
-    | 'text-9xl'   // 8rem (128px)
+    | 'text-xs' // 0.75rem (12px)
+    | 'text-sm' // 0.875rem (14px)
+    | 'text-base' // 1rem (16px)
+    | 'text-lg' // 1.125rem (18px)
+    | 'text-xl' // 1.25rem (20px)
+    | 'text-2xl' // 1.5rem (24px)
+    | 'text-3xl' // 1.875rem (30px)
+    | 'text-4xl' // 2.25rem (36px)
+    | 'text-5xl' // 3rem (48px)
+    | 'text-6xl' // 3.75rem (60px)
+    | 'text-7xl' // 4.5rem (72px)
+    | 'text-8xl' // 6rem (96px)
+    | 'text-9xl' // 8rem (128px)
   >('text-base');
 
   /** Estilo de la fuente: normal o cursiva.
@@ -79,32 +78,29 @@ export class LabelComponent {
    * @param 'font-onest'
    */
   readonly fontFamily = input<
-    | 'font-sans'  // Sans-serif
-    | 'font-onest'   // Onest Font Family
+    | 'font-onest' // Onest Font Family
     | 'font-poppins' // Poppins
-    | 'font-mango'   // Black Mango
-    | 'font-sf'      // SF Pro Display
-  >('font-onest');
+    | 'font-blackMango' // Black Mango
+    | 'font-sfProDisplay' // SF Pro Display
+  >('font-poppins');
+
+  /** Peso de la fuente del label.
+   * @param 'font-normal'
+   */
+  readonly fontWeight = input<
+    | 'font-black' // 100
+    | 'font-bold' // 200
+    | 'font-light' // 300
+    | 'font-regular' // 400
+    | 'font-medium' // 500
+  >('font-regular');
 
   /** Decoración del texto (ninguno, subrayado, tachado).
    * @param 'none'
    */
-  readonly textDecoration = input<'none' | 'underline' | 'line-through'>('none');
-
-  /** Peso de la fuente (negrita, delgada, normal).
-   * @param 'font-normal'
-   */
-  readonly fontWeight = input<
-    | 'font-thin'        // font-weight: 100;
-    | 'font-extralight'  // font-weight: 200;
-    | 'font-light'       // font-weight: 300;
-    | 'font-normal'      // font-weight: 400;
-    | 'font-medium'      // font-weight: 500;
-    | 'font-semibold'    // font-weight: 600;
-    | 'font-bold'        // font-weight: 700;
-    | 'font-extrabold'   // font-weight: 800;
-    | 'font-black'       // font-weight: 900;
-  >('font-normal');
+  readonly textDecoration = input<'none' | 'underline' | 'line-through'>(
+    'none'
+  );
 
   /** Alineación del texto dentro del label.
    * Puede ser 'left', 'center' o 'right'.

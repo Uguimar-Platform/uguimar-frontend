@@ -11,8 +11,11 @@
     'text-[#E7F1FF]': color() === 'blue-lighter',
     'text-[#F9FCFF]': color() === 'blue-faint',
     'text-[#E7E7E7]': color() === 'grey-light',
-    'Font-normal': fontWeight() === 'font-normal',
+
     'text-left': textAlign() === 'left',
+    'text-center': textAlign() === 'center',
+    'text-right': textAlign() === 'right',
+
     'text-xs': fontSize() === 'text-xs',
     'text-sm': fontSize() === 'text-sm',
     'text-base': fontSize() === 'text-base',
@@ -25,10 +28,28 @@
     'text-6xl': fontSize() === 'text-6xl',
     'text-7xl': fontSize() === 'text-7xl',
     'text-8xl': fontSize() === 'text-8xl',
-    'text-9xl': fontSize() === 'text-9xl'
+    'text-9xl': fontSize() === 'text-9xl',
 
+    'font-poppins': fontFamily() === 'font-poppins',
+    'font-onest': fontFamily() === 'font-onest',
+    'font-blackMango': fontFamily() === 'font-blackMango',
+    'font-sfProDisplay': fontFamily() === 'font-sfProDisplay',
+
+    'font-bold': fontWeight() === 'font-bold',
+    'font-medium': fontWeight() === 'font-medium',
+    'font-black': fontWeight() === 'font-black',
+    'font-light': fontWeight() === 'font-light',
+    'font-regular': fontWeight() === 'font-regular',
+
+    'cursor-pointer': cursorPointer() === true,
+
+    italic: fontStyle() === 'italic',
+    'not-italic': fontStyle() === 'normal',
+
+    underline: textDecoration() === 'underline',
+    'line-through': textDecoration() === 'line-through',
+    'no-underline': textDecoration() === 'none'
   }"
 >
   {{ text() }}
 </label>
-
