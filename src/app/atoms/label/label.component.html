@@ -1,40 +1,34 @@
 <label
   [attr.for]="forId()"
-  class="py-2 px-2 m-2"
+  class="py-2 px-2 m-2 flex"
   [ngClass]="{
-    'text-081F5C': color() === 'blue-dark',
-    'text-334EAC': color() === 'blue-light',
-    'text-ffffff': color() === 'white',
-    'text-000000': color() === 'black',
-    'text-7096D1': color() === 'blue-medium',
-    'text-D0E3FF': color() === 'blue-lightest',
-    'text-E7F1FF': color() === 'blue-lighter',
-    'text-F9FCFF': color() === 'blue-faint',
-    'text-E7E7E7': color() === 'grey-light',
-    'font-normal': fontWeight() === 'normal',
-    'font-bold': fontWeight() === 'bold',
-    'font-lighter': fontWeight() === 'lighter',
+    'text-black': color() === 'black',
+    'text-white': color() === 'white',
+    'text-[#081F5C]': color() === 'blue-dark',
+    'text-[#334EAC]': color() === 'blue-medium',
+    'text-[#7096D1]': color() === 'blue-light',
+    'text-[#D0E3FF]': color() === 'blue-lightest',
+    'text-[#E7F1FF]': color() === 'blue-lighter',
+    'text-[#F9FCFF]': color() === 'blue-faint',
+    'text-[#E7E7E7]': color() === 'grey-light',
+    'Font-normal': fontWeight() === 'font-normal',
     'text-left': textAlign() === 'left',
-    'text-center': textAlign() === 'center',
-    'text-right': textAlign() === 'right',
     'text-xs': fontSize() === 'text-xs',
     'text-sm': fontSize() === 'text-sm',
     'text-base': fontSize() === 'text-base',
     'text-lg': fontSize() === 'text-lg',
     'text-xl': fontSize() === 'text-xl',
     'text-2xl': fontSize() === 'text-2xl',
-    'text-12px': fontSize() === '12px',
-    'text-16px': fontSize() === '16px',
-    'text-20px': fontSize() === '20px',
-    'text-48px': fontSize() === '48px',
-    'text-60px': fontSize() === '60px',
-    'cursor-pointer': cursorPointer,
-    italic: fontStyle() === 'italic',
-    underline: textDecoration() === 'underline',
-    'line-through': textDecoration() === 'line-through',
-    'font-onest': fontFamily() === 'Onest',
-    'font-poppins': fontFamily() === 'Poppins'
+    'text-3xl': fontSize() === 'text-3xl',
+    'text-4xl': fontSize() === 'text-4xl',
+    'text-5xl': fontSize() === 'text-5xl',
+    'text-6xl': fontSize() === 'text-6xl',
+    'text-7xl': fontSize() === 'text-7xl',
+    'text-8xl': fontSize() === 'text-8xl',
+    'text-9xl': fontSize() === 'text-9xl'
+
   }"
 >
   {{ text() }}
 </label>
+

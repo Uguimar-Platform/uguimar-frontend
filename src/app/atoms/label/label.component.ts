@@ -32,11 +32,10 @@ export class LabelComponent {
 
   /**  Color del texto del label.
    * Puede ser uno de los valores predefinidos.
-   * @param 'primary'
+   * @param 'black'
    */
   readonly color = input<
-    | 'primary'
-    | 'secondary'
+    | 'black'
     | 'blue-dark'
     | 'blue-medium'
     | 'blue-light'
@@ -45,8 +44,7 @@ export class LabelComponent {
     | 'blue-faint'
     | 'grey-light'
     | 'white'
-    | 'black'
-  >('primary');
+  >('black');
 
   /** Cursor pointer para indicar que es un elemento interactivo.
    * @param 'false'
@@ -57,17 +55,19 @@ export class LabelComponent {
    * @param 'text-base'
    */
   readonly fontSize = input<
-    | 'text-xs'
-    | 'text-sm'
-    | 'text-base'
-    | 'text-lg'
-    | 'text-xl'
-    | 'text-2xl'
-    | '12px'
-    | '16px'
-    | '20px'
-    | '48px'
-    | '60px'
+    | 'text-xs'    // 0.75rem (12px)
+    | 'text-sm'    // 0.875rem (14px)
+    | 'text-base'  // 1rem (16px)
+    | 'text-lg'    // 1.125rem (18px)
+    | 'text-xl'    // 1.25rem (20px)
+    | 'text-2xl'   // 1.5rem (24px)
+    | 'text-3xl'   // 1.875rem (30px)
+    | 'text-4xl'   // 2.25rem (36px)
+    | 'text-5xl'   // 3rem (48px)
+    | 'text-6xl'   // 3.75rem (60px)
+    | 'text-7xl'   // 4.5rem (72px)
+    | 'text-8xl'   // 6rem (96px)
+    | 'text-9xl'   // 8rem (128px)
   >('text-base');
 
   /** Estilo de la fuente: normal o cursiva.
@@ -76,21 +76,35 @@ export class LabelComponent {
   readonly fontStyle = input<'normal' | 'italic'>('normal');
 
   /** Familia de la fuente del label.
-   * @param 'Onest'
+   * @param 'font-onest'
    */
-  readonly fontFamily = input<'Onest' | 'Poppins'>('Poppins');
+  readonly fontFamily = input<
+    | 'font-sans'  // Sans-serif
+    | 'font-onest'   // Onest Font Family
+    | 'font-poppins' // Poppins
+    | 'font-mango'   // Black Mango
+    | 'font-sf'      // SF Pro Display
+  >('font-onest');
 
   /** Decoración del texto (ninguno, subrayado, tachado).
    * @param 'none'
    */
-  readonly textDecoration = input<'none' | 'underline' | 'line-through'>(
-    'none'
-  );
+  readonly textDecoration = input<'none' | 'underline' | 'line-through'>('none');
 
   /** Peso de la fuente (negrita, delgada, normal).
-   * @param 'normal'
+   * @param 'font-normal'
    */
-  readonly fontWeight = input<'normal' | 'bold' | 'lighter'>('normal');
+  readonly fontWeight = input<
+    | 'font-thin'        // font-weight: 100;
+    | 'font-extralight'  // font-weight: 200;
+    | 'font-light'       // font-weight: 300;
+    | 'font-normal'      // font-weight: 400;
+    | 'font-medium'      // font-weight: 500;
+    | 'font-semibold'    // font-weight: 600;
+    | 'font-bold'        // font-weight: 700;
+    | 'font-extrabold'   // font-weight: 800;
+    | 'font-black'       // font-weight: 900;
+  >('font-normal');
 
   /** Alineación del texto dentro del label.
    * Puede ser 'left', 'center' o 'right'.
