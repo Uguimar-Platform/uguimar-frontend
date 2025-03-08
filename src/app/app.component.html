@@ -20,13 +20,5 @@ type="submit"
       height="h-[100px]"
       placeholder="placeholder"
 />
-
-<app-label
-  text="Nombre"
-  color="blue-dark"
-  fontWeight="normal"
-  textAlign="left"
-  fontSize="text-base"
-  [cursorPointer]="true"
->
-</app-label>
+<app-link label="Inicio" route="/" color="primary" [underline]="true"></app-link>
+<app-link label="Contacto" route="/contacto" color="danger" [underline]="false"></app-link>
