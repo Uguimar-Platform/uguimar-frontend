@@ -29,28 +29,7 @@ export class LabelComponent {
    */
   readonly forId = input<string>('');
 
-  /**  Color del texto del label.
-   * Puede ser uno de los valores predefinidos.
-   * @param 'black'
-   */
-  readonly color = input<
-    | 'black'
-    | 'blue-dark'
-    | 'blue-medium'
-    | 'blue-light'
-    | 'blue-lightest'
-    | 'blue-lighter'
-    | 'blue-faint'
-    | 'grey-light'
-    | 'white'
-  >('black');
-
-  /** Cursor pointer para indicar que es un elemento interactivo.
-   * @param 'false'
-   */
-  readonly cursorPointer = input<boolean>(false);
-
-  /** Tamaño de la fuente del label.
+  /** Tamaño de la fuente del label en px.
    * @param 'text-base'
    */
   readonly fontSize = input<
@@ -69,22 +48,7 @@ export class LabelComponent {
     | 'text-9xl' // 8rem (128px)
   >('text-base');
 
-  /** Estilo de la fuente: normal o cursiva.
-   * @param 'normal'
-   */
-  readonly fontStyle = input<'normal' | 'italic'>('normal');
-
-  /** Familia de la fuente del label.
-   * @param 'font-onest'
-   */
-  readonly fontFamily = input<
-    | 'font-onest' // Onest Font Family
-    | 'font-poppins' // Poppins
-    | 'font-blackMango' // Black Mango
-    | 'font-sfProDisplay' // SF Pro Display
-  >('font-poppins');
-
-  /** Peso de la fuente del label.
+  /** G de la fuente del label.
    * @param 'font-normal'
    */
   readonly fontWeight = input<
@@ -95,16 +59,4 @@ export class LabelComponent {
     | 'font-medium' // 500
   >('font-regular');
 
-  /** Decoración del texto (ninguno, subrayado, tachado).
-   * @param 'none'
-   */
-  readonly textDecoration = input<'none' | 'underline' | 'line-through'>(
-    'none'
-  );
-
-  /** Alineación del texto dentro del label.
-   * Puede ser 'left', 'center' o 'right'.
-   * @param 'left'
-   */
-  readonly textAlign = input<'left' | 'center' | 'right'>('left');
 }
