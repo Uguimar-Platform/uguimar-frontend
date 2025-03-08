@@ -14,7 +14,7 @@ import { LinkComponent } from './atoms/link/link.component';
 })
 export class AppComponent {
   title = 'frontend';
-faUser = faUser;
+  faUser = faUser;
   plus=faPlus;
   faTrash = faTrash;
   status: number = 2;
@@ -60,8 +60,9 @@ faUser = faUser;
                   "value": "https://www.ejemplo.com/soporte"
             }
   ]
+
   open() {
     console.log('open');
-
   }
+  
 }
