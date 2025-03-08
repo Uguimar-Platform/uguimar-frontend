@@ -14,4 +14,11 @@ type="submit"
   type="reset"
 ></app-button>
 
-
+<dynamic-select 
+      [arrayRoutes]="arrayRoutes" 
+      width="w-[300px]" 
+      height="h-[100px]"
+      placeholder="placeholder"
+/>
+<app-link label="Inicio" route="/" color="primary" [underline]="true"></app-link>
+<app-link label="Contacto" route="/contacto" color="danger" [underline]="false"></app-link>
