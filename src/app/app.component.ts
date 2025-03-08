@@ -3,10 +3,12 @@ import { faPlus, faUser,faTrash } from '@fortawesome/free-solid-svg-icons';
 import { ButtonComponent } from './atoms/button/button.component';
 import { DynamicSelectComponent } from './atoms/dynamic-select/dynamic-select.component';
 import { RoutesNavDynamicSelect } from './interfaces/RoutesNavDynamicSelect';
+import { LinkComponent } from './atoms/link/link.component';
+
 
 @Component({
   selector: 'app-root',
-  imports: [ButtonComponent, DynamicSelectComponent],
+  imports: [ButtonComponent, DynamicSelectComponent, LinkComponent],
   templateUrl: './app.component.html',
 /*   styleUrl: './app.component.scss' */
 })
