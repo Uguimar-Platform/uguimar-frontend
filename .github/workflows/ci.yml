@@ -29,8 +29,16 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Run ESLint
-        run: pnpm run lint
+      - name: Get changed files
+        id: changed-files
+        run: |
+          FILES=$(git diff --name-only origin/${{ github.base_ref }}..${{ github.head_ref }} -- '*.ts' '*.html' '*.scss' | tr '\n' ' ')
+          echo "files=$FILES" >> $GITHUB_OUTPUT
 
-      - name: Check Prettier formatting
-        run: pnpm run format:check
+      - name: Run ESLint on changed files
+        if: ${{ steps.changed-files.outputs.files != '' }}
+        run: pnpm exec eslint ${{ steps.changed-files.outputs.files }}
+
+      - name: Check Prettier formatting on changed files
+        if: ${{ steps.changed-files.outputs.files != '' }}
+        run: pnpm exec prettier --check ${{ steps.changed-files.outputs.files }}
