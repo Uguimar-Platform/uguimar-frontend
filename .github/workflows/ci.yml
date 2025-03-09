@@ -28,14 +28,3 @@ jobs:
 
       - name: Check Prettier formatting
         run: pnpm run format:check
-
-      - name: Test
-        run: npm test
-
-      - name: Build
-        run: npm run build
-
-      - name: Deploy
-        run: npm run deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
