@@ -1,11 +1,18 @@
-<app-button label="bienvenido" type="submit"> </app-button>
+
+<app-button 
+label="bienvenido"
+type="submit">
+</app-button>
 <app-button
-  type="submit"
+type="submit"
   label="Crea tu cuenta"
   [outline]="true"
   color="secondary"
 ></app-button>
-<app-button label="Enviar" type="reset"></app-button>
+<app-button 
+  label="Enviar" 
+  type="reset"
+></app-button>
 
 <app-label
   text="Usuario/Correo electrónico"
@@ -34,3 +41,12 @@
   color="blue-light"
   fontFamily="font-poppins"
 ></app-label>
+
+<dynamic-select 
+      [arrayRoutes]="arrayRoutes" 
+      width="w-[300px]" 
+      height="h-[100px]"
+      placeholder="placeholder"
+/>
+<app-link label="Inicio" route="/" color="primary" [underline]="true"></app-link>
+<app-link label="Contacto" route="/contacto" color="danger" [underline]="false"></app-link>
