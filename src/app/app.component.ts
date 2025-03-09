@@ -4,12 +4,15 @@ import { ButtonComponent } from './atoms/button/button.component';
 import { DynamicSelectComponent } from './atoms/dynamic-select/dynamic-select.component';
 import { RoutesNavDynamicSelect } from './interfaces/RoutesNavDynamicSelect';
 import { LinkComponent } from './atoms/link/link.component';
+import { LabelComponent } from './atoms/label/label.component';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-root',
-  imports: [ButtonComponent, DynamicSelectComponent, LinkComponent],
+  imports: [ButtonComponent, LabelComponent, CommonModule,DynamicSelectComponent, LinkComponent],
   templateUrl: './app.component.html',
+  styleUrl: './app.component.scss',
 /*   styleUrl: './app.component.scss' */
 })
 export class AppComponent {
