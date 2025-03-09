@@ -8,7 +8,7 @@
     @decription Dysplays a placeholder text before user selection
   -->
   <option 
-    @For="let option of options()" 
+    *ngFor="let option of options()" 
     [value]="option.id"
   >
   <!--  
