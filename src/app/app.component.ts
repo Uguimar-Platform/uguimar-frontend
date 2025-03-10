@@ -1,32 +1,15 @@
-import { Component } from '@angular/core';
-import { ErrorMessageComponent } from './error-message/error-message.component';
+import { Component, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ErrorMessageComponent } from './error-message/error-message.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ErrorMessageComponent, FormsModule], // Import FormsModule for ngModel
-  template: `
-    <div class="p-4">
-      <app-error-message
-        [label]="'Email'"
-        [placeholder]="'Enter your email'"
-        [errorMessage]="errorMessage"
-        [(ngModel)]="emailValue">
-      </app-error-message>
-      <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded" (click)="onSubmit()">Submit</button>
-    </div>
-  `,
+  imports: [CommonModule, FormsModule, ErrorMessageComponent],
+  templateUrl: './app.component.html',
 })
 export class AppComponent {
-  emailValue: string = '';
-  errorMessage: string | null = null;
-
-  onSubmit() {
-    if (!this.emailValue.includes('@')) {
-      this.errorMessage = 'Please enter a valid email address';
-    } else {
-      this.errorMessage = null;
-    }
-  }
+  title = 'frontend';
+  errorMessage: string | null = 'Este es un mensaje de error por default';
 }

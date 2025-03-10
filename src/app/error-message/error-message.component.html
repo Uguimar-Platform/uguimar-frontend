@@ -1,44 +1,14 @@
-<!-- The main container for the error message component -->
-<div class="flex flex-col w-full">
+<!-- 
+  Template for the ErrorMessageComponent.
 
-  <!-- Label and icon section -->
-  <div class="flex items-center gap-2 mb-1">
-    <!-- Conditional rendering of the label icon -->
-    @if (labelIcon()) {
-      <fa-icon [icon]="labelIcon()!" class="text-gray-500"></fa-icon>
-    }
-    <!-- Label text -->
-    <label class="text-sm font-medium text-gray-600">
-      {{ label() }}
-    </label>
-  </div>
-
-  <!-- Configurable input field with custom styles, support for visual validation, 
-        and adjustable properties such as type, width, height, and disabled state -->
-  <input
-    [type]="type()"     
-    [placeholder]="placeholder()"  
-    class="border-none bg-[#E7F1FF] rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"  
-    [ngClass]="{
-      'border-red-500': hasError(),  
-      'bg-red-50': hasError()  
-    }"
-    [style.width]="width()"  
-    [style.height]="height()"  
-    (input)="onInputChange($event)"  
-    [value]="value"  
-    [disabled]="disabled()"  
-  />
-
-  <!-- Error message -->
-  <!-- 
-    If an error message is provided, it is displayed below the input field 
-    to inform the user about the validation issue.
-  -->
-  
-  @if (hasError()) {
-    <p class="text-sm text-red-600 mt-1">
-      {{ errorMessage() }}  <!-- Displays the error message -->
-    </p>
-  }
+  This template displays an error message if one is defined.
+  Dynamic classes are applied to customize the styling of the message.
+-->
+<div 
+  *ngIf="message()" 
+  [ngClass]="customClass()" 
+  class="text-red-500 text-sm mt-1"
+>
+  <!-- Displays the error message -->
+  {{ message() }}
 </div>
