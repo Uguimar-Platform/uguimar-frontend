@@ -6,11 +6,12 @@ import { RoutesNavDynamicSelect } from './interfaces/RoutesNavDynamicSelect';
 import { LinkComponent } from './atoms/link/link.component';
 import { LabelComponent } from './atoms/label/label.component';
 import { CommonModule } from '@angular/common';
+import { ErrorMessageComponent } from './error-message/error-message.component';
 
 
 @Component({
   selector: 'app-root',
-  imports: [ButtonComponent, LabelComponent, CommonModule,DynamicSelectComponent, LinkComponent],
+  imports: [ButtonComponent, LabelComponent, CommonModule,DynamicSelectComponent, LinkComponent,ErrorMessageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 /*   styleUrl: './app.component.scss' */
@@ -64,8 +65,11 @@ export class AppComponent {
             }
   ]
 
+  errorMessage: string | null = 'Este es un mensaje de error por default';
+
   open() {
     console.log('open');
   }
   
 }
+
