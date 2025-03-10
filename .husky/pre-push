@@ -1,0 +1,11 @@
+#!/bin/sh
+# Obtener archivos modificados entre la rama remota y HEAD
+CHANGED_FILES=$(git diff --name-only origin/$(git rev-parse --abbrev-ref HEAD)..HEAD -- '*.ts' '*.html' '*.scss' | tr '\n' ' ')
+
+if [ -n "$CHANGED_FILES" ]; then
+  echo "Linting files: $CHANGED_FILES"
+  pnpm exec eslint $CHANGED_FILES
+  pnpm exec prettier --check $CHANGED_FILES
+else
+  echo "No changed files to lint."
+fi

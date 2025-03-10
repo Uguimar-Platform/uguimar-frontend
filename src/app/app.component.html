@@ -1,12 +1,51 @@
-<div class="p-4">
-  <!-- This component renders an input field with error message support. 
-        It includes label, placeholder, error message, and two-way data binding for the value. -->
-  <app-error-message
-    [label]="'Email'"
-    [placeholder]="'Enter your email'"
-    [errorMessage]="errorMessage"
-    [(ngModel)]="emailValue">
-  </app-error-message>
-  <!-- Button to submit the form -->
-  <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded " (click)="onSubmit()">Submit</button> <!-- Click event to trigger the onSubmit method -->
-</div>
+<app-button 
+label="bienvenido"
+type="submit">
+</app-button>
+<app-button
+type="submit"
+  label="Crea tu cuenta"
+  [outline]="true"
+  color="secondary"
+></app-button>
+<app-button 
+  label="Enviar" 
+  type="reset"
+></app-button>
+
+<app-label
+  text="Usuario/Correo electrónico"
+  forId="UserLabel"
+  color="blue-dark"
+  fontFamily="font-sfProDisplay"
+></app-label>
+
+<app-label
+  text="Contraseña"
+  forId="PasswordLabel"
+  color="black"
+  fontFamily="font-blackMango"
+></app-label>
+
+<app-label
+  text="Nombre de usuario"
+  forId="UsernameLabel"
+  color="blue-medium"
+  fontFamily="font-onest"
+></app-label>
+
+<app-label
+  text="Fecha de nacimiento"
+  forId="BirthdateLabel"
+  color="blue-light"
+  fontFamily="font-poppins"
+></app-label>
+
+<dynamic-select 
+      [arrayRoutes]="arrayRoutes" 
+      width="w-[300px]" 
+      height="h-[100px]"
+      placeholder="placeholder"
+/>
+<app-link label="Inicio" route="/" color="primary" [underline]="true"></app-link>
+<app-link label="Contacto" route="/contacto" color="danger" [underline]="false"></app-link>
