@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 
 /**
  * Angular component that displays an error message.
- * 
- * This component is standalone and can be reused to display 
+ *
+ * This component is standalone and can be reused to display
  * custom error messages in different parts of the application.
  */
 @Component({
@@ -16,15 +16,15 @@ import { CommonModule } from '@angular/common';
 export class ErrorMessageComponent {
   /**
    * Error message to be displayed in the component.
-   * 
-   * @type {string | null} 
+   *
+   * @type {string | null}
    * @default null
    */
   readonly message = input<string | null>(null);
 
   /**
    * Custom class or set of classes to customize the styling of the component.
-   * 
+   *
    * @type {string | Record<string, boolean>}
    * @default ''
    */
