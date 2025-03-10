@@ -4,10 +4,10 @@
   This template displays an error message if one is defined.
   Dynamic classes are applied to customize the styling of the message.
 -->
-<div
-  *ngIf="message()"
-  [ngClass]="customClass()"
-  class="text-red-500 text-sm mt-1">
-  <!-- Displays the error message -->
-  {{ message() }}
-</div>
+@if (message()) {
+  <div 
+    [class]="customClass()"
+    class="text-red-500 text-sm mt-1">
+    {{ message() }}
+  </div>
+}
