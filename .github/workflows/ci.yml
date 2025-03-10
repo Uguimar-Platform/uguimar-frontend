@@ -1,0 +1,44 @@
+name: Lint and Format
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  lint-and-format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+          run_install: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Get changed files
+        id: changed-files
+        run: |
+          FILES=$(git diff --name-only origin/${{ github.base_ref }}..${{ github.head_ref }} -- '*.ts' '*.html' '*.scss' | tr '\n' ' ')
+          echo "files=$FILES" >> $GITHUB_OUTPUT
+
+      - name: Run ESLint on changed files
+        if: ${{ steps.changed-files.outputs.files != '' }}
+        run: pnpm exec eslint ${{ steps.changed-files.outputs.files }}
+
+      - name: Check Prettier formatting on changed files
+        if: ${{ steps.changed-files.outputs.files != '' }}
+        run: pnpm exec prettier --check ${{ steps.changed-files.outputs.files }}

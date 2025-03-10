@@ -1,29 +1,7 @@
-<select 
-  class="btn__select" 
->
-  <option value="">-- Seleccione --</option>
-  <!--
-    Default option
-    @value "" to indicate no selection initially
-    @decription Dysplays a placeholder text before user selection
-  -->
-  <option 
-    *ngFor="let option of options()" 
-    [value]="option.id"
-  >
-  <!--  
-    Dynamic option generation  
-    @directive @For Loops through the 'options' array and creates an option for each element.
-    @binding [value] Assigns the unique 'id' of each option as the value attribute.
-    @description Ensures that each option in the dropdown is dynamically created based on the available data.
-    @function options() Returns an array containing objects with 'id' and 'name' properties.
-  -->
-    
-    {{ option.name }}
-    <!--  
-      Option label  
-      @binding {{ option.name }} Displays the name property as the visible text  
-    -->
-    
-  </option>
+<select class="btn__select">
+  @for (option of options(); track $index) {
+    <option value="{{ option.id }}">
+      {{ option.name }}
+    </option>
+  }
 </select>
