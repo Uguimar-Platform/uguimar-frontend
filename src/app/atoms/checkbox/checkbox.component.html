@@ -1,7 +1,8 @@
-<label class="flex items-center gap-2 cursor-pointer">
-  <input 
-    type="checkbox" 
-    [checked]="checked()"
+<label class="flex items-center gap-2 cursor-pointer" [class.opacity-50]="disabled()">
+  <input
+    type="checkbox"
+    [formControl]="control"
+    [disabled]="disabled()"
     class="w-4 h-4 accent-blue-500"
   />
   <span [class]="color()">{{ label() }}</span>
