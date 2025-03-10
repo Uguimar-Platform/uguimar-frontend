@@ -5,6 +5,7 @@ import { DynamicSelectComponent } from './atoms/dynamic-select/dynamic-select.co
 import { RoutesNavDynamicSelect } from './interfaces/RoutesNavDynamicSelect';
 import { LinkComponent } from './atoms/link/link.component';
 import { CommonModule } from '@angular/common';
+import { ErrorMessageComponent } from './atoms/error-message/error-message.component';
 import { LabelComponent } from './atoms/label/label.component';
 import { CheckboxComponent } from './atoms/checkbox/checkbox.component';
 
@@ -16,6 +17,7 @@ import { CheckboxComponent } from './atoms/checkbox/checkbox.component';
     CommonModule,
     DynamicSelectComponent,
     LinkComponent,
+    ErrorMessageComponent,
     CheckboxComponent,
   ],
   templateUrl: './app.component.html',
@@ -70,6 +72,8 @@ export class AppComponent {
       value: 'https://www.ejemplo.com/soporte',
     },
   ];
+
+  errorMessage: string | null = 'Este es un mensaje de error por default';
 
   open() {
     console.log('open');

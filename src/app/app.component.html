@@ -47,3 +47,13 @@
   route="/contacto"
   color="danger"
   [underline]="false"></app-link>
+
+<div class="p-4">
+  <h1>Prueba del Componente de Mensaje de Error</h1>
+
+  <!-- Usar el componente con un mensaje estático -->
+  <app-error-message message="Este es un mensaje de error estático" />
+
+  <!-- Usar el componente con una propiedad dinámica del componente padre -->
+  <app-error-message [message]="errorMessage" />
+</div>
