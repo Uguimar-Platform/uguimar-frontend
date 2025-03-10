@@ -1,6 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, forwardRef, input } from '@angular/core';
-import { FormsModule, NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import {
+  FormsModule,
+  NG_VALUE_ACCESSOR,
+  ControlValueAccessor,
+} from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
@@ -22,7 +26,6 @@ import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
   ],
 })
 export class InputComponent implements ControlValueAccessor {
-  
   readonly type = input('text');
   readonly placeholder = input('');
   readonly label = input('');
@@ -33,9 +36,9 @@ export class InputComponent implements ControlValueAccessor {
   readonly customClass = input<string | Record<string, boolean>>('');
   readonly labelIcon = input<IconDefinition | null>(null);
 
-  value: string = '';
-  onChange: (value: string) => void = () => {};
-  onTouched: () => void = () => {};
+  value = '';
+  // onChange: (value: string) => void = () => {};
+  // onTouched: () => void = () => {};
 
   /**
    * Sets the value of the component.
