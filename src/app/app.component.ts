@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { faPlus, faUser, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { ButtonComponent } from './atoms/button/button.component';
 import { DynamicSelectComponent } from './atoms/dynamic-select/dynamic-select.component';
@@ -8,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { ErrorMessageComponent } from './atoms/error-message/error-message.component';
 import { LabelComponent } from './atoms/label/label.component';
 import { CheckboxComponent } from './atoms/checkbox/checkbox.component';
+import { CreateDropdownComponent } from './atoms/create-dropdown/create-dropdown.component';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +21,7 @@ import { CheckboxComponent } from './atoms/checkbox/checkbox.component';
     LinkComponent,
     ErrorMessageComponent,
     CheckboxComponent,
+    CreateDropdownComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
