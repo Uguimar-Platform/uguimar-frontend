@@ -1,5 +1,9 @@
-<label class="checkbox">
-    <input type="checkbox" [checked]="checked">
-    {{ label }}
-  </label>
-  
+<label class="flex items-center gap-2 cursor-pointer">
+  <input 
+    type="checkbox" 
+    [checked]="checked()"
+    class="w-4 h-4 accent-blue-500"
+  />
+  <span [class]="color()">{{ label() }}</span>
+</label>
+
