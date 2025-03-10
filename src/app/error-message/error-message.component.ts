@@ -5,41 +5,41 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 /**
- * This component displays a configurable input field with error message support.
- * Supports properties: type, placeholder, label, disabled, width, height, backgroundColor, and errorMessage.
+ * This component displays a configurable input field with support for error messages.
+ * It supports properties such as type, placeholder, label, disabled, width, height, backgroundColor, and errorMessage.
  */
 @Component({
-  selector: 'app-error-message',
-  standalone: true,
-  imports: [FormsModule, CommonModule, FontAwesomeModule],
-  templateUrl: './error-message.component.html',
+  selector: 'app-error-message', // Defines the component's selector to be used in HTML templates
+  standalone: true, // Marks this component as standalone
+  imports: [FormsModule, CommonModule, FontAwesomeModule], // Imports necessary modules
+  templateUrl: './error-message.component.html', // Associated HTML file
   providers: [
     {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => ErrorMessageComponent),
-      multi: true,
+      provide: NG_VALUE_ACCESSOR, // Provides a way to connect the component with Angular forms
+      useExisting: forwardRef(() => ErrorMessageComponent), // Uses a forward reference to the current component
+      multi: true, // Allows multiple providers
     },
   ],
 })
 export class ErrorMessageComponent implements ControlValueAccessor {
-  readonly type = input('text');
-  readonly placeholder = input('');
-  readonly label = input('');
-  readonly disabled = input(false);
-  readonly width = input('100%');
-  readonly height = input('40px');
-  readonly backgroundColor = input('#ffffff');
-  readonly customClass = input<string | Record<string, boolean>>('');
-  readonly labelIcon = input<IconDefinition | null>(null);
-  readonly errorMessage = input<string | null>(null); // Error message input
+  readonly type = input('text'); // Input type (default: text)
+  readonly placeholder = input(''); // Placeholder text
+  readonly label = input(''); // Input label
+  readonly disabled = input(false); // Disabled state (default: false)
+  readonly width = input('100%'); // Input field width
+  readonly height = input('40px'); // Input field height
+  readonly backgroundColor = input('#ffffff'); // Background color
+  readonly customClass = input<string | Record<string, boolean>>(''); // Custom CSS class
+  readonly labelIcon = input<IconDefinition | null>(null); // Icon for the label
+  readonly errorMessage = input<string | null>(null); // Error message
 
-  value: string = '';
-  onChange: (value: string) => void = () => {};
-  onTouched: () => void = () => {};
+  value: string = ''; // Current value of the input
+  onChange: (value: string) => void = () => {}; // Function to handle value changes
+  onTouched: () => void = () => {}; // Function to handle touch events
 
   /**
-   * Sets the value of the component.
-   * @param value - The value to be set.
+   * Sets the component's value.
+   * @param value - The value to set.
    */
   writeValue(value: string): void {
     this.value = value ?? '';
@@ -63,7 +63,7 @@ export class ErrorMessageComponent implements ControlValueAccessor {
 
   /**
    * Handles the input event.
-   * Updates the component value and notifies value change and touch events.
+   * Updates the component's value and notifies both value change and touch events.
    * @param event - The input event.
    */
   onInputChange(event: Event): void {
@@ -75,7 +75,7 @@ export class ErrorMessageComponent implements ControlValueAccessor {
 
   /**
    * Checks if the input has an error.
-   * @returns boolean indicating if an error message exists.
+   * @returns A boolean indicating whether there is an error message.
    */
   hasError(): boolean {
     return !!this.errorMessage();
