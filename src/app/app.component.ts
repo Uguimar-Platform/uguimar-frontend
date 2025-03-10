@@ -4,9 +4,10 @@ import { ButtonComponent } from './atoms/button/button.component';
 import { DynamicSelectComponent } from './atoms/dynamic-select/dynamic-select.component';
 import { RoutesNavDynamicSelect } from './interfaces/RoutesNavDynamicSelect';
 import { LinkComponent } from './atoms/link/link.component';
-import { LabelComponent } from './atoms/label/label.component';
 import { CommonModule } from '@angular/common';
 import { ErrorMessageComponent } from './error-message/error-message.component';
+import { LabelComponent } from './atoms/label/label.component';
+import { CheckboxComponent } from './atoms/checkbox/checkbox.component';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ import { ErrorMessageComponent } from './error-message/error-message.component';
     DynamicSelectComponent,
     LinkComponent,
     ErrorMessageComponent,
+    CheckboxComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -27,7 +29,7 @@ export class AppComponent {
   faUser = faUser;
   plus = faPlus;
   faTrash = faTrash;
-  status: number = 2;
+  status = 2;
   public arrayRoutes: RoutesNavDynamicSelect[] = [
     {
       option: '',
