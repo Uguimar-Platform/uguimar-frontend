@@ -1,10 +1,10 @@
-<label class="flex items-center gap-2 cursor-pointer" [class.opacity-50]="disabled()">
-  <input
+<label [for]="id()" class="flex items-center gap-2 cursor-pointer" [class.opacity-50]="disabled()">
+  <input 
     type="checkbox"
+    [id]="id()"
     [formControl]="control"
     [disabled]="disabled()"
     class="w-4 h-4 accent-blue-500"
   />
   <span [class]="color()">{{ label() }}</span>
 </label>
-

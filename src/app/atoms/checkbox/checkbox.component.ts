@@ -1,4 +1,4 @@
-import { Component, Input, signal } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -6,9 +6,10 @@ import { FormControl } from '@angular/forms';
   templateUrl: './checkbox.component.html'
 })
 export class CheckboxComponent {
-  @Input() label = signal<string>('');
-  @Input() color = signal<string>('text-gray-900');
-  @Input() disabled = signal<boolean>(false);
+  readonly id = input<string>('checkbox-' + Math.random().toString(36).substr(2, 9)); //El cambio
+  readonly label = input<string>('');
+  readonly color = input<string>('text-gray-900');
+  readonly disabled = input<boolean>(false);
   
-  control = new FormControl(false); // Para formmulario reactivo 
+  control = new FormControl(false); // Para formulario reactivo 
 }
