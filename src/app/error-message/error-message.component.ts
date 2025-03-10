@@ -10,7 +10,6 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-error-message', // Selector that identifies the component in templates.
   standalone: true, // Indicates that the component is standalone.
-  imports: [CommonModule], // Modules imported and used by the component.
   templateUrl: './error-message.component.html', // Path to the associated HTML template.
 })
 export class ErrorMessageComponent {

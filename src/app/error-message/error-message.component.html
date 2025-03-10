@@ -5,9 +5,7 @@
   Dynamic classes are applied to customize the styling of the message.
 -->
 @if (message()) {
-  <div 
-    [class]="customClass()"
-    class="text-red-500 text-sm mt-1">
-    {{ message() }}
-  </div>
+<div [class]="customClass()" class="text-red-500 text-sm mt-1">
+  {{ message() }}
+</div>
 }
