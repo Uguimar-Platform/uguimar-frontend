@@ -33,10 +33,36 @@ jobs:
       - name: Build
         run: pnpm exec ng build --configuration development
 
-      - name: Install Firebase Tools and Dependencies
-        run: pnpm add -g firebase-tools @angular-devkit/core @angular-devkit/architect jsonc-parser
+      - name: Install required Angular dependencies
+        run: pnpm add @angular-devkit/core @angular-devkit/architect jsonc-parser
 
-      - name: Deploy to Firebase
-        run: pnpm exec firebase hosting:preview --project uguimar-platform --token "${{ secrets.FIREBASE_SERVICE_ACCOUNT_UGUIMAR_PLATFORM }}" --non-interactive
+      - name: Create firebase.json if not exists
+        run: |
+          if [ ! -f firebase.json ]; then
+            echo '{
+              "hosting": {
+                "public": "dist/uguimar-frontend",
+                "ignore": [
+                  "firebase.json",
+                  "**/.*",
+                  "**/node_modules/**"
+                ],
+                "rewrites": [
+                  {
+                    "source": "**",
+                    "destination": "/index.html"
+                  }
+                ]
+              }
+            }' > firebase.json
+          fi
+
+      - name: Deploy preview to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: hosting:preview --only hosting
         env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_UGUIMAR_PLATFORM }}
+          PROJECT_ID: uguimar-platform
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FIREBASE_CLI_EXPERIMENTS: webframeworks
