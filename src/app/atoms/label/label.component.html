@@ -1,0 +1,21 @@
+<label
+  [attr.for]="forId()"
+  class="py-2 px-2 m-2 flex"
+  [ngClass]="{
+    'text-black': color() === 'black',
+    'text-white': color() === 'white',
+    'text-[#081F5C]': color() === 'blue-dark',
+    'text-[#334EAC]': color() === 'blue-medium',
+    'text-[#7096D1]': color() === 'blue-light',
+    'text-[#D0E3FF]': color() === 'blue-lightest',
+    'text-[#E7F1FF]': color() === 'blue-lighter',
+    'text-[#F9FCFF]': color() === 'blue-faint',
+    'text-[#E7E7E7]': color() === 'grey-light',
+
+    'font-poppins': fontFamily() === 'font-poppins',
+    'font-onest': fontFamily() === 'font-onest',
+    'font-blackMango': fontFamily() === 'font-blackMango',
+    'font-sfProDisplay': fontFamily() === 'font-sfProDisplay',
+  }">
+  {{ text() }}
+</label>

@@ -1,32 +1,33 @@
 import { Component, effect, ElementRef, HostListener, input, signal, viewChild } from '@angular/core';
+
 import { RouterLink } from '@angular/router';
 import { RoutesNavDynamicSelect } from '../../interfaces/RoutesNavDynamicSelect';
 import { CommonModule } from '@angular/common';
 
-
-/** 
+/**
  * Component that represents a dynamic selector with search and navigation functionality.
- * 
+ *
  * Module for handling forms and two-way data binding.
  * Directive for handling route links in Angular.
-*/
+ */
 @Component({
       selector: 'dynamic-select',
       imports: [
-            RouterLink, CommonModule
+            RouterLink,
+            CommonModule
       ],
       templateUrl: './dynamic-select.component.html',
       styleUrl: './dynamic-select.component.scss'
 })
 
-/** 
+/**
  * Signal that stores the value entered by the user in the input field.
- * 
+ *
  * Input property that receives an array of routes for the dynamic selector.
  * @input array Routes - Array of avDynamicSelect Routes objects representing the available routes.
- * 
+ *
  * Array that stores the routes filtered based on user input.
-*/
+ */
 export class DynamicSelectComponent {
 
       // property focus is for the input and visibility on options of search

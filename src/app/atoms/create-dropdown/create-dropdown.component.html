@@ -1,0 +1,7 @@
+<select class="btn__select">
+  @for (option of options(); track $index) {
+    <option value="{{ option.id }}">
+      {{ option.name }}
+    </option>
+  }
+</select>
