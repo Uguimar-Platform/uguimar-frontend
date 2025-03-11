@@ -37,8 +37,10 @@ export class InputComponent implements ControlValueAccessor {
   readonly labelIcon = input<IconDefinition | null>(null);
 
   value = '';
-  // onChange: (value: string) => void = () => {};
-  // onTouched: () => void = () => {};
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  onChange: (value: string) => void = () => {};
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  onTouched: () => void = () => {};
 
   /**
    * Sets the value of the component.

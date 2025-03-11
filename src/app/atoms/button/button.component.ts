@@ -1,6 +1,14 @@
 import { CommonModule } from '@angular/common';
-import { Component, input, output, ChangeDetectionStrategy } from '@angular/core';
-import { FontAwesomeModule, IconDefinition } from '@fortawesome/angular-fontawesome';
+import {
+  Component,
+  input,
+  output,
+  ChangeDetectionStrategy,
+} from '@angular/core';
+import {
+  FontAwesomeModule,
+  IconDefinition,
+} from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-button',
@@ -11,7 +19,9 @@ import { FontAwesomeModule, IconDefinition } from '@fortawesome/angular-fontawes
 })
 export class ButtonComponent {
   // Inputs como signals
-  readonly color = input<'primary' | 'warning' | 'info' | 'danger' | 'secondary'>('primary');
+  readonly color = input<
+    'primary' | 'warning' | 'info' | 'danger' | 'secondary'
+  >('primary');
   readonly outline = input<boolean>(false);
   readonly label = input<string>('');
   readonly icon = input<IconDefinition | null>(null);
@@ -21,12 +31,11 @@ export class ButtonComponent {
   readonly type = input<'button' | 'submit' | 'reset'>('button');
 
   // Output
-  click = output<void>();
-
+  buttonClick = output<void>();
 
   onClick() {
     if (!this.disabled()) {
-      this.click.emit();
+      this.buttonClick.emit();
     }
   }
 }

@@ -2,39 +2,37 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CreateDropdownComponent } from './create-dropdown.component';
 /**
-*@testSuize CreateDropdownComponent
-*@description
-*Holds an instance of the CreateDropdownComponent to be tested.
-*/
-
+ *@testSuize CreateDropdownComponent
+ *@description
+ *Holds an instance of the CreateDropdownComponent to be tested.
+ */
 
 describe('CreateDropdownComponent', () => {
   let component: CreateDropdownComponent;
-  /** 
-   * @property component 
+  /**
+   * @property component
    * Holds an instance of the CreateDropdownComponent to be tested.
    */
-  
+
   let fixture: ComponentFixture<CreateDropdownComponent>;
-  /** 
-   * @property fixture 
+  /**
+   * @property fixture
    * Represents the testing environment for the component.
    */
-  
+
   beforeEach(async () => {
-  /**
-   * @lifecycleHook beforeEach
-   * @description 
-   * Initializes the testing module and sets up the component instance before each test.
-   */
+    /**
+     * @lifecycleHook beforeEach
+     * @description
+     * Initializes the testing module and sets up the component instance before each test.
+     */
     await TestBed.configureTestingModule({
-      imports: [CreateDropdownComponent]
-      /**  
+      imports: [CreateDropdownComponent],
+      /**
        * @imports [CreateDropdownComponent]
        * Declares the component within the testing module.
        */
-    })
-    .compileComponents(); //Compiles the component and its dependencies.
+    }).compileComponents(); //Compiles the component and its dependencies.
 
     //Create an instance of the component for testing.
     fixture = TestBed.createComponent(CreateDropdownComponent);
@@ -45,11 +43,11 @@ describe('CreateDropdownComponent', () => {
   });
 
   it('should create', () => {
-  /**
-  *@test should create the component
-  *@description
-  *Ensures that the CreateDropdownComponent is successfully instantianed.
-  */
+    /**
+     *@test should create the component
+     *@description
+     *Ensures that the CreateDropdownComponent is successfully instantianed.
+     */
     expect(component).toBeTruthy();
   });
 });

@@ -33,11 +33,23 @@ jobs:
       - name: Build
         run: pnpm exec ng build --configuration development
 
-      - name: Deploy to Firebase
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_UGUIMAR_PLATFORM }}
-          projectId: uguimar-platform
+      - name: Install required Angular dependencies
+        run: pnpm add -D @angular-devkit/core @angular-devkit/architect jsonc-parser
+
+      - name: Verify existing firebase.json
+        run: cat firebase.json
+
+      - name: Setup Firebase credentials
+        run: |
+          echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT_UGUIMAR_PLATFORM }}' > /tmp/firebase-service-account.json
+          export GOOGLE_APPLICATION_CREDENTIALS=/tmp/firebase-service-account.json
+
+      - name: Install Firebase Tools
+        run: pnpm add -g firebase-tools
+
+      - name: Deploy preview to Firebase
+        run: pnpm exec firebase hosting:channel:deploy pr-${{ github.event.pull_request.number }} --project uguimar-platform --expires 2h --debug
         env:
+          GOOGLE_APPLICATION_CREDENTIALS: /tmp/firebase-service-account.json
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FIREBASE_CLI_EXPERIMENTS: webframeworks

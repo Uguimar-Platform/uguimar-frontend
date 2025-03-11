@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-auth-layout',
   imports: [],
   templateUrl: './auth-layout.component.html',
-  styleUrl: './auth-layout.component.scss'
+  styleUrl: './auth-layout.component.scss',
 })
-export default class AuthLayoutComponent {
-
-}
+export default class AuthLayoutComponent {}

@@ -32,6 +32,9 @@ importers:
       '@fortawesome/angular-fontawesome':
         specifier: ^1.0.0
         version: 1.0.0(@angular/core@19.2.0(rxjs@7.8.2)(zone.js@0.15.0))
+      '@fortawesome/fontawesome-svg-core':
+        specifier: ^6.7.2
+        version: 6.7.2
       '@fortawesome/free-brands-svg-icons':
         specifier: ^6.7.2
         version: 6.7.2
