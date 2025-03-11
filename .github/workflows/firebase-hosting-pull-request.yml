@@ -48,7 +48,7 @@ jobs:
         run: pnpm add -g firebase-tools
 
       - name: Deploy preview to Firebase
-        run: pnpm exec firebase hosting:preview --project uguimar-platform --debug
+        run: pnpm exec firebase hosting:channel:deploy pr-${{ github.event.pull_request.number }} --project uguimar-platform --expires 2h --debug
         env:
           GOOGLE_APPLICATION_CREDENTIALS: /tmp/firebase-service-account.json
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
