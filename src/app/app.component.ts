@@ -6,7 +6,7 @@ import { RoutesNavDynamicSelect } from './interfaces/RoutesNavDynamicSelect';
 
 @Component({
   selector: 'app-root',
-  imports: [ButtonComponent],
+  imports: [ButtonComponent, DynamicSelectComponent],
   templateUrl: './app.component.html',
 /*   styleUrl: './app.component.scss' */
 })

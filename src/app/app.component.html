@@ -1,32 +1,18 @@
-
-<app-button 
-label="bienvenido"
-type="submit">
-</app-button>
+<app-button label="bienvenido" type="submit"> </app-button>
 <app-button
-type="submit"
+  type="submit"
   label="Crea tu cuenta"
   [outline]="true"
   color="secondary"
 ></app-button>
-<app-button 
-  label="Enviar" 
-  type="reset"
-></app-button>
-
-<dynamic-select 
-      [arrayRoutes]="arrayRoutes" 
-      width="w-[300px]" 
-      height="h-[100px]"
-      placeholder="placeholder"
-/>
-
-<app-label
-  text="Nombre"
-  color="blue-dark"
-  fontWeight="normal"
-  textAlign="left"
-  fontSize="text-base"
-  [cursorPointer]="true"
->
-</app-label>
+<app-button label="Enviar" type="reset"></app-button>
+<div class="bg-[#D0E3FF]">
+  <dynamic-select
+    [arrayRoutes]="arrayRoutes"
+    width="w-[300px]"
+    height="h-[100px]"
+    placeholder="placeholder"
+    opacity="opacity-60"
+    border="border-solid border-2 border-[#b10909]"
+  />
+</div>
