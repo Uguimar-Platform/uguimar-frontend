@@ -9,7 +9,7 @@ import { NgClass } from '@angular/common';
   selector: 'app-link', // Defines the component's selector to be used in templates.
   imports: [RouterModule, NgClass], // Imports RouterModule to enable routing functionality.
   templateUrl: './link.component.html', // Specifies the HTML template for the component.
-  styleUrl: './link.component.scss' // Defines the stylesheet for component styling.
+  styleUrl: './link.component.scss', // Defines the stylesheet for component styling.
 })
 export class LinkComponent {
   /**
@@ -28,7 +28,9 @@ export class LinkComponent {
    * The color of the link text.
    * @param {'primary' | 'warning' | 'info' | 'danger' | 'secondary'} color - Color of the link (Default: 'primary')
    */
-  readonly color = input<'primary' | 'warning' | 'info' | 'danger' | 'secondary'>('primary');
+  readonly color = input<
+    'primary' | 'warning' | 'info' | 'danger' | 'secondary'
+  >('primary');
 
   /**
    * Determines whether the link text should be underlined.

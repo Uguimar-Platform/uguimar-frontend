@@ -21,7 +21,7 @@ import { CreateDropdownComponent } from './atoms/create-dropdown/create-dropdown
     LinkComponent,
     ErrorMessageComponent,
     CheckboxComponent,
-    CreateDropdownComponent
+    CreateDropdownComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

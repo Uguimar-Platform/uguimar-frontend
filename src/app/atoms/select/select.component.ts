@@ -1,14 +1,14 @@
-import { Component, input, output, EventEmitter } from '@angular/core';
+import { Component, input, EventEmitter } from '@angular/core';
 
 /**
  * This is a customizable select component that supports properties like id, name, value, checked, disabled, label, and class.
  * It emits change events when the selection changes.
  */
 @Component({
-  selector: 'app-select', 
-  standalone: true, 
-  imports: [], 
-  templateUrl: './select.component.html', 
+  selector: 'app-select',
+  standalone: true,
+  imports: [],
+  templateUrl: './select.component.html',
 })
 export class SelectComponent {
   /**

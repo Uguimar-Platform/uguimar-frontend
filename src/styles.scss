@@ -1,56 +1,64 @@
-@use "tailwindcss/theme";
-@use "tailwindcss/utilities";
-@use "tailwindcss";
-@import "tailwindcss";
+@use 'tailwindcss/theme';
+@use 'tailwindcss/utilities';
+@use 'tailwindcss';
+@import 'tailwindcss';
 
-@theme {
-  --font-poppins: "Poppins", sans-serif;
-  --font-onest: "Onest", sans-serif;
-  --font-blackMango: "Black Mango", sans-serif;
-  --font-sfProDisplay: "SF Pro Display", sans-serif;
+@layer base {
+  :root {
+    --font-poppins: 'Poppins', sans-serif;
+    --font-onest: 'Onest', sans-serif;
+    --font-blackMango: 'Black Mango', sans-serif;
+    --font-sfProDisplay: 'SF Pro Display', sans-serif;
+  }
 }
 
 //Poppins Variations
 @font-face {
-  font-family: "Poppins";
-  src: url("../src/assets/fonts/poppins-woff/Poppins-Black.woff2") format("woff2"),
-    url("../src/assets/fonts/poppins-woff/Poppins-Black.woff") format("woff");
+  font-family: 'Poppins';
+  src:
+    url('../src/assets/fonts/poppins-woff/Poppins-Black.woff2') format('woff2'),
+    url('../src/assets/fonts/poppins-woff/Poppins-Black.woff') format('woff');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Poppins";
-  src: url("../src/assets/fonts/poppins-woff/Poppins-Bold.woff2") format("woff2"),
-    url("../src/assets/fonts/poppins-woff/Poppins-Bold.woff") format("woff");
+  font-family: 'Poppins';
+  src:
+    url('../src/assets/fonts/poppins-woff/Poppins-Bold.woff2') format('woff2'),
+    url('../src/assets/fonts/poppins-woff/Poppins-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Poppins";
-  src: url("../src/assets/fonts/poppins-woff/Poppins-Light.woff2") format("woff2"),
-    url("../src/assets/fonts/poppins-woff/Poppins-Light.woff") format("woff");
+  font-family: 'Poppins';
+  src:
+    url('../src/assets/fonts/poppins-woff/Poppins-Light.woff2') format('woff2'),
+    url('../src/assets/fonts/poppins-woff/Poppins-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Poppins";
-  src: url("../src/assets/fonts/poppins-woff/Poppins-Regular.woff2") format("woff2"),
-    url("../src/assets/fonts/poppins-woff/Poppins-Regular.woff") format("woff");
+  font-family: 'Poppins';
+  src:
+    url('../src/assets/fonts/poppins-woff/Poppins-Regular.woff2')
+      format('woff2'),
+    url('../src/assets/fonts/poppins-woff/Poppins-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Poppins";
-  src: url("../src/assets/fonts/poppins-woff/Poppins-Medium.woff2") format("woff2"),
-    url("../src/assets/fonts/poppins-woff/Poppins-Medium.woff") format("woff");
+  font-family: 'Poppins';
+  src:
+    url('../src/assets/fonts/poppins-woff/Poppins-Medium.woff2') format('woff2'),
+    url('../src/assets/fonts/poppins-woff/Poppins-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -59,45 +67,50 @@
 //------------------------------------------------------------------------------------
 //Onest Variations
 @font-face {
-  font-family: "Onest";
-  src: url("../src/assets/fonts/onest-woff/Onest-Bold.woff2") format("woff2"),
-    url("../src/assets/fonts/onest-woff/Onest-Bold.woff") format("woff");
+  font-family: 'Onest';
+  src:
+    url('../src/assets/fonts/onest-woff/Onest-Bold.woff2') format('woff2'),
+    url('../src/assets/fonts/onest-woff/Onest-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Onest";
-  src: url("../src/assets/fonts/onest-woff/Onest-Black.woff2") format("woff2"),
-    url("../src/assets/fonts/onest-woff/Onest-Black.woff") format("woff");
+  font-family: 'Onest';
+  src:
+    url('../src/assets/fonts/onest-woff/Onest-Black.woff2') format('woff2'),
+    url('../src/assets/fonts/onest-woff/Onest-Black.woff') format('woff');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Onest";
-  src: url("../src/assets/fonts/onest-woff/Onest-Medium.woff2") format("woff2"),
-    url("../src/assets/fonts/onest-woff/Onest-Medium.woff") format("woff");
+  font-family: 'Onest';
+  src:
+    url('../src/assets/fonts/onest-woff/Onest-Medium.woff2') format('woff2'),
+    url('../src/assets/fonts/onest-woff/Onest-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Onest";
-  src: url("../src/assets/fonts/onest-woff/Onest-Light.woff2") format("woff2"),
-    url("../src/assets/fonts/onest-woff/Onest-Light.woff") format("woff");
+  font-family: 'Onest';
+  src:
+    url('../src/assets/fonts/onest-woff/Onest-Light.woff2') format('woff2'),
+    url('../src/assets/fonts/onest-woff/Onest-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Onest";
-  src: url("../src/assets/fonts/onest-woff/Onest-Regular.woff2") format("woff2"),
-    url("../src/assets/fonts/onest-woff/Onest-Regular.woff") format("woff");
+  font-family: 'Onest';
+  src:
+    url('../src/assets/fonts/onest-woff/Onest-Regular.woff2') format('woff2'),
+    url('../src/assets/fonts/onest-woff/Onest-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -106,45 +119,60 @@
 //------------------------------------------------------------------------------------
 //Black Mango Variations
 @font-face {
-  font-family: "Black Mango";
-  src: url("../src/assets/fonts/blackMango-woff/BlackMango-Black.woff2") format("woff2"),
-    url("../src/assets/fonts/blackMango-woff/BlackMango-Black.woff") format("woff");
+  font-family: 'Black Mango';
+  src:
+    url('../src/assets/fonts/blackMango-woff/BlackMango-Black.woff2')
+      format('woff2'),
+    url('../src/assets/fonts/blackMango-woff/BlackMango-Black.woff')
+      format('woff');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Black Mango";
-  src: url("../src/assets/fonts/blackMango-woff/BlackMango-Medium.woff2") format("woff2"),
-    url("../src/assets/fonts/blackMango-woff/BlackMango-Medium.woff") format("woff");
+  font-family: 'Black Mango';
+  src:
+    url('../src/assets/fonts/blackMango-woff/BlackMango-Medium.woff2')
+      format('woff2'),
+    url('../src/assets/fonts/blackMango-woff/BlackMango-Medium.woff')
+      format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Black Mango";
-  src: url("../src/assets/fonts/blackMango-woff/BlackMango-Regular.woff2") format("woff2"),
-    url("../src/assets/fonts/blackMango-woff/BlackMango-Regular.woff") format("woff");
+  font-family: 'Black Mango';
+  src:
+    url('../src/assets/fonts/blackMango-woff/BlackMango-Regular.woff2')
+      format('woff2'),
+    url('../src/assets/fonts/blackMango-woff/BlackMango-Regular.woff')
+      format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Black Mango";
-  src: url("../src/assets/fonts/blackMango-woff/BlackMango-Bold.woff2") format("woff2"),
-    url("../src/assets/fonts/blackMango-woff/BlackMango-Bold.woff") format("woff");
+  font-family: 'Black Mango';
+  src:
+    url('../src/assets/fonts/blackMango-woff/BlackMango-Bold.woff2')
+      format('woff2'),
+    url('../src/assets/fonts/blackMango-woff/BlackMango-Bold.woff')
+      format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Black Mango";
-  src: url("../src/assets/fonts/blackMango-woff/BlackMango-Light.woff2") format("woff2"),
-    url("../src/assets/fonts/blackMango-woff/BlackMango-Light.woff") format("woff");
+  font-family: 'Black Mango';
+  src:
+    url('../src/assets/fonts/blackMango-woff/BlackMango-Light.woff2')
+      format('woff2'),
+    url('../src/assets/fonts/blackMango-woff/BlackMango-Light.woff')
+      format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -152,45 +180,60 @@
 
 //------------------------------------------------------------------------------------
 @font-face {
-  font-family: "SF Pro Display";
-  src: url("../src/assets/fonts/SFproDisplay-woff/SFProDisplay-Bold.woff2") format("woff2"),
-    url("../src/assets/fonts/SFproDisplay-woff/SFProDisplay-Bold.woff") format("woff");
+  font-family: 'SF Pro Display';
+  src:
+    url('../src/assets/fonts/SFproDisplay-woff/SFProDisplay-Bold.woff2')
+      format('woff2'),
+    url('../src/assets/fonts/SFproDisplay-woff/SFProDisplay-Bold.woff')
+      format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "SF Pro Display";
-  src: url("../src/assets/fonts/SFproDisplay-woff/SFProDisplay-Regular.woff2") format("woff2"),
-    url("../src/assets/fonts/SFproDisplay-woff/SFProDisplay-Regular.woff") format("woff");
+  font-family: 'SF Pro Display';
+  src:
+    url('../src/assets/fonts/SFproDisplay-woff/SFProDisplay-Regular.woff2')
+      format('woff2'),
+    url('../src/assets/fonts/SFproDisplay-woff/SFProDisplay-Regular.woff')
+      format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "SF Pro Display";
-  src: url("../src/assets/fonts/SFproDisplay-woff/SFProDisplay-LightItalic.woff2") format("woff2"),
-    url("../src/assets/fonts/SFproDisplay-woff/SFProDisplay-LightItalic.woff") format("woff");
+  font-family: 'SF Pro Display';
+  src:
+    url('../src/assets/fonts/SFproDisplay-woff/SFProDisplay-LightItalic.woff2')
+      format('woff2'),
+    url('../src/assets/fonts/SFproDisplay-woff/SFProDisplay-LightItalic.woff')
+      format('woff');
   font-weight: 200;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "SF Pro Display";
-  src: url("../src/assets/fonts/SFproDisplay-woff/SFProDisplay-Medium.woff2") format("woff2"),
-    url("../src/assets/fonts/SFproDisplay-woff/SFProDisplay-Medium.woff") format("woff");
+  font-family: 'SF Pro Display';
+  src:
+    url('../src/assets/fonts/SFproDisplay-woff/SFProDisplay-Medium.woff2')
+      format('woff2'),
+    url('../src/assets/fonts/SFproDisplay-woff/SFProDisplay-Medium.woff')
+      format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "SF Pro Display";
-  src: url("../src/assets/fonts/SFproDisplay-woff/SFProDisplay-BlackItalic.woff2") format("woff2"),
-    url("../src/assets/fonts/SFproDisplay-woff/SFProDisplay-BlackItalic.woff") format("woff");
+  font-family: 'SF Pro Display';
+  src:
+    url('../src/assets/fonts/SFproDisplay-woff/SFProDisplay-BlackItalic.woff2')
+      format('woff2'),
+    url('../src/assets/fonts/SFproDisplay-woff/SFProDisplay-BlackItalic.woff')
+      format('woff');
   font-weight: 900;
   font-style: italic;
   font-display: swap;

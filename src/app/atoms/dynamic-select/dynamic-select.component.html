@@ -1,11 +1,14 @@
-<div class="dynamic-select" [class]="width()+' '+ height()">
+<div class="dynamic-select" [class]="width() + ' ' + height()">
+  <input
+    type="text"
+    class="dynamic-select-input"
+    [placeholder]="placeholder()"
+    #InputSelect
+    (input)="routeInput.set(InputSelect.value)" />
 
-        <input type="text" class="dynamic-select-input" [placeholder]="placeholder()" #InputSelect (input)="routeInput.set(InputSelect.value)">
-
-        <div class="options">
-
-                @for (opt of selectedRoute; track $index) {
-                <a class="option" [routerLink]="opt.option">{{opt.value}}</a>
-                }
-        </div>
+  <div class="options">
+    @for (opt of selectedRoute; track $index) {
+      <a class="option" [routerLink]="opt.option">{{ opt.value }}</a>
+    }
+  </div>
 </div>

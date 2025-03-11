@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-admin-layout',
   imports: [],
   templateUrl: './admin-layout.component.html',
-  styleUrl: './admin-layout.component.scss'
+  styleUrl: './admin-layout.component.scss',
 })
-export default class AdminLayoutComponent {
-
-}
+export default class AdminLayoutComponent {}
