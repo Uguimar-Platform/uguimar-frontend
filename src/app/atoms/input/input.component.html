@@ -1,13 +1,12 @@
 <div class="flex flex-col w-full">
   <div class="flex items-center gap-2 mb-1">
-
     @if (labelIcon()) {
-    <fa-icon [icon]="labelIcon()!" class="text-gray-500"></fa-icon>
+      <fa-icon [icon]="labelIcon()!" class="text-gray-500"></fa-icon>
     }
-    
-    <label class="text-sm font-medium text-gray-600">
+
+    <span class="text-sm font-medium text-gray-600">
       {{ label() }}
-    </label>
+    </span>
   </div>
 
   <input

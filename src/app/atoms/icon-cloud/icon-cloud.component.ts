@@ -1,4 +1,12 @@
-import { Component, ElementRef, OnDestroy, OnInit, ViewChild, computed, input } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+  computed,
+  input,
+} from '@angular/core';
 import { Icon, TargetRotation } from './interface.icon-cloud';
 import { DEFAULT_TECH_SLUGS } from './icon-cloud.constants';
 
@@ -27,7 +35,9 @@ export class IconCloudComponent implements OnInit, OnDestroy {
     if (providedImages.length > 0) {
       return providedImages;
     }
-    return this.slugs.map(slug => `https://cdn.simpleicons.org/${slug}/${slug}`);
+    return this.slugs.map(
+      slug => `https://cdn.simpleicons.org/${slug}/${slug}`
+    );
   });
 
   /**
@@ -77,8 +87,6 @@ export class IconCloudComponent implements OnInit, OnDestroy {
    * icon URLs if no external list is provided.
    */
   private slugs = DEFAULT_TECH_SLUGS;
-
-  constructor() {}
 
   /**
    * Lifecycle hook that runs when the component is initialized.
@@ -311,10 +319,12 @@ export class IconCloudComponent implements OnInit, OnDestroy {
         this.rotationRef = {
           x:
             this.targetRotation.startX +
-            (this.targetRotation.x - this.targetRotation.startX) * easedProgress,
+            (this.targetRotation.x - this.targetRotation.startX) *
+              easedProgress,
           y:
             this.targetRotation.startY +
-            (this.targetRotation.y - this.targetRotation.startY) * easedProgress,
+            (this.targetRotation.y - this.targetRotation.startY) *
+              easedProgress,
         };
 
         // Once the animation completes, clear the target rotation

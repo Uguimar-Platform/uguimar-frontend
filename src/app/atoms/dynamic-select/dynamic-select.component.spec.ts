@@ -8,9 +8,8 @@ describe('DynamicSelectComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DynamicSelectComponent]
-    })
-    .compileComponents();
+      imports: [DynamicSelectComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(DynamicSelectComponent);
     component = fixture.componentInstance;
