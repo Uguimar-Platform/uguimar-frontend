@@ -3,11 +3,13 @@
 @use 'tailwindcss';
 @import 'tailwindcss';
 
-@theme {
-  --font-poppins: 'Poppins', sans-serif;
-  --font-onest: 'Onest', sans-serif;
-  --font-blackMango: 'Black Mango', sans-serif;
-  --font-sfProDisplay: 'SF Pro Display', sans-serif;
+@layer base {
+  :root {
+    --font-poppins: 'Poppins', sans-serif;
+    --font-onest: 'Onest', sans-serif;
+    --font-blackMango: 'Black Mango', sans-serif;
+    --font-sfProDisplay: 'SF Pro Display', sans-serif;
+  }
 }
 
 //Poppins Variations
