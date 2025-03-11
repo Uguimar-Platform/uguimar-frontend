@@ -8,9 +8,8 @@ describe('IconCloudComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [IconCloudComponent]
-    })
-    .compileComponents();
+      imports: [IconCloudComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(IconCloudComponent);
     component = fixture.componentInstance;

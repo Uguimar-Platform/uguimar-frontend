@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class CoursesService {
   constructor(private http: HttpClient) {}
 
-  createCourse(body:ICourses): Observable<ICourses> {
+  createCourse(body: ICourses): Observable<ICourses> {
     return this.http.post<ICourses>('/api/courses', body);
   }
 }

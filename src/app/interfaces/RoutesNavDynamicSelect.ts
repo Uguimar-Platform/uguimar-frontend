@@ -1,4 +1,4 @@
-export interface RoutesNavDynamicSelect{
-        option:string;
-        value:string;
+export interface RoutesNavDynamicSelect {
+  option: string;
+  value: string;
 }
