@@ -33,11 +33,10 @@ jobs:
       - name: Build
         run: pnpm exec ng build --configuration development
 
+      - name: Install Firebase Tools and Dependencies
+        run: pnpm add -g firebase-tools @angular-devkit/core @angular-devkit/architect jsonc-parser
+
       - name: Deploy to Firebase
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_UGUIMAR_PLATFORM }}
-          projectId: uguimar-platform
+        run: pnpm exec firebase hosting:preview --project uguimar-platform --token "${{ secrets.FIREBASE_SERVICE_ACCOUNT_UGUIMAR_PLATFORM }}" --non-interactive
         env:
           FIREBASE_CLI_EXPERIMENTS: webframeworks
