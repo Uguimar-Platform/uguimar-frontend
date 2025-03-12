@@ -10,6 +10,7 @@ import { ErrorMessageComponent } from './atoms/error-message/error-message.compo
 import { LabelComponent } from './atoms/label/label.component';
 import { CheckboxComponent } from './atoms/checkbox/checkbox.component';
 import { CreateDropdownComponent } from './atoms/create-dropdown/create-dropdown.component';
+import { NavigationMenuComponent } from './molecules/navigation-menu/navigation-menu.component';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +23,7 @@ import { CreateDropdownComponent } from './atoms/create-dropdown/create-dropdown
     ErrorMessageComponent,
     CheckboxComponent,
     CreateDropdownComponent,
+    NavigationMenuComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
