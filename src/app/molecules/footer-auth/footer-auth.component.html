@@ -1,29 +1,91 @@
-<footer class="bg-black p-4">
-  <!-- Versión desktop: logo a la izquierda y links a la derecha -->
+<!-- 
+  @component-template footer-auth.component.html
+  @description HTML template for FooterAuthComponent.
+  Represents the application's footer with a responsive design.
+  Includes a logo and links (desktop) or only a logo (mobile).
+  Uses Tailwind CSS for styling and app-link component for navigation.
+  @since 2025-03-12
+-->
+
+<footer class="p-6">
+  <!-- 
+    @section desktop-layout
+    @description Container for the desktop version of the footer.
+    Uses Tailwind classes (hidden md:flex) to show only on medium and large screens.
+    Contains the logo on the left and links on the right, vertically centered.
+  -->
   <div class="hidden md:flex justify-center items-center">
+    <!-- 
+      @element img
+      @description Brand logo image (desktop version).
+      @attr src Path to the logo SVG file.
+      @attr alt Alternative text for accessibility.
+      @attr class Tailwind styles for height (h-16) and auto width (w-auto).
+    -->
     <img
       src="assets/images/uguimar_isologo.svg"
       alt="Logo"
       class="h-16 w-auto" />
 
-    <div class="flex gap-6">
+    <!-- 
+      @section links
+      @description Container for social links and terms.
+      Uses flexbox with gap-8 for spacing and Poppins font with italic style.
+    -->
+    <div class="flex gap-8 font-poppins italic">
+      <!-- 
+        @component app-link
+        @description Reusable component for links.
+        @prop label Visible text of the link.
+        @prop route Navigation route (in this case, placeholder "/").
+        @prop color Link color (value "primary").
+        @prop [underline] Boolean property to disable underline (false).
+      -->
       <app-link
         label="Terminos y Condiciones"
         route="/"
-        color="primary"></app-link>
-      <app-link label="Whatsapp" route="/" color="primary"></app-link>
-      <app-link label="Instagram" route="/" color="primary"></app-link>
-      <app-link label="Facebook" route="/" color="primary"></app-link>
-      <app-link label="Youtube" route="/" color="primary"></app-link>
+        color="primary"
+        [underline]="false"></app-link>
+      <app-link
+        label="Whatsapp"
+        route="/"
+        color="primary"
+        [underline]="false"></app-link>
+      <app-link
+        label="Instagram"
+        route="/"
+        color="primary"
+        [underline]="false"></app-link>
+      <app-link
+        label="Facebook"
+        route="/"
+        color="primary"
+        [underline]="false"></app-link>
+      <app-link
+        label="Youtube"
+        route="/"
+        color="primary"
+        [underline]="false"></app-link>
     </div>
   </div>
 
-  <!-- Versión mobile: solo logo y "Academy" centrados -->
+  <!-- 
+    @section mobile-layout
+    @description Container for the mobile version of the footer.
+    Uses Tailwind classes (flex flex-col md:hidden) to show only on small screens.
+    Centers the logo vertically.
+  -->
   <div class="flex flex-col items-center justify-center md:hidden">
+    <!-- 
+      @element img
+      @description Brand logo image (mobile version).
+      @attr src Path to the mobile logo SVG file.
+      @attr alt Alternative text for accessibility.
+      @attr class Tailwind styles for custom height (h-29) and width (w-92), with bottom margin (mb-2).
+    -->
     <img
-      src="assets/images/uguimar_isologo.svg"
+      src="assets/images/LogoFooterMobile.svg"
       alt="Logo"
-      class="h-20 w-auto mb-2" />
-    <p class="text-white text-xl font-bold">Academy</p>
+      class="h-29 w-92 mb-2" />
   </div>
 </footer>
