@@ -1,26 +1,29 @@
-<footer class="flex justify-center">
-  <img src="assets/images/logo.png" alt="Logo" class="w-20 h-20" />
-  <app-link
-    label="Terminos y Condiciones"
-    route="/"
-    color="primary"
-    [underline]="false">
-    Enlace
-  </app-link>
+<footer class="bg-black p-4">
+  <!-- Versión desktop: logo a la izquierda y links a la derecha -->
+  <div class="hidden md:flex justify-center items-center">
+    <img
+      src="assets/images/uguimar_isologo.svg"
+      alt="Logo"
+      class="h-16 w-auto" />
 
-  <app-link label="Whatsapp" route="/" color="primary" [underline]="false">
-    Enlace
-  </app-link>
+    <div class="flex gap-6">
+      <app-link
+        label="Terminos y Condiciones"
+        route="/"
+        color="primary"></app-link>
+      <app-link label="Whatsapp" route="/" color="primary"></app-link>
+      <app-link label="Instagram" route="/" color="primary"></app-link>
+      <app-link label="Facebook" route="/" color="primary"></app-link>
+      <app-link label="Youtube" route="/" color="primary"></app-link>
+    </div>
+  </div>
 
-  <app-link label="Instagram" route="/" color="primary" [underline]="false">
-    Enlace
-  </app-link>
-
-  <app-link label="Facebook" route="/" color="primary" [underline]="false">
-    Enlace
-  </app-link>
-
-  <app-link label="Youtube" route="/" color="primary" [underline]="false">
-    Enlace
-  </app-link>
+  <!-- Versión mobile: solo logo y "Academy" centrados -->
+  <div class="flex flex-col items-center justify-center md:hidden">
+    <img
+      src="assets/images/uguimar_isologo.svg"
+      alt="Logo"
+      class="h-20 w-auto mb-2" />
+    <p class="text-white text-xl font-bold">Academy</p>
+  </div>
 </footer>
