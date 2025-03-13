@@ -2,6 +2,16 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { LinkComponent } from '../../atoms/link/link.component';
 
+/**
+ * NavigationMenuComponent
+ * 
+ * This component represents the main navigation menu of the application.
+ * It displays a list of links to different sections of the app.
+ *
+ * @component
+ * @example
+ * <app-navigation-menu></app-navigation-menu>
+ */
 @Component({
   selector: 'app-navigation-menu',
   standalone: true,
@@ -10,6 +20,12 @@ import { LinkComponent } from '../../atoms/link/link.component';
   styleUrl: './navigation-menu.component.scss',
 })
 export class NavigationMenuComponent {
+  /**
+   * List of menu items displayed in the navigation menu.
+   * Each item contains a label and a route.
+   * 
+   * @property {Array<{label: string, route: string}>} menuItems
+   */
   menuItems = [
     { label: 'Inicio', route: '/' },
     { label: 'Cursos', route: '/cursos' },
