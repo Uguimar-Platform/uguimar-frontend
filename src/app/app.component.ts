@@ -10,6 +10,7 @@ import { ErrorMessageComponent } from './atoms/error-message/error-message.compo
 import { LabelComponent } from './atoms/label/label.component';
 import { CheckboxComponent } from './atoms/checkbox/checkbox.component';
 import { CreateDropdownComponent } from './atoms/create-dropdown/create-dropdown.component';
+import { DynamicIconComponent } from './molecules/dynamic-icon/dynamic-icon.component';
 
 @Component({
   selector: 'app-root',
