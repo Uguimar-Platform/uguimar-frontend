@@ -1,12 +1,6 @@
-<a [routerLink]="route()"
+<a
+  [routerLink]="route()"
   class="font-semibold px-3 py-2 transition"
-  [ngClass]="{
-    'text-blue-500 hover:text-blue-400': color() === 'primary',
-    'text-yellow-500 hover:text-yellow-400': color() === 'warning',
-    'text-cyan-500 hover:text-cyan-400': color() === 'info',
-    'text-red-500 hover:text-red-400': color() === 'danger',
-    'text-gray-500 hover:text-gray-400': color() === 'secondary',
-    'underline': underline
-  }">
+  [ngClass]="getTextColorClass() + (underline() ? ' underline' : '')">
   {{ label() }}
 </a>

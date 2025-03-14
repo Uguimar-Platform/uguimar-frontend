@@ -1,17 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FooterAuthComponent } from './footer-auth.component';
 
-import { DynamicSelectComponent } from './dynamic-select.component';
-
-describe('DynamicSelectComponent', () => {
-  let component: DynamicSelectComponent;
-  let fixture: ComponentFixture<DynamicSelectComponent>;
-
+describe('FooterAuthComponent', () => {
+  let component: FooterAuthComponent;
+  let fixture: ComponentFixture<FooterAuthComponent>;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DynamicSelectComponent],
+      imports: [FooterAuthComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DynamicSelectComponent);
+    fixture = TestBed.createComponent(FooterAuthComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
