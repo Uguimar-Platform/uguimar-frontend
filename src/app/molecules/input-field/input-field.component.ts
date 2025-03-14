@@ -1,5 +1,11 @@
-import { Component, input, effect } from '@angular/core';
-import { FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { Component, input, effect, OnInit } from '@angular/core';
+import {
+  FormControl,
+  Validators,
+  ReactiveFormsModule,
+  AbstractControl,
+  ValidationErrors,
+} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { InputComponent } from '../../atoms/input/input.component';
 import { ErrorMessageComponent } from '../../atoms/error-message/error-message.component';
@@ -21,7 +27,7 @@ import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
   ],
   templateUrl: './input-field.component.html',
 })
-export class InputFieldComponent {
+export class InputFieldComponent implements OnInit {
   /**
    * Label that will be displayed next to the input field.
    * @param undefined - Default value if no label is provided.
@@ -103,13 +109,32 @@ export class InputFieldComponent {
   readonly maxLength = input<number | null>(null);
 
   /**
+   * External form control to use instead of the internal one
+   */
+  readonly formControl = input<FormControl | null>(null);
+
+  /**
    * Form control to handle the field value and validation.
    * Initialized with an empty string and the corresponding validators.
    */
-  control = new FormControl<string>('', {
-    nonNullable: true,
-    validators: this.getValidators(),
-  });
+  control!: FormControl<string>;
+
+  ngOnInit() {
+    // Use external form control if provided, otherwise create internal one
+    this.control =
+      this.formControl() ||
+      new FormControl<string>('', {
+        nonNullable: true,
+        validators: this.getValidators(),
+      });
+
+    // If using compareWith, we need to update validation when the compared field changes
+    if (this.compareWith()) {
+      this.compareWith()!.valueChanges.subscribe(() => {
+        this.control.updateValueAndValidity();
+      });
+    }
+  }
 
   /**
    * The constructor is used to initialize the effect that updates the validators
@@ -117,15 +142,18 @@ export class InputFieldComponent {
    */
   constructor() {
     effect(() => {
-      // Store the current value to preserve it during the update
-      const currentValue = this.control.value;
+      // Only update validators if using internal control
+      if (!this.formControl()) {
+        // Store the current value to preserve it during the update
+        const currentValue = this.control?.value;
 
-      // Update validators based on current properties
-      this.updateValidators();
+        // Update validators based on current properties
+        this.updateValidators();
 
-      // Restore the original value if it changed during the update
-      if (this.control.value !== currentValue) {
-        this.control.setValue(currentValue, { emitEvent: false });
+        // Restore the original value if it changed during the update
+        if (this.control?.value !== currentValue) {
+          this.control?.setValue(currentValue, { emitEvent: false });
+        }
       }
     });
   }
@@ -138,6 +166,16 @@ export class InputFieldComponent {
     this.control.setValidators(this.getValidators());
     this.control.updateValueAndValidity();
   }
+
+  /**
+   * Reference to another form control to compare values with (for password confirmation)
+   */
+  readonly compareWith = input<FormControl | null>(null);
+
+  /**
+   * Custom error message for when the field doesn't match the compareWith field
+   */
+  readonly matchErrorMessage = input<string>('Invalid password confirmation');
 
   /**
    * Gets the array of validators based on configured properties.
@@ -166,7 +204,41 @@ export class InputFieldComponent {
       validators.push(Validators.maxLength(this.maxLength()!));
     }
 
+    // Add comparison validator if compareWith is specified
+    if (this.compareWith()) {
+      validators.push(this.createCompareValidator());
+    }
+
     return validators;
+  }
+
+  /**
+   * Creates a validator that compares the control value with another control's value
+   * @returns A validator function
+   */
+  private createCompareValidator() {
+    return (control: AbstractControl): ValidationErrors | null => {
+      if (!this.compareWith()) return null;
+
+      const compareValue = this.compareWith()!.value;
+      const currentValue = control.value;
+
+      // Only validate if both values exist
+      if (
+        compareValue === undefined ||
+        compareValue === null ||
+        currentValue === undefined ||
+        currentValue === null
+      ) {
+        return null;
+      }
+
+      // Ensure we're comparing strings in the same format
+      const compareValueStr = String(compareValue).trim();
+      const currentValueStr = String(currentValue).trim();
+
+      return compareValueStr === currentValueStr ? null : { match: true };
+    };
   }
 
   /**
@@ -174,7 +246,7 @@ export class InputFieldComponent {
    * Only shows errors if the user has interacted with the field.
    * @returns true if there is an error to display, false otherwise.
    */
-  get hasError(): boolean {
+  hasError(): boolean {
     return this.control.invalid && (this.control.dirty || this.control.touched);
   }
 
@@ -201,6 +273,11 @@ export class InputFieldComponent {
     // Maximum length error
     if (this.control.errors?.['maxlength']) {
       return `Este campo no debe exceder ${this.maxLength()} caracteres.`;
+    }
+
+    // Match error (for password confirmation)
+    if (this.control.errors?.['match']) {
+      return this.matchErrorMessage();
     }
 
     return null;

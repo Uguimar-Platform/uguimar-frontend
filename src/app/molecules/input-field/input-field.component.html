@@ -12,7 +12,7 @@
   </app-input>
 
   <div class="error-container mt-1">
-    @if (hasError) {
+    @if (hasError()) {
       <app-error-message [message]="errorMessage" [customClass]="errorClass()">
       </app-error-message>
     }
