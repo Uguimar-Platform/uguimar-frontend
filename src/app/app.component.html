@@ -82,12 +82,14 @@
 <app-link
   label="Inicio"
   route="/"
-  color="primary"
+  color="blue-medium"
   [underline]="true"></app-link>
+
+<!-- Ejemplo de link sin subrayado -->
 <app-link
   label="Contacto"
   route="/contacto"
-  color="danger"
+  color="blue-dark"
   [underline]="false"></app-link>
 
 <div class="p-4">
@@ -154,3 +156,6 @@
   [compareWith]="passwordControl"
   [matchErrorMessage]="'Las contraseñas no coinciden'">
 </app-input-field>
+<footer>
+  <app-footer-auth></app-footer-auth>
+</footer>

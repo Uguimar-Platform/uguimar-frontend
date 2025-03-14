@@ -24,6 +24,7 @@ import { ErrorMessageComponent } from './atoms/error-message/error-message.compo
 import { LabelComponent } from './atoms/label/label.component';
 import { CheckboxComponent } from './atoms/checkbox/checkbox.component';
 import { CreateDropdownComponent } from './atoms/create-dropdown/create-dropdown.component';
+import { FooterAuthComponent } from './molecules/footer-auth/footer-auth.component';
 import { InputFieldComponent } from './molecules/input-field/input-field.component';
 
 @Component({
@@ -40,6 +41,7 @@ import { InputFieldComponent } from './molecules/input-field/input-field.compone
     CreateDropdownComponent,
     InputFieldComponent,
     ReactiveFormsModule,
+    FooterAuthComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
