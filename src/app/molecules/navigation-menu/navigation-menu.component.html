@@ -1,11 +1,16 @@
 <nav
-  class="bg-white rounded-full border border-blue-500 px-6 py-2 flex justify-center gap-6">
-  <app-link
-    *ngFor="let item of menuItems"
+  class="bg-[#F9FCFF] rounded-full border border-blue-500 px-6 py-2 flex justify-center gap-6">
+  <ul class="flex">
+    <li *ngFor="let item of menuItems" class="hover:bg-[#7096D1] hover:text-white rounded-full px-4 py-2">
+      <app-link
+    
     [label]="item.label"
     [route]="item.route"
     color="blue-dark"
     [underline]="false">
   </app-link>
+    </li>
+  </ul>
+
 </nav>
 

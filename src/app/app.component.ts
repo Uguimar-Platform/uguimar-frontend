@@ -11,6 +11,7 @@ import { LabelComponent } from './atoms/label/label.component';
 import { CheckboxComponent } from './atoms/checkbox/checkbox.component';
 import { CreateDropdownComponent } from './atoms/create-dropdown/create-dropdown.component';
 import { NavigationMenuComponent } from './molecules/navigation-menu/navigation-menu.component';
+import { FooterAuthComponent } from './molecules/footer-auth/footer-auth.component';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,7 @@ import { NavigationMenuComponent } from './molecules/navigation-menu/navigation-
     CheckboxComponent,
     CreateDropdownComponent,
     NavigationMenuComponent,
+    FooterAuthComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
