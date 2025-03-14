@@ -24,7 +24,7 @@ import { FooterAuthComponent } from './molecules/footer-auth/footer-auth.compone
     ErrorMessageComponent,
     CheckboxComponent,
     CreateDropdownComponent,
-    DynamicIconComponent
+    DynamicIconComponent,
     FooterAuthComponent,
   ],
   templateUrl: './app.component.html',
