@@ -11,7 +11,7 @@
   }
 
   .options {
-    @apply fixed border-[1px] border-[#E7E7E7] rounded-[8px];
+    @apply absolute border-[1px] border-[#E7E7E7] rounded-[8px];
     @apply max-h-[180px] overflow-y-auto bg-[white];
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12);
   }

@@ -1,5 +1,4 @@
 import { Component, effect, ElementRef, HostListener, input, signal, viewChild } from '@angular/core';
-
 import { RouterLink } from '@angular/router';
 import { RoutesNavDynamicSelect } from '../../interfaces/RoutesNavDynamicSelect';
 import { CommonModule } from '@angular/common';
@@ -42,6 +41,7 @@ export class DynamicSelectComponent {
       public height = input<string>("");
       public opacity = input<string>("");
       public border = input<string>("");
+      public placeholderColor = input<string>("");
       // Signal that stores the value entered by the user in the input field.
       protected routeInput = signal<string>("");
 
@@ -56,8 +56,7 @@ export class DynamicSelectComponent {
       * Gets the current value of `routeInput`.
       * Calls `eventInput` with the current value.
       */
-      constructor(private elRef: ElementRef) {
-
+      constructor() {
             effect(() => {
                   const valueInput = this.routeInput();
                   this.eventInput(valueInput);
