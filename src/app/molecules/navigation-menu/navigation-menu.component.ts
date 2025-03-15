@@ -4,7 +4,7 @@ import { LinkComponent } from '../../atoms/link/link.component';
 
 /**
  * NavigationMenuComponent
- * 
+ *
  * This component represents the main navigation menu of the application.
  * It displays a list of links to different sections of the app.
  *
@@ -23,7 +23,7 @@ export class NavigationMenuComponent {
   /**
    * List of menu items displayed in the navigation menu.
    * Each item contains a label and a route.
-   * 
+   *
    * @property {Array<{label: string, route: string}>} menuItems
    */
   menuItems = [

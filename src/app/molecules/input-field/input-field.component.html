@@ -1,1 +1,20 @@
-<p>input-field works!</p>
+<div class="input-field-container flex flex-col w-full">
+  <app-input
+    [type]="type()"
+    [placeholder]="placeholder() ?? ''"
+    [label]="label() ?? ''"
+    [disabled]="disabled()"
+    [width]="width()"
+    [height]="height()"
+    [customClass]="customClass() ?? ''"
+    [labelIcon]="labelIcon() ?? null"
+    [formControl]="control">
+  </app-input>
+
+  <div class="error-container mt-1">
+    @if (hasError()) {
+      <app-error-message [message]="errorMessage" [customClass]="errorClass()">
+      </app-error-message>
+    }
+  </div>
+</div>

@@ -73,12 +73,15 @@
   fontFamily="font-poppins"></app-label>
 
 <app-checkbox label="Recordar la contraseña" color="blue-dark"></app-checkbox>
+<div class="bg-[#D0E3FF] p-4">
+  <dynamic-select
+    [arrayRoutes]="arrayRoutes"
+    width="w-[300px]"
+    placeholder="placeholder"
+    opacity="opacity-60"
+    placeholderColor="placeholder-[#334EAC]" />
+</div>
 
-<dynamic-select
-  [arrayRoutes]="arrayRoutes"
-  width="w-[300px]"
-  height="h-[100px]"
-  placeholder="placeholder" />
 <app-link
   label="Inicio"
   route="/"
@@ -103,6 +106,68 @@
 </div>
 
 <app-navigation-menu></app-navigation-menu>
+<app-input-field
+  [label]="'Nombre de usuario'"
+  [labelIcon]="faUser"
+  [placeholder]="'username'"
+  [required]="true"
+  [minLength]="3">
+</app-input-field>
+
+<div class="grid grid-cols-2 gap-4">
+  <app-input-field [label]="'Nombres'" [placeholder]="'John'" [required]="true">
+  </app-input-field>
+
+  <app-input-field
+    [label]="'Apellidos'"
+    [placeholder]="'Doe'"
+    [required]="true">
+  </app-input-field>
+</div>
+
+<app-input-field
+  [label]="'Correo electrónico'"
+  [labelIcon]="faEnvelope"
+  [placeholder]="'you@email.com'"
+  [required]="true"
+  [email]="true">
+</app-input-field>
+
+<app-input-field
+  [label]="'Fecha de nacimiento'"
+  [labelIcon]="faCalendar"
+  [placeholder]="'dd/mm/yyyy'"
+  [type]="'date'"
+  [required]="true">
+</app-input-field>
+
+<app-input-field
+  [label]="'Contraseña'"
+  [labelIcon]="faLock"
+  [type]="'password'"
+  [placeholder]="'********'"
+  [required]="true"
+  [minLength]="8"
+  [formControl]="passwordControl">
+</app-input-field>
+
+<app-input-field
+  [label]="'Confirmar contraseña'"
+  [labelIcon]="faLock"
+  [type]="'password'"
+  [placeholder]="'********'"
+  [required]="true"
+  [compareWith]="passwordControl"
+  [matchErrorMessage]="'Las contraseñas no coinciden'">
+</app-input-field>
+
+<app-dynamic-icon
+  text="Registrate!"
+  fontFamily="font-blackMango"
+  color="blue-dark"
+  fontSize="text-6xl"
+  fontWeight=" font-black" />
+
 <footer>
   <app-footer-auth></app-footer-auth>
 </footer>
