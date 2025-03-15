@@ -1,12 +1,24 @@
-<div class="dynamic-select" [class]="width() + ' ' + height()">
+<div class="dynamic-select" [class]="width() + ' ' + height() + ' ' + border()">
   <input
     type="text"
     class="dynamic-select-input"
+    [class]="
+      'border-none outline-none ' +
+      border() +
+      ' ' +
+      opacity() +
+      ' ' +
+      placeholderColor()
+    "
     [placeholder]="placeholder()"
     #InputSelect
-    (input)="routeInput.set(InputSelect.value)" />
+    (input)="routeInput.set(InputSelect.value); focus = true"
+    (focus)="focus = true" />
 
-  <div class="options">
+  <div
+    class="options"
+    [class]="width()"
+    [ngClass]="{ hidden: focus === false || selectedRoute.length === 0 }">
     @for (opt of selectedRoute; track $index) {
       <a class="option" [routerLink]="opt.option">{{ opt.value }}</a>
     }

@@ -1,6 +1,15 @@
-import { Component, effect, input, signal } from '@angular/core';
+import {
+  Component,
+  effect,
+  ElementRef,
+  HostListener,
+  input,
+  signal,
+  viewChild,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { RoutesNavDynamicSelect } from '../../interfaces/RoutesNavDynamicSelect';
+import { CommonModule } from '@angular/common';
 
 /**
  * Component that represents a dynamic selector with search and navigation functionality.
@@ -10,7 +19,7 @@ import { RoutesNavDynamicSelect } from '../../interfaces/RoutesNavDynamicSelect'
  */
 @Component({
   selector: 'dynamic-select',
-  imports: [RouterLink],
+  imports: [RouterLink, CommonModule],
   templateUrl: './dynamic-select.component.html',
   styleUrl: './dynamic-select.component.scss',
 })
@@ -24,11 +33,19 @@ import { RoutesNavDynamicSelect } from '../../interfaces/RoutesNavDynamicSelect'
  * Array that stores the routes filtered based on user input.
  */
 export class DynamicSelectComponent {
+  // property focus is for the input and visibility on options of search
+  protected focus = true;
+  // selected input of html
+  protected readonly input = viewChild.required<ElementRef>('InputSelect');
   public arrayRoutes = input.required<RoutesNavDynamicSelect[]>();
   public placeholder = input<string>('Buscar...');
-  // width and height properties are of size
+  // width, height, opacity and border properties are of desing
+  // property border is for border and ouline
   public width = input<string>('');
   public height = input<string>('');
+  public opacity = input<string>('');
+  public border = input<string>('');
+  public placeholderColor = input<string>('');
   // Signal that stores the value entered by the user in the input field.
   protected routeInput = signal<string>('');
 
@@ -69,5 +86,21 @@ export class DynamicSelectComponent {
     );
 
     this.selectedRoute = filteredRoutes;
+  }
+
+  /**
+   * Detects clicks outside the input element and updates the focus state.
+   *
+   * @param event - The click event from the document.
+   *
+   * This method listens for clicks anywhere on the document.
+   * If the click occurs outside the input element, the `focus` state is set to `false`,
+   * indicating that the input is no longer active.
+   */
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event: Event) {
+    if (!this.input().nativeElement.contains(event.target)) {
+      this.focus = false;
+    }
   }
 }
