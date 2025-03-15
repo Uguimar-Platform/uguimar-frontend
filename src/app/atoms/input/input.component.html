@@ -1,22 +1,36 @@
 <div class="flex flex-col w-full">
   <div class="flex items-center gap-2 mb-1">
     @if (labelIcon()) {
-      <fa-icon [icon]="labelIcon()!" class="text-gray-500"></fa-icon>
+      <fa-icon [icon]="labelIcon()!" class="text-[#334EAC]"></fa-icon>
     }
 
-    <span class="text-sm font-medium text-gray-600">
+    <span class="text-sm font-medium text-[#334EAC]">
       {{ label() }}
     </span>
   </div>
 
-  <input
-    [type]="type()"
-    [placeholder]="placeholder()"
-    class="border-none bg-[#E7F1FF] rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-    [ngClass]="customClass()"
-    [style.width]="width()"
-    [style.height]="height()"
-    (input)="onInputChange($event)"
-    [value]="value"
-    [disabled]="disabled()" />
+  <div class="relative">
+    <input
+      [type]="getEffectiveType()"
+      [placeholder]="placeholder()"
+      class="border-none bg-[#E7F1FF] rounded-[5px] px-3 py-2 focus:outline-none w-full placeholder-[#334EAC] placeholder-opacity-50"
+      [ngClass]="customClass()"
+      [style.width]="width()"
+      [style.height]="height()"
+      (input)="onInputChange($event)"
+      (blur)="onTouched()"
+      [value]="value"
+      [disabled]="disabled()"
+      [min]="getMinDate()"
+      [max]="getMaxDate()" />
+
+    @if (type() === 'password') {
+      <button
+        type="button"
+        class="absolute right-3 top-1/2 transform -translate-y-1/2 text-[#334EAC] focus:outline-none"
+        (click)="togglePasswordVisibility()">
+        <fa-icon [icon]="showPassword ? eyeIconVisible : eyeIcon"></fa-icon>
+      </button>
+    }
+  </div>
 </div>

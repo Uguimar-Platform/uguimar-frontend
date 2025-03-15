@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 /**
  * This component allows you to display a configurable input field.
@@ -35,6 +36,11 @@ export class InputComponent implements ControlValueAccessor {
   readonly backgroundColor = input('#ffffff');
   readonly customClass = input<string | Record<string, boolean>>('');
   readonly labelIcon = input<IconDefinition | null>(null);
+
+  // Password visibility properties
+  showPassword = false;
+  eyeIcon = faEyeSlash;
+  eyeIconVisible = faEye;
 
   value = '';
   // eslint-disable-next-line @typescript-eslint/no-empty-function
@@ -76,5 +82,42 @@ export class InputComponent implements ControlValueAccessor {
     this.value = inputValue;
     this.onChange(inputValue);
     this.onTouched();
+  }
+
+  readonly minDate = input<string | null>(null);
+  readonly maxDate = input<string | null>(null);
+
+  /**
+   * Toggles the password visibility
+   */
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
+
+  /**
+   * Gets the effective input type based on password visibility or date type
+   */
+  getEffectiveType(): string {
+    if (this.type() === 'password' && this.showPassword) {
+      return 'text';
+    }
+    if (this.type() === 'date') {
+      return 'date';
+    }
+    return this.type();
+  }
+
+  /**
+   * Gets the minimum date for date inputs
+   */
+  getMinDate(): string | null {
+    return this.minDate();
+  }
+
+  /**
+   * Gets the maximum date for date inputs
+   */
+  getMaxDate(): string | null {
+    return this.maxDate();
   }
 }
