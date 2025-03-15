@@ -14,7 +14,6 @@ import { FooterAuthComponent } from './molecules/footer-auth/footer-auth.compone
 
 @Component({
   selector: 'app-root',
-
   imports: [
     ButtonComponent,
     LabelComponent,
