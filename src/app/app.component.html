@@ -73,12 +73,15 @@
   fontFamily="font-poppins"></app-label>
 
 <app-checkbox label="Recordar la contraseña" color="blue-dark"></app-checkbox>
+<div class="bg-[#D0E3FF] p-4">
+  <dynamic-select
+    [arrayRoutes]="arrayRoutes"
+    width="w-[300px]"
+    placeholder="placeholder"
+    opacity="opacity-60"
+    placeholderColor="placeholder-[#334EAC]" />
+</div>
 
-<dynamic-select
-  [arrayRoutes]="arrayRoutes"
-  width="w-[300px]"
-  height="h-[100px]"
-  placeholder="placeholder" />
 <app-link
   label="Inicio"
   route="/"
