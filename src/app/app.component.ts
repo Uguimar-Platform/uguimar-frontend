@@ -10,6 +10,7 @@ import { ErrorMessageComponent } from './atoms/error-message/error-message.compo
 import { LabelComponent } from './atoms/label/label.component';
 import { CheckboxComponent } from './atoms/checkbox/checkbox.component';
 import { CreateDropdownComponent } from './atoms/create-dropdown/create-dropdown.component';
+import { DynamicIconComponent } from './molecules/dynamic-icon/dynamic-icon.component';
 import { FooterAuthComponent } from './molecules/footer-auth/footer-auth.component';
 
 @Component({
@@ -23,6 +24,7 @@ import { FooterAuthComponent } from './molecules/footer-auth/footer-auth.compone
     ErrorMessageComponent,
     CheckboxComponent,
     CreateDropdownComponent,
+    DynamicIconComponent,
     FooterAuthComponent,
   ],
   templateUrl: './app.component.html',
