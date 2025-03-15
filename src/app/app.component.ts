@@ -24,6 +24,7 @@ import { ErrorMessageComponent } from './atoms/error-message/error-message.compo
 import { LabelComponent } from './atoms/label/label.component';
 import { CheckboxComponent } from './atoms/checkbox/checkbox.component';
 import { CreateDropdownComponent } from './atoms/create-dropdown/create-dropdown.component';
+import { NavigationMenuComponent } from './molecules/navigation-menu/navigation-menu.component';
 import { DynamicIconComponent } from './molecules/dynamic-icon/dynamic-icon.component';
 import { FooterAuthComponent } from './molecules/footer-auth/footer-auth.component';
 import { InputFieldComponent } from './molecules/input-field/input-field.component';
@@ -40,6 +41,7 @@ import { InputFieldComponent } from './molecules/input-field/input-field.compone
     ErrorMessageComponent,
     CheckboxComponent,
     CreateDropdownComponent,
+    NavigationMenuComponent,
     InputFieldComponent,
     ReactiveFormsModule,
     DynamicIconComponent,

@@ -1,0 +1,15 @@
+<nav
+  class="max-w-[1200px] mx-auto bg-[#F9FCFF] rounded-full border border-2 border-[#334EAC] px-6 flex justify-center gap-6">
+  <ul class="flex">
+    @for (item of menuItems; track item) {
+      <li class="hover:bg-[#7096D1] hover:text-white rounded-full px-4 py-2">
+        <app-link
+          [label]="item.label"
+          [route]="item.route"
+          color="blue-dark"
+          [underline]="false">
+        </app-link>
+      </li>
+    }
+  </ul>
+</nav>
