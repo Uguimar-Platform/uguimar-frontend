@@ -4,11 +4,8 @@ import { LabelComponent } from '../../atoms/label/label.component';
 
 @Component({
   selector: 'app-dynamic-icon',
-  imports: [
-    IconCloudComponent,
-    LabelComponent
-  ],
-  templateUrl: './dynamic-icon.component.html'
+  imports: [IconCloudComponent, LabelComponent],
+  templateUrl: './dynamic-icon.component.html',
 })
 export class DynamicIconComponent {
   /** Text to be displayed in the label.
@@ -49,8 +46,8 @@ export class DynamicIconComponent {
 
   /** Font Size of the label
    */
-  fontSize = input<string>("");
+  fontSize = input<string>('');
   /** Font Weight of the label
    */
-  fontWeight = input<string>("");
+  fontWeight = input<string>('');
 }
