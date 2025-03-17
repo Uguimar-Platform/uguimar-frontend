@@ -8,7 +8,7 @@ import {
   viewChild,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { RoutesNavDynamicSelect } from '../../interfaces/RoutesNavDynamicSelect';
+import { RoutesNavDynamicSelect } from '../../core/interfaces/RoutesNavDynamicSelect';
 import { CommonModule } from '@angular/common';
 
 /**
