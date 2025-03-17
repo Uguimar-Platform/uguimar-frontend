@@ -1,6 +1,5 @@
-/* learning-path-section.component.scss */
 .learning-path-section {
-  background-color: #e7f1ff; //F0F7FF
+  background-color: #e7f1ff;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -55,21 +54,20 @@
   border-radius: 24px;
   padding: 1.5rem 2rem;
   width: 100%;
-  max-width: 650px; // Hacer el contenedor un poco más ancho
-  border: 1px solid #000000; // Bordes más oscuros y marcados
+  max-width: 650px;
+  border: 1px solid #000000;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
-  gap: 0.5rem; // Reduce el espacio entre los elementos internos
+  gap: 0.5rem;
 
-  /* Ajuste para moverlo más a la derecha */
-  margin-left: -190px; // Puedes ajustar este valor según sea necesario
+  margin-left: -190px;
 
   .input-label {
     font-family: 'Poppins', sans-serif;
     font-size: 1.1rem;
     color: #000000;
     margin-bottom: 1rem;
-    font-weight: 700; // Más negrita
+    font-weight: 700;
     text-align: center;
   }
 
@@ -79,11 +77,11 @@
     ::ng-deep input {
       background-color: #f0f7ff !important;
       border-radius: 12px !important;
-      border: 1px solid #000000 !important; // Bordes más oscuros
+      border: 1px solid #000000 !important;
       padding: 0.75rem 1rem !important;
       font-family: 'Poppins', sans-serif !important;
       height: 50px !important;
-      font-size: 0.8rem !important; // Reducir el tamaño de la fuente
+      font-size: 0.8rem !important;
 
       &::placeholder {
         color: rgba(51, 78, 172, 0.5) !important;
@@ -95,7 +93,7 @@
 .button-container {
   margin-top: 0rem;
   margin-bottom: 3rem;
-  justify-content: flex-start; // Mover el botón a la izquierda
+  justify-content: flex-start;
   margin-right: 200px;
 
   ::ng-deep button {
@@ -111,7 +109,6 @@
 
 .logo-container {
   position: absolute;
-  /* Ajustando la posición del logo: más a la derecha y más arriba */
   right: 9%;
   top: 2%;
 
@@ -119,23 +116,19 @@
     position: static;
     margin-top: 2rem;
   }
-
   .logo-image {
-    /* Aumentando el tamaño del logo */
     width: 250px;
     height: 250px;
     object-fit: contain;
   }
 }
-
-/* Estilos específicos para asegurar que coincida con el diseño de Figma */
 ::ng-deep {
   .learning-path-section {
     font-family: 'Poppins', sans-serif;
   }
 }
 
-/* INICIO DE ESTILOS RESPONSIVOS ADICIONALES */
+/*RESPONSIVOS ADICIONALES*/
 @media (max-width: 1200px) {
   .input-container {
     margin-left: -100px;

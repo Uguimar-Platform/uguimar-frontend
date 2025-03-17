@@ -28,6 +28,5 @@ export class LearningPathSectionComponent {
 
   generatePath() {
     console.log('Generando ruta personalizada:', this.pathInputControl.value);
-    // Aquí iría la lógica para generar la ruta
   }
 }
