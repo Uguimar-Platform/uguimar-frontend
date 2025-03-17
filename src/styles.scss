@@ -9,7 +9,16 @@
     --font-onest: 'Onest', sans-serif;
     --font-blackMango: 'Black Mango', sans-serif;
     --font-sfProDisplay: 'SF Pro Display', sans-serif;
+    --primary-color: #e7f1ff;
   }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 //Poppins Variations
