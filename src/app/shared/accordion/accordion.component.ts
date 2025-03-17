@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LabelComponent } from '../../atoms/label/label.component';
+import { LabelComponent } from '../atoms/label/label.component';
 
 /**
  * This component implements a dropdown button that initially shows only the title
