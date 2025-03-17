@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { LinkComponent } from '../../atoms/link/link.component';
 
 /**
@@ -10,12 +9,12 @@ import { LinkComponent } from '../../atoms/link/link.component';
  */
 @Component({
   /**
-   * @selector app-footer-auth
+   * @selector footer-molecule
    * @description CSS selector used to instantiate this component in HTML templates.
    */
-  selector: 'footer-auth-molecule',
-  imports: [CommonModule, LinkComponent],
-  templateUrl: './footer-auth.component.html',
-  styleUrl: './footer-auth.component.scss',
+  selector: 'footer-molecule',
+  imports: [LinkComponent],
+  templateUrl: './footer.component.html',
+  styleUrl: './footer.component.scss',
 })
-export class FooterAuthComponent {}
+export class FooterComponent {}
