@@ -1,0 +1,11 @@
+<div
+  class="flex items-center p-4 bg-white rounded-3xl shadow-md border border-blue-400 w-full max-w-lg">
+  <img
+    [src]="image()"
+    alt="Foto de {{ name() }}"
+    class="w-30 h-30 rounded-3xl object-cover border border-gray-300 mr-4" />
+  <div class="flex flex-col">
+    <span class="text-xl font-bold text-blue-900">{{ name() }}</span>
+    <p class="text-gray-700 text-base leading-5">{{ opinion() }}</p>
+  </div>
+</div>
