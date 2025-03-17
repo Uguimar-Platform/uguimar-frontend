@@ -3,7 +3,6 @@ import {
   FormBuilder,
   FormControl,
   FormGroup,
-  ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
 import {
@@ -15,38 +14,13 @@ import {
   faTrash,
 } from '@fortawesome/free-solid-svg-icons';
 
-import { ButtonComponent } from './atoms/button/button.component';
-import { DynamicSelectComponent } from './atoms/dynamic-select/dynamic-select.component';
 import { RoutesNavDynamicSelect } from './interfaces/RoutesNavDynamicSelect';
-import { LinkComponent } from './atoms/link/link.component';
-import { CommonModule } from '@angular/common';
-import { ErrorMessageComponent } from './atoms/error-message/error-message.component';
-import { LabelComponent } from './atoms/label/label.component';
-import { CheckboxComponent } from './atoms/checkbox/checkbox.component';
-import { CreateDropdownComponent } from './atoms/create-dropdown/create-dropdown.component';
-import { NavigationMenuComponent } from './molecules/navigation-menu/navigation-menu.component';
-import { DynamicIconComponent } from './molecules/dynamic-icon/dynamic-icon.component';
-import { FooterAuthComponent } from './molecules/footer-auth/footer-auth.component';
-import { InputFieldComponent } from './molecules/input-field/input-field.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    ButtonComponent,
-    LabelComponent,
-    CommonModule,
-    DynamicSelectComponent,
-    LinkComponent,
-    ErrorMessageComponent,
-    CheckboxComponent,
-    CreateDropdownComponent,
-    NavigationMenuComponent,
-    InputFieldComponent,
-    ReactiveFormsModule,
-    DynamicIconComponent,
-    FooterAuthComponent,
-  ],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
