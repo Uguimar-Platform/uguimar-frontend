@@ -1,0 +1,20 @@
+<div class="input-field-container flex flex-col w-full">
+  <input-atom
+    [type]="type()"
+    [placeholder]="placeholder() ?? ''"
+    [label]="label() ?? ''"
+    [disabled]="disabled()"
+    [width]="width()"
+    [height]="height()"
+    [customClass]="customClass() ?? ''"
+    [labelIcon]="labelIcon() ?? null"
+    [formControl]="control">
+  </input-atom>
+
+  <div class="error-container mt-1">
+    @if (hasError()) {
+      <error-message-atom [message]="errorMessage" [customClass]="errorClass()">
+      </error-message-atom>
+    }
+  </div>
+</div>

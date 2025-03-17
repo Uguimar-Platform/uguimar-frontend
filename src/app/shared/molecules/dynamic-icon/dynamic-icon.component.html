@@ -1,0 +1,13 @@
+<!--
+ This is in case there is no text, then the label is not rendered.
+  -->
+@if (text()) {
+  <label-atom
+    [text]="text()"
+    [forId]="forId()"
+    [fontFamily]="fontFamily()"
+    class="flex justify-center"
+    [color]="color()"
+    [class]="fontSize() + ' ' + fontWeight()" />
+}
+<icon-cloud-atom />
