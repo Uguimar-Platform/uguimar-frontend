@@ -1,0 +1,33 @@
+<!-- learning-path-section.component.html (sin cambios) -->
+<section class="learning-path-section">
+  <div class="learning-path-container">
+    <div class="title-container">
+      <h1 class="title-first-line">Descubre tu ruta de</h1>
+      <h1 class="title-second-line">aprendizaje personalizada</h1>
+    </div>
+
+    <div class="content-container">
+      <div class="input-container">
+        <p class="input-label">Crea tu ruta personalizada</p>
+
+        <input-atom
+          placeholder="Ruta personalizada"
+          [formControl]="pathInputControl"
+          backgroundColor="#F0F7FF"
+          class="custom-input"></input-atom>
+      </div>
+
+      <div class="button-container">
+        <button-atom
+          label="Generar ruta"
+          color="primary"
+          (buttonClick)="generatePath()"
+          class="generate-button"></button-atom>
+      </div>
+
+      <div class="logo-container">
+        <img src="assets/images/logo.svg" alt="" class="logo-image" />
+      </div>
+    </div>
+  </div>
+</section>
