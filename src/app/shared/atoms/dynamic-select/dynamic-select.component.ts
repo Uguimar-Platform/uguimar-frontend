@@ -8,8 +8,8 @@ import {
   viewChild,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { RoutesNavDynamicSelect } from '../../interfaces/RoutesNavDynamicSelect';
 import { CommonModule } from '@angular/common';
+import { RoutesNavDynamicSelect } from '../../../core/interfaces/RoutesNavDynamicSelect';
 
 /**
  * Component that represents a dynamic selector with search and navigation functionality.
