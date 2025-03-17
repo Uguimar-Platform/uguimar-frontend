@@ -14,7 +14,7 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
  * Supports the properties: type, placeholder, label, disabled, width, height and backgroundColor.
  */
 @Component({
-  selector: 'app-input',
+  selector: 'input-atom',
   standalone: true,
   imports: [FormsModule, CommonModule, FontAwesomeModule],
   templateUrl: './input.component.html',

@@ -1,8 +1,8 @@
-<!-- 
+<!--
  This is in case there is no text, then the label is not rendered.
   -->
 @if (text()) {
-  <app-label
+  <label-atom
     [text]="text()"
     [forId]="forId()"
     [fontFamily]="fontFamily()"
@@ -10,4 +10,4 @@
     [color]="color()"
     [class]="fontSize() + ' ' + fontWeight()" />
 }
-<app-icon-cloud />
+<icon-cloud-atom />
