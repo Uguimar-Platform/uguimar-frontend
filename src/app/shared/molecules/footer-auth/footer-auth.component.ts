@@ -13,7 +13,7 @@ import { LinkComponent } from '../../atoms/link/link.component';
    * @selector app-footer-auth
    * @description CSS selector used to instantiate this component in HTML templates.
    */
-  selector: 'app-footer-auth',
+  selector: 'footer-auth-molecule',
   imports: [CommonModule, LinkComponent],
   templateUrl: './footer-auth.component.html',
   styleUrl: './footer-auth.component.scss',

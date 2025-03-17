@@ -7,7 +7,7 @@ import { NgClass } from '@angular/common';
  * It allows customization of the displayed label, target route, and appearance.
  */
 @Component({
-  selector: 'app-link', // Defines the component's selector to be used in templates.
+  selector: 'link-atom', // Defines the component's selector to be used in templates.
   standalone: true, // Componente independiente
   imports: [RouterModule, NgClass], // Imports RouterModule to enable routing functionality.
   templateUrl: './link.component.html', // Specifies the HTML template for the component.

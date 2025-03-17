@@ -16,7 +16,7 @@ import { DEFAULT_TECH_SLUGS } from './icon-cloud.constants';
  * or clicking on a specific icon to bring it to the front.
  */
 @Component({
-  selector: 'app-icon-cloud',
+  selector: 'icon-cloud-atom',
   standalone: true,
   templateUrl: './icon-cloud.component.html',
 })
