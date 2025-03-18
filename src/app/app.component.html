@@ -1,1 +1,38 @@
 <router-outlet></router-outlet>
+
+<div class="flex justify-center gap-6">
+    <app-card-plan
+    plan="Básico"
+    [price]="200"
+    [users]="1"
+    [benefits]="['Acceso completo a todos los cursos.', 'Certificado de finalización.', 'Recompensas por suscripción continuada.']"
+    textColor="white"
+    bgColor="blue-light"
+    btnColor="blue-dark">
+  </app-card-plan>
+  
+  <app-card-plan
+    plan="Dúo"
+    [price]="350"
+    [users]="2"
+    [benefits]="['Acceso completo a todos los cursos.', 'Certificado de finalización.', 'Recompensas por suscripción continuada.']"
+    textColor="blue-medium"
+    bgColor="white"
+    btnColor="grey-light"
+    >
+  </app-card-plan>
+  
+  <app-card-plan
+    plan="Expert"
+    [price]="500"
+    [users]="3"
+    [benefits]="['Acceso completo a todos los cursos.', 'Certificado de finalización.', 'Recompensas por suscripción continuada.']"
+    textColor="white"
+    bgColor="blue-medium"
+    btnColor="blue-lightest">
+  </app-card-plan>
+  
+</div>
+
+  
+
