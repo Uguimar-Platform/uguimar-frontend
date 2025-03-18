@@ -5,23 +5,23 @@
         <img  alt="Usuario" class="w-12 h-12 rounded-full">
     </div>
 
-    <p class="mt-2 text-sm" [ngClass]="getTextColorClass()">({{ users }} persona{{ users > 1 ? 's' : '' }})</p>
-    <h3 class="text-2xl font-extrabold mt-2" [ngClass]="getTextColorClass()">{{ plan }}</h3>
+    <p class="mt-2 text-sm" [ngClass]="getTextColorClass()">({{ users() }} persona{{ users() > 1 ? 's' : '' }})</p>
+    <h3 class="text-2xl font-extrabold mt-2" [ngClass]="getTextColorClass()">{{ plan() }}</h3>
     <p class="text-xl font-bold mt-2" [ngClass]="getTextColorClass()">
-      S/. {{ price }} <span class="text-sm">/Anual</span>
+      S/. {{ price() }} <span class="text-sm">/Anual</span>
     </p>
 
     <!-- Lista de beneficios -->
     <p class="mt-4 font-bold" [ngClass]="getTextColorClass()">Beneficios:</p>
     <ul class="text-left font-semibold mt-2 space-y-2">
-      <li *ngFor="let benefit of benefits" class="flex items-center" [ngClass]="getTextColorClass()">
+      <li *ngFor="let benefit of benefits()" class="flex items-center" [ngClass]="getTextColorClass()">
         <fa-icon [icon]="faCheckCircle" class="mr-2"></fa-icon>
         {{ benefit }}
       </li>
     </ul>
 
     <!-- Botón con color dinámico -->
-    <button class="mt-6 px-4 py-2 font-bold rounded-2xl transition-all duration-300 
+    <button class="mt-6 px-4 py-2 font-bold rounded-2xl transition-all duration-300
       hover:scale-95 active:scale-90"
       [ngClass]="[getButtonBackgroundClass(), getTextColorClass()]">
       Adquirir
