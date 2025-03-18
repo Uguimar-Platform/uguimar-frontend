@@ -1,7 +1,7 @@
 import { Component, input } from '@angular/core';
 
 @Component({
-  selector: 'app-checkbox',
+  selector: 'checkbox-atom',
   templateUrl: './checkbox.component.html',
   standalone: true, // Añadimos esta línea
 })

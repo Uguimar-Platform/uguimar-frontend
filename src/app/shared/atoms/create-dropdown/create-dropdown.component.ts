@@ -10,7 +10,7 @@ import { Component, signal } from '@angular/core';
    * loads a predefined list of options based on user categories.
    */
 
-  selector: 'app-create-dropdown',
+  selector: 'create-dropdown-atom',
   /**
    * @selector 'app-create-dropdown'
    * Defines the custom HTML tag for this component, allowing it to be

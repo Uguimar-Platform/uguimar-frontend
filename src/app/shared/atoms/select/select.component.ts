@@ -5,7 +5,7 @@ import { Component, input, EventEmitter } from '@angular/core';
  * It emits change events when the selection changes.
  */
 @Component({
-  selector: 'app-select',
+  selector: 'select-atom',
   standalone: true,
   imports: [],
   templateUrl: './select.component.html',

@@ -11,7 +11,7 @@ import {
 } from '@fortawesome/angular-fontawesome';
 
 @Component({
-  selector: 'app-button',
+  selector: 'button-atom',
   standalone: true,
   imports: [CommonModule, FontAwesomeModule],
   templateUrl: './button.component.html',

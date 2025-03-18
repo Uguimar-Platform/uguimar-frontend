@@ -7,7 +7,7 @@ import { Component, input } from '@angular/core';
  * custom error messages in different parts of the application.
  */
 @Component({
-  selector: 'app-error-message', // Selector that identifies the component in templates.
+  selector: 'error-message-atom', // Selector that identifies the component in templates.
   standalone: true, // Indicates that the component is standalone.
   templateUrl: './error-message.component.html', // Path to the associated HTML template.
 })
