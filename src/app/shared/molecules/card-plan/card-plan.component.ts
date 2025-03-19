@@ -57,6 +57,7 @@ export class CardPlanComponent {
    */
   readonly btnColor = input<'blue-dark' | 'blue-medium' | 'blue-light' | 'blue-lightest' | 'blue-lighter' | 'blue-faint' | 'grey-light' | 'white'>('blue-dark');
 
+  readonly logoColor = input<'blue-dark' | 'blue-medium' | 'blue-light' | 'blue-lightest' | 'blue-lighter' | 'blue-faint' | 'grey-light' | 'white'>('blue-dark');
   /**
    * Image URL for the user logo.
    * @param {string} logoImage
@@ -98,6 +99,23 @@ export class CardPlanComponent {
       'white': 'text-[#FFFFFF]'
     };
     return colorMap[this.textColor()] || 'text-[#334EAC]';
+  }
+  /**
+   * Gets the corresponding Tailwind CSS class for the text color.
+   * @returns {string} The Tailwind CSS class for the text color.
+   */
+  getLogoColorClass(): string {
+    const colorMap: Record<string, string> = {
+      'blue-dark': 'bg-[#081F5C]',
+      'blue-medium': 'bg-[#334EAC]',
+      'blue-light': 'bg-[#7096D1]',
+      'blue-lightest': 'bg-[#D0E3FF]',
+      'blue-lighter': 'bg-[#E7F1FF]',
+      'blue-faint': 'bg-[#F9FCFF]',
+      'grey-light': 'bg-[#E7E7E7]',
+      'white': 'bg-[#FFFFFF]'
+    };
+    return colorMap[this.logoColor()] || 'bg-[#FFFFFF]';
   }
 
   /**
