@@ -1,43 +1,55 @@
+<!-- Main container that centers the content of the Contact section -->
 <div class="flex flex-col items-center justify-center p-6">
-  <h1 class="text-5xl font-bold text-black mb-6 w-full text-center">
-    Contacto
-  </h1>
+  <!-- Main title of the Contact section -->
+  <h1 class="text-5xl font-bold text-black mb-6 w-full text-center">Contact</h1>
+
+  <!-- Contact form container with a blue background -->
   <div
     class="bg-[#5670CA] w-full max-w-full flex items-center justify-center p-6 pb-12">
+    <!-- Flex container that groups the elements: image and form -->
     <div class="flex flex-col md:flex-row justify-center items-center">
+      <!-- Container for the image visible on larger screens -->
       <div class="w-1/3 flex justify-center items-center">
         <img
           src="assets/images/Picturecontact-section.svg"
-          alt="Imagen de contáctanos"
+          alt="Contact us image"
           class="w-500px hidden sm:block" />
       </div>
 
+      <!-- Container for the form -->
       <div class="w-2/3 space-y-6">
+        <!-- Input field for the email -->
         <input-field-molecule
-          label="Correo"
+          label="Email"
           id="useremail"
           type="email"
           placeholder="Email"
           width="500px"
-          class="w-full px-4 py-2 border:none rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"></input-field-molecule>
+          class="w-full px-4 py-2 border:none rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+        </input-field-molecule>
 
+        <!-- Input field for the message -->
         <input-field-molecule
-          label="Mensaje"
+          label="Message"
           id="usermessage"
-          placeholder="Ingrese el mensaje a enviar"
+          placeholder="Enter the message to send"
           width="500px"
           height="100px"
-          class="w-full h-32 px-4 py-2 border:none rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"></input-field-molecule>
+          class="w-full h-32 px-4 py-2 border:none rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none">
+        </input-field-molecule>
 
+        <!-- Button to submit the form -->
         <button-atom
-          label="Enviar"
-          class="w-100% py-3 bg-blue-700 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400"></button-atom>
+          label="Send"
+          class="w-100% py-3 bg-blue-700 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400">
+        </button-atom>
       </div>
 
+      <!-- Container for the image visible on smaller screens -->
       <div class="w-1/3 flex justify-center items-center">
         <img
           src="assets/images/Picturecontact-section.svg"
-          alt="Imagen de contáctanos"
+          alt="Contact us image"
           class="w-500px block md:hidden" />
       </div>
     </div>
