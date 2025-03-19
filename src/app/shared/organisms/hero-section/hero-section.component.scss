@@ -1,19 +1,7 @@
-@import 'tailwindcss';
 section {
-  @apply flex flex-row w-[1440px] m-auto gap-10 px-12 py-16;
   font-family: 'SF Pro Display';
 }
 
 img {
-  @apply border-amber-950 border-solid border-2 rounded-[61px] relative;
-
-  &:nth-child(1) {
-    @apply w-[500px] h-[314px] left-24;
-  }
-  &:nth-child(2) {
-    @apply w-[341px] h-[222px] left-48 top-20;
-  }
-  &:nth-child(3) {
-    @apply w-[278px] h-[185px] -left-[150px] bottom-24;
-  }
+  @apply border-[#461901] border-solid border-[2px] rounded-[61px] relative;
 }
