@@ -1,39 +1,59 @@
-<<<<<<< HEAD
-<section class="flex flex-col md:flex-row items-center justify-center gap-10 px-6 md:px-12 py-16">
+<section>
   <!--texto-->
-  <div class="max-w-xl text-center md:text-left">
-    <h1 class="text-4xl md:text-5xl font-extrabold text-[#112D4E]">
-      Aprende, crece y <span class="text-[#1E40AF]">destaca</span> con cursos transformadores
+  <div class="text">
+    <h1 class="title">
+      Aprende, crece y <span class="text-[#1E40AF]">destaca</span> con cursos
+      transformadores
     </h1>
-    <p class="text-lg text-gray-600 mt-4">
-      Tu plataforma de aprendizaje: crece, explora y alcanza tus metas con cursos que transforman.
+    <p class="description">
+      Tu plataforma de aprendizaje: crece, explora y alcanza tus metas con
+      cursos que transforman.
     </p>
-    
+
     <!-- Input de búsqueda -->
-    <div class="mt-6 flex items-center bg-[#BFD4FF] rounded-full p-2 w-full md:w-140">
-        <!-- Icono de búsqueda -->
-        <div class="bg-[#7096D1] w-15 h-10 flex items-center justify-center rounded-lg mr-2 ml-1">
-          <span class="text-white text-lg">🔍</span>
-        </div>
-        <!-- Input -->
-        <input type="text" placeholder="¿Qué deseas aprender?" 
-        class="w-full bg-[#E6EEFF] text-[#6F94E8] placeholder-[#6F94E8] px-4 py-2 border-none rounded-full focus:outline-none focus:ring-0">
+    <div class="input-search">
+      <!-- Icono de búsqueda -->
+      <button-atom [fullWidth]="true" rounded="rounded-xl">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M16.893 16.92L19.973 20M19 11.5C19 13.4891 18.2098 15.3968 16.8033 16.8033C15.3968 18.2098 13.4891 19 11.5 19C9.51088 19 7.60322 18.2098 6.1967 16.8033C4.79018 15.3968 4 13.4891 4 11.5C4 9.51088 4.79018 7.60322 6.1967 6.1967C7.60322 4.79018 9.51088 4 11.5 4C13.4891 4 15.3968 4.79018 16.8033 6.1967C18.2098 7.60322 19 9.51088 19 11.5Z"
+            stroke="#D0E3FF"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button-atom>
+      <!-- Input -->
+      <dynamic-select-atom
+        class="w-full px-2"
+        placeholder="¿Qué deseas aprender?"
+        opacity="opacity-60"
+        placeholderColor="placeholder-[#334EAC]"
+        [arrayRoutes]="[]" />
     </div>
 
     <!-- Botón -->
-    <button class="mt-6 bg-[#7096D1] text-white px-6 py-3 rounded-full flex items-center gap-2 font-semibold hover:bg-[#112D4E] transition">
-        Empezar gratis →
-    </button>
+    <button-atom label="Empezar gratis →" rounded="rounded-full" />
   </div>
 
   <!--imágenes -->
   <div class="grid grid-cols-2 gap-4">
-    <img src="ruta-imagen-1.jpg" alt="Grupo estudiando" class="w-48 md:w-56 rounded-lg shadow-md">
-    <img src="ruta-imagen-2.jpg" alt="Estudiantes en el campus" class="w-48 md:w-56 rounded-lg shadow-md">
-    <img src="ruta-imagen-3.jpg" alt="Estudiantes colaborando" class="col-span-2 w-full md:w-96 rounded-lg shadow-md">
+    <img
+      src="/assets/images/image.png"
+      alt="Grupo estudiando"
+      class="w-48 md:w-56 rounded-lg shadow-md" />
+    <img
+      src="/assets/images/image2.png"
+      alt="Estudiantes en el campus"
+      class="w-48 md:w-56 rounded-lg shadow-md" />
+    <img
+      src="/assets/images/image3.png"
+      alt="Estudiantes colaborando"
+      class="col-span-2 w-full md:w-96 rounded-lg shadow-md" />
   </div>
 </section>
-
-=======
-<p>hero-section works!</p>
->>>>>>> cae72480809fc52945894d23fdddd93808d97c02

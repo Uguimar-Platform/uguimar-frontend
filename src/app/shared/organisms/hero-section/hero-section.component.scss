@@ -1,0 +1,19 @@
+@import 'tailwindcss';
+section {
+  @apply flex flex-col md:flex-row items-center justify-center gap-10 px-6 md:px-12 py-16;
+  font-family: 'SF Pro Display';
+}
+.text {
+  @apply max-w-[488px] text-center md:text-left;
+  .title {
+    @apply text-[64px] md:text-5xl font-extrabold text-[#112D4E];
+  }
+  .description {
+    @apply text-lg text-gray-600 mt-4;
+  }
+  .input-search {
+    @apply mt-6 flex gap-2 items-center bg-[#D0E3FF] rounded-full px-[8px] py-[6px] w-full mb-10;
+  }
+}
+.images {
+}

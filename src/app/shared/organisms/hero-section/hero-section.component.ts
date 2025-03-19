@@ -1,17 +1,12 @@
 import { Component } from '@angular/core';
+import { ButtonComponent } from '../../atoms/button/button.component';
+import { DynamicSelectComponent } from '../../atoms/dynamic-select/dynamic-select.component';
 
 @Component({
   selector: 'app-hero-section',
-  imports: [],
+  standalone: true,
+  imports: [ButtonComponent, DynamicSelectComponent],
   templateUrl: './hero-section.component.html',
-<<<<<<< HEAD
-  styleUrl: './hero-section.component.scss'
-})
-export class HeroSectionComponent {
-
-}
-=======
   styleUrl: './hero-section.component.scss',
 })
 export class HeroSectionComponent {}
->>>>>>> cae72480809fc52945894d23fdddd93808d97c02

@@ -19,6 +19,7 @@ import { RoutesNavDynamicSelect } from '../../../core/interfaces/RoutesNavDynami
  */
 @Component({
   selector: 'dynamic-select-atom',
+  standalone: true,
   imports: [RouterLink, CommonModule],
   templateUrl: './dynamic-select.component.html',
   styleUrl: './dynamic-select.component.scss',

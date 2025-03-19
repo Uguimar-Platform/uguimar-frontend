@@ -6,16 +6,12 @@ import { HeroSectionComponent } from '../../shared/organisms/hero-section/hero-s
 
 @Component({
   selector: 'app-main-layout',
-<<<<<<< HEAD
-  imports: [RouterModule, HeaderComponent, FooterComponent, HeroSectionComponent],
-=======
   imports: [
     RouterModule,
     HeaderComponent,
     FooterComponent,
     HeroSectionComponent,
   ],
->>>>>>> cae72480809fc52945894d23fdddd93808d97c02
   standalone: true,
   templateUrl: './main-layout.component.html',
   styleUrl: './main-layout.component.scss',
