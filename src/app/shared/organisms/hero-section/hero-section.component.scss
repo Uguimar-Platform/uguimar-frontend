@@ -3,31 +3,17 @@ section {
   @apply flex flex-row w-[1440px] m-auto gap-10 px-12 py-16;
   font-family: 'SF Pro Display';
 }
-.text {
-  @apply flex flex-col gap-6 max-w-[566px] text-left;
-  .title {
-    @apply text-[64px] text-5xl font-extrabold text-[#202020];
-  }
-  .description {
-    @apply text-[24px] text-gray-600;
-  }
-  .input-search {
-    @apply mt-6 flex gap-2 items-center bg-[#D0E3FF] rounded-full px-[8px] py-[6px] w-full mb-10;
-  }
-}
-.images {
-  @apply relative;
-  img {
-    @apply border-amber-950 border-solid border-2 rounded-[61px];
 
-    &:nth-child(1) {
-      @apply relative w-[500px] h-[314px] left-24;
-    }
-    &:nth-child(2) {
-      @apply relative w-[341px] h-[222px] left-48 top-20;
-    }
-    &:nth-child(3) {
-      @apply relative inline w-[278px] h-[185px] -left-[150px] bottom-24;
-    }
+img {
+  @apply border-amber-950 border-solid border-2 rounded-[61px] relative;
+
+  &:nth-child(1) {
+    @apply w-[500px] h-[314px] left-24;
+  }
+  &:nth-child(2) {
+    @apply w-[341px] h-[222px] left-48 top-20;
+  }
+  &:nth-child(3) {
+    @apply w-[278px] h-[185px] -left-[150px] bottom-24;
   }
 }
