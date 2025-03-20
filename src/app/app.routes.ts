@@ -9,7 +9,7 @@ export const routes: Routes = [
         path: '',
         loadChildren: () =>
           import('./modules/home/home.routes').then(m => m.HOME_ROUTES),
-      },
+      }
     ],
   },
   {
