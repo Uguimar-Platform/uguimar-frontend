@@ -1,16 +1,16 @@
 <div class="w-[380px] bg-[#F9FCFF] border border-[#334EAC] rounded-3xl p-6 py-8 shadow-md text-center">
-    <h1 class="font-bold text-3xl text-left mb-2">{{title}} <span class="text-[#334EAC]">{{course}}</span> </h1>
-    <p>{{description}}</p>
+    <h1 class="font-bold text-3xl text-left mb-2">{{title()}} <span class="text-[#334EAC]">{{course()}}</span> </h1>
+    <p>{{description()}}</p>
     <img
       class="w-48 mx-auto mt-3 mb-6"
-      src={{image}} 
+      [src]="image()"
       alt="imagen"
     >
     <a 
-      [href]="buttonLink" 
+      [href]="buttonLink()" 
     >
       <button class="px-14 py-2 bg-[#334EAC] text-white font-semibold rounded-full hover:bg-[#233B8C] transition duration-300">
-        {{ buttonText }}
+        {{ buttonText()}}
       </button>
     </a>
 </div>
