@@ -2,8 +2,7 @@ import { Component, input } from '@angular/core';
 import { LabelComponent } from '../../atoms/label/label.component';
 import { ButtonComponent } from '../../atoms/button/button.component';
 import { CommonModule } from '@angular/common';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faChartSimple, faUser } from '@fortawesome/free-solid-svg-icons';
+import { MatIconModule } from '@angular/material/icon';
 
 /**
  * Component that represents a course card.
@@ -13,7 +12,7 @@ import { faChartSimple, faUser } from '@fortawesome/free-solid-svg-icons';
  */
 @Component({
   selector: 'app-cardCourses',
-  imports: [CommonModule, LabelComponent, ButtonComponent, FontAwesomeModule],
+  imports: [CommonModule, LabelComponent, ButtonComponent, MatIconModule],
   templateUrl: './card-courses.component.html',
   styleUrl: './card-courses.component.scss',
 })
@@ -60,14 +59,14 @@ export class CardCoursesComponent {
   readonly category = input<string>('CategoriaCurso');
 
   /**
-   * User icon imported from FontAwesome.
-   * @type {IconDefinition}
+   * Icon name for user from Material Icons.
+   * @type {string}
    */
-  protected userIcon = faUser;
+  protected userIcon = 'person';
 
   /**
-   * Bar chart icon imported from FontAwesome.
-   * @type {IconDefinition}
+   * Icon name for chart from Material Icons.
+   * @type {string}
    */
-  protected barIcon = faChartSimple;
+  protected chartIcon = 'bar_chart';
 }
