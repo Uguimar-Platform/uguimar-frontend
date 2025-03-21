@@ -10,6 +10,7 @@ import {
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RoutesNavDynamicSelect } from '../../../core/interfaces/RoutesNavDynamicSelect';
+import { Router } from '@angular/router';
 
 /**
  * Component that represents a dynamic selector with search and navigation functionality.
@@ -49,9 +50,10 @@ export class DynamicSelectComponent {
   public placeholderColor = input<string>('');
   // Signal that stores the value entered by the user in the input field.
   protected routeInput = signal<string>('');
-
+  /* routes select by input */
   protected selectedRoute: RoutesNavDynamicSelect[] = [];
-
+  /* click signal from component fatter */
+  public handledClickSignal = input<boolean>(false);
   /**
    * Component constructor.
    * Used to initialize the effect that reacts to changes in `routeInput`.
@@ -60,11 +62,29 @@ export class DynamicSelectComponent {
    * Effect that is executed whenever `routeInput` changes.
    * Gets the current value of `routeInput`.
    * Calls `eventInput` with the current value.
+   *
+   * Effect that runs when `routeIhandledClickSignal` changes, i.e., an external button is clicked.
+   * Calls `eventInput` and redirects based on the input value.
    */
-  constructor() {
+  constructor(private router: Router) {
     effect(() => {
       const valueInput = this.routeInput();
       this.eventInput(valueInput);
+    });
+    effect(() => {
+      alert('xd');
+      this.handledClickSignal();
+      const valueInput = this.input().nativeElement.value;
+      if (!valueInput) {
+        return;
+      }
+      const filteredRoutes = this.arrayRoutes().filter(route =>
+        route.option.toLowerCase().includes(valueInput.toLowerCase())
+      );
+      if (filteredRoutes.length === 0) {
+        return;
+      }
+      this.router.navigate([filteredRoutes[0].value]);
     });
   }
 
@@ -83,7 +103,7 @@ export class DynamicSelectComponent {
     }
 
     const filteredRoutes = this.arrayRoutes().filter(route =>
-      route.value.toLowerCase().includes(valueFilter.toLowerCase())
+      route.option.toLowerCase().includes(valueFilter.toLowerCase())
     );
 
     this.selectedRoute = filteredRoutes;

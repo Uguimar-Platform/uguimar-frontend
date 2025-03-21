@@ -1,5 +1,5 @@
 .dynamic-select {
-  @apply rounded-[10px] font-[sans-serif];
+  @apply relative rounded-[10px] font-[sans-serif];
 
   &-input {
     @apply w-full h-full py-[12px] pl-[6px] rounded-[8px] text-[16px] bg-[white] box-border;
@@ -12,7 +12,7 @@
 
   .options {
     @apply absolute border-[1px] border-[#E7E7E7] rounded-[8px];
-    @apply max-h-[180px] overflow-y-auto bg-[white];
+    @apply w-[100%] max-h-[180px] overflow-y-auto bg-[white];
     box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12);
   }
 

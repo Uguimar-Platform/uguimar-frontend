@@ -21,13 +21,15 @@
       <button-atom
         customClass="rounded-xl bg-[#7096D1] hover:bg-[#005194]"
         icon="search"
-        iconColor="#fff" />
+        iconColor="#fff"
+        (buttonClick)="clickSearch()" />
       <dynamic-select-atom
-        class="w-full px-2"
+        class="w-full px-2 relative z-20"
         placeholder="¿Qué deseas aprender?"
         opacity="opacity-60"
         placeholderColor="placeholder-[#334EAC]"
-        [arrayRoutes]="[]" />
+        [handledClickSignal]="signalClickButton()"
+        [arrayRoutes]="arrayRoutes" />
     </div>
 
     <button-atom
@@ -35,7 +37,8 @@
       icon="arrow_right_alt"
       iconPosition="right"
       iconColor="#fff"
-      label="Empezar gratis" />
+      label="Empezar gratis"
+      (buttonClick)="clickStartFree()" />
   </div>
 
   <div>
