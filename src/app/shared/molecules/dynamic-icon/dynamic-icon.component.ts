@@ -3,7 +3,7 @@ import { IconCloudComponent } from '../../atoms/icon-cloud/icon-cloud.component'
 import { LabelComponent } from '../../atoms/label/label.component';
 
 @Component({
-  selector: 'app-dynamic-icon',
+  selector: 'dynamic-icon-molecule',
   imports: [IconCloudComponent, LabelComponent],
   templateUrl: './dynamic-icon.component.html',
 })

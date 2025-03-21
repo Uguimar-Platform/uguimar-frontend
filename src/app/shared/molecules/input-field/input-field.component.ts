@@ -17,7 +17,7 @@ import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
  * that handles form validation and displays error messages.
  */
 @Component({
-  selector: 'app-input-field',
+  selector: 'input-field-molecule',
   standalone: true,
   imports: [
     CommonModule,

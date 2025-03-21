@@ -6,14 +6,14 @@ import { CommonModule } from '@angular/common';
  * Represents a customizable label in Angular.
  */
 
-/** 
+/**
 Method that implements the logic to protect routes.
 It is responsible for verifying the validity of the JWT token and assigning the decoded user to the request.*
 @param context The execution context that contains information about the current request.
 @returns True if the token is valid, or throws an HTTP exception if it is not.*/
 
 @Component({
-  selector: 'app-label', // Name of the selector to be used in the HTML
+  selector: 'label-atom', // Name of the selector to be used in the HTML
   imports: [CommonModule], // Import CommonModule to use common directives
   templateUrl: './label.component.html', // HTML template file path
   changeDetection: ChangeDetectionStrategy.OnPush, // Efficient change detection strategy

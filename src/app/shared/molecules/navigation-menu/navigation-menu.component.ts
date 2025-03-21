@@ -13,7 +13,7 @@ import { LinkComponent } from '../../atoms/link/link.component';
  * <app-navigation-menu></app-navigation-menu>
  */
 @Component({
-  selector: 'app-navigation-menu',
+  selector: 'navigation-menu-molecule',
   standalone: true,
   imports: [CommonModule, LinkComponent],
   templateUrl: './navigation-menu.component.html',
