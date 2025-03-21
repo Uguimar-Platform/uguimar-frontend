@@ -1,12 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, input } from '@angular/core';
+import { ButtonComponent } from '../../atoms/button/button.component';
+import { LabelComponent } from '../../atoms/label/label.component';
 
 /**
  * Component that represents a course category card.
  */
 @Component({
   selector: 'app-card-category-courses',
-  imports: [CommonModule],
+  imports: [CommonModule, ButtonComponent, LabelComponent],
   templateUrl: './card-category-courses.component.html',
   styleUrl: './card-category-courses.component.scss',
 })
