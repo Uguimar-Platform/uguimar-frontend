@@ -5,37 +5,24 @@ import {
   output,
   ChangeDetectionStrategy,
 } from '@angular/core';
-import {
-  FontAwesomeModule,
-  IconDefinition,
-} from '@fortawesome/angular-fontawesome';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'button-atom',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule],
+  imports: [CommonModule, MatIconModule],
   templateUrl: './button.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent {
-  // Inputs como signals
-  readonly color = input<
-    'primary' | 'warning' | 'info' | 'danger' | 'secondary'
-  >('primary');
-  readonly outline = input<boolean>(false);
+  // Inputs
+  readonly customClass = input<string>(''); // Clases de Tailwind personalizadas
   readonly label = input<string>('');
-  readonly icon = input<IconDefinition | null>(null);
-  readonly iconPosition = input<'left' | 'right'>('left');
-  readonly fullWidth = input<boolean>(false);
-  readonly disabled = input<boolean>(false);
-  readonly type = input<'button' | 'submit' | 'reset'>('button');
+  readonly textColor = input<string>('#fff');
+  readonly icon = input<string | undefined>(undefined);
+  readonly iconColor = input<string>('#000');
+  iconPosition = input<'left' | 'right'>('left');
 
   // Output
   buttonClick = output<void>();
-
-  onClick() {
-    if (!this.disabled()) {
-      this.buttonClick.emit();
-    }
-  }
 }
