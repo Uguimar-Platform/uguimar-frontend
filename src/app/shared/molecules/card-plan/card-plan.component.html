@@ -3,7 +3,7 @@
     @for (icon of getUserIcons(); track $index) {
       <div class="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden" [ngStyle]="{ 'background-color': logoColor() }">
         <img [src]="logoImage()" alt="Usuario" class="w-8 h-8 object-cover rounded-full" >
-      </div>  
+      </div>
     }
   </div>
   <p class="mt-2 text-sm" [ngStyle]="{ color: textColor() }">({{ users() }} persona{{ users() > 1 ? 's' : '' }})</p>
@@ -15,15 +15,19 @@
   <ul class="text-left font-semibold mt-2 space-y-2">
     @for (benefit of benefits(); track $index) {
       <li class="flex items-center" [ngStyle]="{ color: textColor() }">
-        <fa-icon [icon]="faCheckCircle" class="mr-2"></fa-icon>
+        <mat-icon
+        class="mr-2"
+        [ngStyle]="{ fontSize: iconSize }">
+        {{icon()}}
+        </mat-icon>
         {{ benefit }}
       </li>
     }
   </ul>
-  <div class="flex justify-center w-full mt-10 px-6"> 
-    <button-atom 
-      class="!rounded-full px-2 font-bold transition-all duration-300 hover:scale-95 active:scale-90 " 
-      [label]="'Adquirir'" 
+  <div class="flex justify-center w-full mt-10 px-6">
+    <button-atom
+      class="!rounded-full px-2 font-bold transition-all duration-300 hover:scale-95 active:scale-90 "
+      [label]="'Adquirir'"
       [textColor]="textColor()"
       [ngStyle]="{'background-color': btnColor()}"
       (buttonClick)="onButtonClick()">

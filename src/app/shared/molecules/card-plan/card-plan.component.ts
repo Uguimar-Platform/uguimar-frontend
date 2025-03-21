@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, input } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faUser, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { ButtonComponent } from '../../atoms/button/button.component';
+import { MatIconModule } from '@angular/material/icon';
 
 /**
  * Component representing a subscription plan card.
@@ -10,7 +10,7 @@ import { ButtonComponent } from '../../atoms/button/button.component';
 @Component({
   selector: 'app-card-plan',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule, ButtonComponent],
+  imports: [CommonModule, FontAwesomeModule, ButtonComponent, MatIconModule],
   templateUrl: './card-plan.component.html',
   styleUrl: './card-plan.component.scss',
 })
@@ -66,14 +66,14 @@ export class CardPlanComponent {
   readonly logoImage = input<string>('');
 
   /**
-   * FontAwesome icon representing a user.
-   */
-  faUser = faUser;
-
-  /**
    * FontAwesome icon representing a checkmark for validation or confirmation.
    */
-  faCheckCircle = faCheckCircle;
+  readonly icon = input<string>('check_circle');
+
+  /**
+   * FontAwesome icon size representing a check mark for validation or confirmation 
+   */
+  iconSize = '17px';
 
   /**
    * Returns an array with a length equal to the number of users.
