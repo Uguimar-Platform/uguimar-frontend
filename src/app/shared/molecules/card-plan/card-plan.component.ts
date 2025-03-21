@@ -1,4 +1,4 @@
-import { NgClass } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, input } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faUser, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
@@ -10,7 +10,7 @@ import { ButtonComponent } from '../../atoms/button/button.component';
 @Component({
   selector: 'app-card-plan',
   standalone: true,
-  imports: [NgClass, FontAwesomeModule, ButtonComponent],
+  imports: [CommonModule, FontAwesomeModule, ButtonComponent],
   templateUrl: './card-plan.component.html',
   styleUrl: './card-plan.component.scss',
 })
@@ -44,21 +44,21 @@ export class CardPlanComponent {
    * Color of the text of the card-plan.
    * @param {string} textColor
    */
-  readonly textColor = input<'blue-dark' | 'blue-medium' | 'blue-light' | 'blue-lightest' | 'blue-lighter' | 'blue-faint' | 'grey-light' | 'white'>('blue-medium');
+  readonly textColor = input<string>('#fff');
 
   /**
    * Color of the background of the card-plan.
    * @param {string} bgColor
    */
-  readonly bgColor = input<'blue-dark' | 'blue-medium' | 'blue-light' | 'blue-lightest' | 'blue-lighter' | 'blue-faint' | 'grey-light' | 'white'>('white');
+  readonly bgColor = input<string>('#fff');
 
   /**
    * Color of the button of the card-plan.
    * @param {string} btnColor
    */
-  readonly btnColor = input<'blue-dark' | 'blue-medium' | 'blue-light' | 'blue-lightest' | 'blue-lighter' | 'blue-faint' | 'grey-light' | 'white'>('blue-dark');
+  readonly btnColor = input<string>('#fff');
 
-  readonly logoColor = input<'blue-dark' | 'blue-medium' | 'blue-light' | 'blue-lightest' | 'blue-lighter' | 'blue-faint' | 'grey-light' | 'white'>('blue-dark');
+  readonly logoColor = input<string>('#fff');
   /**
    * Image URL for the user logo.
    * @param {string} logoImage
@@ -91,94 +91,4 @@ export class CardPlanComponent {
     console.log(`Plan ${this.plan()} seleccionado`);
     //logica para seleccionar el plan
   }
-
-  
-  /**
-   * Gets the corresponding Tailwind CSS class for the text color.
-   * @returns {string} The Tailwind CSS class for the text color.
-   */
-  getTextColorClass(): string {
-    const colorMap: Record<string, string> = {
-      'blue-dark': 'text-[#081F5C]',
-      'blue-medium': 'text-[#334EAC]',
-      'blue-light': 'text-[#7096D1]',
-      'blue-lightest': 'text-[#D0E3FF]',
-      'blue-lighter': 'text-[#E7F1FF]',
-      'blue-faint': 'text-[#F9FCFF]',
-      'grey-light': 'text-[#E7E7E7]',
-      'white': 'text-[#FFFFFF]'
-    };
-    return colorMap[this.textColor()] || 'text-[#334EAC]';
-  }
-  /**
-   * Gets the corresponding Tailwind CSS class for the text color.
-   * @returns {string} The Tailwind CSS class for the text color.
-   */
-  getLogoColorClass(): string {
-    const colorMap: Record<string, string> = {
-      'blue-dark': 'bg-[#081F5C]',
-      'blue-medium': 'bg-[#334EAC]',
-      'blue-light': 'bg-[#7096D1]',
-      'blue-lightest': 'bg-[#D0E3FF]',
-      'blue-lighter': 'bg-[#E7F1FF]',
-      'blue-faint': 'bg-[#F9FCFF]',
-      'grey-light': 'bg-[#E7E7E7]',
-      'white': 'bg-[#FFFFFF]'
-    };
-    return colorMap[this.logoColor()] || 'bg-[#FFFFFF]';
-  }
-
-  /**
-   * Gets the corresponding Tailwind CSS class for the background color.
-   * @returns {string} The Tailwind CSS class for the background color.
-   */
-  getBackgroundColorClass(): string {
-    const colorMap: Record<string, string> = {
-      'blue-dark': 'bg-[#081F5C]',
-      'blue-medium': 'bg-[#334EAC]',
-      'blue-light': 'bg-[#7096D1]',
-      'blue-lightest': 'bg-[#D0E3FF]',
-      'blue-lighter': 'bg-[#E7F1FF]',
-      'blue-faint': 'bg-[#F9FCFF]',
-      'grey-light': 'bg-[#E7E7E7]',
-      'white': 'bg-[#FFFFFF]'
-    };
-    return colorMap[this.bgColor()] || 'bg-white';
-  }
-
-  /**
-   * Gets the corresponding Tailwind CSS class for the button background color.
-   * @returns {string} The Tailwind CSS class for the button background color.
-   */
-  getButtonBackgroundClass(): string {
-    const colorMap: Record<string, string> = {
-      'blue-dark': 'bg-[#081F5C] hover:bg-blue-700',
-      'blue-medium': 'bg-[#334EAC] hover:bg-blue-500',
-      'blue-light': 'bg-[#7096D1] hover:bg-blue-300',
-      'blue-lightest': 'bg-[#D0E3FF] hover:bg-blue-100',
-      'blue-lighter': 'bg-[#E7F1FF] hover:bg-blue-50',
-      'blue-faint': 'bg-[#F9FCFF] hover:bg-gray-200',
-      'grey-light': 'bg-[#E7E7E7] hover:bg-gray-200',
-      'white': 'bg-[#FFFFFF] hover:bg-gray-100'
-    };
-    return colorMap[this.btnColor()] || 'bg-blue-800 hover:bg-blue-700';
-  }
-  /**
- * Converts color name to hex code for button-atom component.
- * @param {string} colorName - Name of the color
- * @returns {string} - Hex code of the color
- */
-getColorHexCode(colorName: string): string {
-  const colorMap: Record<string, string> = {
-    'blue-dark': '#081F5C',
-    'blue-medium': '#334EAC',
-    'blue-light': '#7096D1',
-    'blue-lightest': '#D0E3FF',
-    'blue-lighter': '#E7F1FF',
-    'blue-faint': '#F9FCFF',
-    'grey-light': '#E7E7E7',
-    'white': '#FFFFFF'
-  };
-  return colorMap[colorName] || '#FFFFFF';
-}
 }

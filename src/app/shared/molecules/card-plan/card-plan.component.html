@@ -1,24 +1,20 @@
-<div class="p-6 rounded-[40px] shadow-lg text-center w-72" [ngClass]="getBackgroundColorClass()">
-  <!-- Imágenes de usuario (según el número de usuarios) -->
+<div class="p-6 rounded-[40px] shadow-lg text-center w-72" [ngStyle]="{ 'background-color': bgColor() }">
   <div class="flex justify-center gap-2" >
     @for (icon of getUserIcons(); track $index) {
-      <div class="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden" [ngClass]="getLogoColorClass()">
+      <div class="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden" [ngStyle]="{ 'background-color': logoColor() }">
         <img [src]="logoImage()" alt="Usuario" class="w-8 h-8 object-cover rounded-full" >
-      </div>
+      </div>  
     }
   </div>
-
-  <p class="mt-2 text-sm" [ngClass]="getTextColorClass()">({{ users() }} persona{{ users() > 1 ? 's' : '' }})</p>
-  <h3 class="text-2xl font-extrabold mt-2" [ngClass]="getTextColorClass()">{{ plan() }}</h3>
-  <p class="text-xl font-bold mt-2" [ngClass]="getTextColorClass()">
+  <p class="mt-2 text-sm" [ngStyle]="{ color: textColor() }">({{ users() }} persona{{ users() > 1 ? 's' : '' }})</p>
+  <h3 class="text-2xl font-extrabold mt-2" [ngStyle]="{ color: textColor() }">{{ plan() }}</h3>
+  <p class="text-xl font-bold mt-2" [ngStyle]="{ color: textColor() }">
     S/. {{ price() }} <span class="text-sm">/Anual</span>
   </p>
-
-  <!-- Lista de beneficios -->
-  <p class="mt-4 font-bold" [ngClass]="getTextColorClass()">Beneficios:</p>
+  <p class="mt-4 font-bold" [ngStyle]="{ color: textColor() }">Beneficios:</p>
   <ul class="text-left font-semibold mt-2 space-y-2">
     @for (benefit of benefits(); track $index) {
-      <li class="flex items-center" [ngClass]="getTextColorClass()">
+      <li class="flex items-center" [ngStyle]="{ color: textColor() }">
         <fa-icon [icon]="faCheckCircle" class="mr-2"></fa-icon>
         {{ benefit }}
       </li>
@@ -26,11 +22,11 @@
   </ul>
   <div class="flex justify-center w-full mt-10 px-6"> 
     <button-atom 
-      [customClass]="getButtonBackgroundClass() + 'py-4 font-bold transition-all duration-300 hover:scale-95 active:scale-90 !rounded-full'" 
+      class="!rounded-full px-2 font-bold transition-all duration-300 hover:scale-95 active:scale-90 " 
       [label]="'Adquirir'" 
-      [textColor]="getColorHexCode(textColor())"
+      [textColor]="textColor()"
+      [ngStyle]="{'background-color': btnColor()}"
       (buttonClick)="onButtonClick()">
     </button-atom>
   </div>
-
 </div>
