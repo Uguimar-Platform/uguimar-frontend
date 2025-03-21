@@ -2,6 +2,7 @@ import { NgClass } from '@angular/common';
 import { Component, input } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faUser, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { ButtonComponent } from '../../atoms/button/button.component';
 
 /**
  * Component representing a subscription plan card.
@@ -9,7 +10,7 @@ import { faUser, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-card-plan',
   standalone: true,
-  imports: [NgClass, FontAwesomeModule],
+  imports: [NgClass, FontAwesomeModule, ButtonComponent],
   templateUrl: './card-plan.component.html',
   styleUrl: './card-plan.component.scss',
 })
@@ -84,6 +85,15 @@ export class CardPlanComponent {
   }
 
   /**
+  * Handles the button click event.
+  */
+  onButtonClick(): void {
+    console.log(`Plan ${this.plan()} seleccionado`);
+    //logica para seleccionar el plan
+  }
+
+  
+  /**
    * Gets the corresponding Tailwind CSS class for the text color.
    * @returns {string} The Tailwind CSS class for the text color.
    */
@@ -153,4 +163,22 @@ export class CardPlanComponent {
     };
     return colorMap[this.btnColor()] || 'bg-blue-800 hover:bg-blue-700';
   }
+  /**
+ * Converts color name to hex code for button-atom component.
+ * @param {string} colorName - Name of the color
+ * @returns {string} - Hex code of the color
+ */
+getColorHexCode(colorName: string): string {
+  const colorMap: Record<string, string> = {
+    'blue-dark': '#081F5C',
+    'blue-medium': '#334EAC',
+    'blue-light': '#7096D1',
+    'blue-lightest': '#D0E3FF',
+    'blue-lighter': '#E7F1FF',
+    'blue-faint': '#F9FCFF',
+    'grey-light': '#E7E7E7',
+    'white': '#FFFFFF'
+  };
+  return colorMap[colorName] || '#FFFFFF';
+}
 }

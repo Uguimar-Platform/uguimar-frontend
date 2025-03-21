@@ -24,11 +24,13 @@
       </li>
     }
   </ul>
+  <div class="flex justify-center w-full mt-10 px-6"> 
+    <button-atom 
+      [customClass]="getButtonBackgroundClass() + 'py-4 font-bold transition-all duration-300 hover:scale-95 active:scale-90 !rounded-full'" 
+      [label]="'Adquirir'" 
+      [textColor]="getColorHexCode(textColor())"
+      (buttonClick)="onButtonClick()">
+    </button-atom>
+  </div>
 
-  <!-- Botón con color dinámico -->
-  <button class="mt-6 px-6 py-2 font-bold rounded-full transition-all duration-300
-    hover:scale-95 active:scale-90"
-    [ngClass]="[getButtonBackgroundClass(), getTextColorClass()]">
-    Adquirir
-  </button>
 </div>
