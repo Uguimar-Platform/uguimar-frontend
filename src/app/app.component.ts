@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 
 import { RouterOutlet } from '@angular/router';
-import { LearningPathSectionComponent } from './shared/organisms/learning-patch-section/learning-path-section.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LearningPathSectionComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
