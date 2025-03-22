@@ -1,10 +1,16 @@
 <div class="flex flex-col w-full">
-  <div class="flex items-center gap-2 mb-1">
+  <div
+    class="flex items-center gap-2 mb-1"
+    [ngClass]="{
+      'justify-start': labelAlignment() === 'left',
+      'justify-center': labelAlignment() === 'center',
+      'justify-end': labelAlignment() === 'right',
+    }">
     @if (labelIcon()) {
       <fa-icon [icon]="labelIcon()!" class="text-[#334EAC]"></fa-icon>
     }
 
-    <span class="text-sm font-medium text-[#334EAC]">
+    <span [ngClass]="[labelSize(), labelFont()]" [style.color]="labelColor()">
       {{ label() }}
     </span>
   </div>

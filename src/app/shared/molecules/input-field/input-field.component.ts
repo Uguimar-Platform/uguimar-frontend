@@ -282,4 +282,27 @@ export class InputFieldComponent implements OnInit {
 
     return null;
   }
+  /**
+   * Label color for the input field.
+   * @param '#334EAC' - Default color for the label.
+   */
+  readonly labelColor = input<string>('#334EAC');
+
+  /**
+   * Label font size for the input field.
+   * @param 'text-sm' - Default font size for the label.
+   */
+  readonly labelSize = input<string>('text-sm');
+
+  /**
+   * Label font weight for the input field.
+   * @param 'font-medium' - Default font weight for the label.
+   */
+  readonly labelFont = input<string>('font-medium');
+
+  /**
+   * Label alignment for the input field.
+   * @param 'left' - Default alignment for the label.
+   */
+  readonly labelAlignment = input<'left' | 'center' | 'right'>('left');
 }

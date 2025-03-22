@@ -36,6 +36,10 @@ export class InputComponent implements ControlValueAccessor {
   readonly backgroundColor = input('#ffffff');
   readonly customClass = input<string | Record<string, boolean>>('');
   readonly labelIcon = input<IconDefinition | null>(null);
+  readonly labelColor = input<string>('#334EAC');
+  readonly labelSize = input<string>('text-sm');
+  readonly labelFont = input<string>('font-medium');
+  readonly labelAlignment = input<'left' | 'center' | 'right'>('left');
 
   // Password visibility properties
   showPassword = false;
