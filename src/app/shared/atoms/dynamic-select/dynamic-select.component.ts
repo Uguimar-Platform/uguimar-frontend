@@ -52,8 +52,7 @@ export class DynamicSelectComponent {
   protected routeInput = signal<string>('');
   /* routes select by input */
   protected selectedRoute: RoutesNavDynamicSelect[] = [];
-  /* click signal from component fatter */
-  public handledClickSignal = input<boolean>(false);
+
   /**
    * Component constructor.
    * Used to initialize the effect that reacts to changes in `routeInput`.
@@ -62,31 +61,36 @@ export class DynamicSelectComponent {
    * Effect that is executed whenever `routeInput` changes.
    * Gets the current value of `routeInput`.
    * Calls `eventInput` with the current value.
-   *
-   * Effect that runs when `routeIhandledClickSignal` changes, i.e., an external button is clicked.
-   * Calls `eventInput` and redirects based on the input value.
    */
   constructor(private router: Router) {
     effect(() => {
       const valueInput = this.routeInput();
       this.eventInput(valueInput);
     });
-    effect(() => {
-      alert('xd');
-      this.handledClickSignal();
-      const valueInput = this.input().nativeElement.value;
-      if (!valueInput) {
-        return;
-      }
-      const filteredRoutes = this.arrayRoutes().filter(route =>
-        route.option.toLowerCase().includes(valueInput.toLowerCase())
-      );
-      if (filteredRoutes.length === 0) {
-        return;
-      }
-      this.router.navigate([filteredRoutes[0].value]);
-    });
   }
+
+  /* 
+    method for filter routes by event father
+      select the input value.
+      We check if it's empty to terminate the function.
+      We filter the routes.
+      If there are no matches, then the function ends.
+      If there are hidden routes, the first route, i.e., the closest one.
+    @param
+   */
+  eventNavigate = () => {
+    const valueInput = this.input().nativeElement.value;
+    if (!valueInput) {
+      return;
+    }
+    const filteredRoutes = this.arrayRoutes().filter(route =>
+      route.option.toLowerCase().includes(valueInput.toLowerCase())
+    );
+    if (filteredRoutes.length === 0) {
+      return;
+    }
+    this.router.navigate([filteredRoutes[0].value]);
+  };
 
   /**
    * Method that filters routes based on user input.

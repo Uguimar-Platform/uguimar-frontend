@@ -1,4 +1,4 @@
-import { Component, input, signal } from '@angular/core';
+import { Component, input, viewChild } from '@angular/core';
 import { ButtonComponent } from '../../atoms/button/button.component';
 import { DynamicSelectComponent } from '../../atoms/dynamic-select/dynamic-select.component';
 import { LabelComponent } from '../../atoms/label/label.component';
@@ -28,16 +28,17 @@ export class HeroSectionComponent {
     { value: '/about', option: 'About' },
     { value: '/contact', option: 'Contact' },
   ];
-  /* 
-  This is a signal to the dynamic selection component from the button-atom.s
-   */
-  protected signalClickButton = signal<boolean>(false);
+
+  // signal for dynamic select component for change event.
+  protected dynamicSelectMolecule =
+    viewChild<DynamicSelectComponent>('dynamicSelect');
+
   /**
-   * Method for update signalClickButton
+   * Method for click buttonAtom
    * @param
    */
   protected clickSearch() {
-    this.signalClickButton.set(!this.signalClickButton());
+    this.dynamicSelectMolecule()?.eventNavigate();
   }
   /**
    * Method for event click button StartFree

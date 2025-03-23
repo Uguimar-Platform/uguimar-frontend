@@ -24,11 +24,11 @@
         iconColor="#fff"
         (buttonClick)="clickSearch()" />
       <dynamic-select-atom
+        #dynamicSelect
         class="w-full px-2 relative z-20"
         placeholder="¿Qué deseas aprender?"
         opacity="opacity-60"
         placeholderColor="placeholder-[#334EAC]"
-        [handledClickSignal]="signalClickButton()"
         [arrayRoutes]="arrayRoutes" />
     </div>
 
