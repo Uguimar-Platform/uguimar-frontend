@@ -88,7 +88,6 @@ export class CardPlanComponent {
   * Handles the button click event.
   */
   onButtonClick(): void {
-    console.log(`Plan ${this.plan()} seleccionado`);
     //logica para seleccionar el plan
   }
 }

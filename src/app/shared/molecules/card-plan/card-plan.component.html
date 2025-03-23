@@ -1,23 +1,23 @@
-<div class="p-6 rounded-[40px] shadow-lg text-center w-72" [ngStyle]="{ 'background-color': bgColor() }">
+<div class="p-6 rounded-[40px] shadow-lg text-center w-72" [style]="{ 'background-color': bgColor() }">
   <div class="flex justify-center gap-2" >
     @for (icon of getUserIcons(); track $index) {
-      <div class="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden" [ngStyle]="{ 'background-color': logoColor() }">
+      <div class="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden" [style]="{ 'background-color': logoColor() }">
         <img [src]="logoImage()" alt="Usuario" class="w-8 h-8 object-cover rounded-full" >
       </div>
     }
   </div>
-  <p class="mt-2 text-sm" [ngStyle]="{ color: textColor() }">({{ users() }} persona{{ users() > 1 ? 's' : '' }})</p>
-  <h3 class="text-2xl font-extrabold mt-2" [ngStyle]="{ color: textColor() }">{{ plan() }}</h3>
-  <p class="text-xl font-bold mt-2" [ngStyle]="{ color: textColor() }">
+  <p class="mt-2 text-sm" [style]="{ color: textColor() }">({{ users() }} persona{{ users() > 1 ? 's' : '' }})</p>
+  <h3 class="text-2xl font-extrabold mt-2" [style]="{ color: textColor() }">{{ plan() }}</h3>
+  <p class="text-xl font-bold mt-2" [style]="{ color: textColor() }">
     S/. {{ price() }} <span class="text-sm">/Anual</span>
   </p>
-  <p class="mt-4 font-bold" [ngStyle]="{ color: textColor() }">Beneficios:</p>
+  <p class="mt-4 font-bold" [style]="{ color: textColor() }">Beneficios:</p>
   <ul class="text-left font-semibold mt-2 space-y-2">
     @for (benefit of benefits(); track $index) {
-      <li class="flex items-center" [ngStyle]="{ color: textColor() }">
+      <li class="flex items-center" [style]="{ color: textColor() }">
         <mat-icon
         class="mr-2"
-        [ngStyle]="{ fontSize: iconSize }">
+        [style]="{ fontSize: iconSize }">
         {{icon()}}
         </mat-icon>
         {{ benefit }}
@@ -29,7 +29,7 @@
       class="!rounded-full px-2 font-bold transition-all duration-300 hover:scale-95 active:scale-90 "
       [label]="'Adquirir'"
       [textColor]="textColor()"
-      [ngStyle]="{'background-color': btnColor()}"
+      [style]="{'background-color': btnColor()}"
       (buttonClick)="onButtonClick()">
     </button-atom>
   </div>
