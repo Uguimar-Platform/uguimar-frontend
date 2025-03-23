@@ -1,11 +1,31 @@
 <div
-  class="flex items-center p-4 bg-white rounded-3xl shadow-md border border-blue-400 w-full max-w-lg">
+  class="flex items-center p-4 rounded-3xl shadow-md border w-full max-w-lg"
+  [ngClass]="{
+    'bg-white border-blue-400 text-gray-700': theme() === 'light',
+    'bg-[#334EAC] border-[#334EAC] text-white': theme() === 'dark',
+  }">
   <img
     [src]="image()"
     alt="Foto de {{ name() }}"
-    class="w-30 h-30 rounded-3xl object-cover border border-gray-300 mr-4" />
+    class="w-30 h-30 rounded-3xl object-cover border mr-4"
+    [ngClass]="{
+      'border-gray-300': theme() === 'light',
+      'border-white': theme() === 'dark',
+    }" />
   <div class="flex flex-col">
-    <app-label class="text-xl font-bold text-blue-900">{{ name() }}</app-label>
-    <p class="text-gray-700 text-base leading-5">{{ opinion() }}</p>
+    <app-label
+      [text]="name()"
+      [color]="theme() === 'light' ? 'blue-dark' : 'white'"
+      [fontFamily]="'font-poppins'"
+      class="text-xl font-bold">
+    </app-label>
+    <p
+      class="text-base leading-5"
+      [ngClass]="{
+        'text-gray-700': theme() === 'light',
+        'text-white': theme() === 'dark',
+      }">
+      {{ opinion() }}
+    </p>
   </div>
 </div>

@@ -1,23 +1,17 @@
 import { Component, input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { LabelComponent } from '../label/label.component';
 
 /**
  * @Component CardInstructorComponent
- * This component represents an instructor's card, displaying their name, image, and opinion.
- * It uses the LabelComponent for displaying the instructor's name.
- *
- * - `name`: The instructor's full name.
- * - `image`: The URL of the instructor's profile picture.
- * - `opinion`: The instructor's opinion or review.
- *
- * The component is marked as standalone and imports the LabelComponent for modularity.
+ * Represents an instructor's profile card with customizable theme styles.
  */
 @Component({
   selector: 'app-card-instructor',
   standalone: true,
   templateUrl: './card-instructor.component.html',
   styleUrls: [],
-  imports: [LabelComponent],
+  imports: [CommonModule, LabelComponent], // ✅ Agregado CommonModule
 })
 export class CardInstructorComponent {
   /** The instructor's full name */
@@ -28,4 +22,7 @@ export class CardInstructorComponent {
 
   /** The instructor's opinion or review */
   readonly opinion = input<string>('');
+
+  /** The theme of the card (light or dark) */
+  readonly theme = input<'light' | 'dark'>('light');
 }
