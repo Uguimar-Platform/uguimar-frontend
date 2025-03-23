@@ -20,8 +20,4 @@ import { InputFieldComponent } from '../../molecules/input-field/input-field.com
 })
 export class LearningPathSectionComponent {
   pathInputControl = new FormControl('', { nonNullable: true });
-
-  generatePath() {
-    console.log('Generando ruta personalizada:', this.pathInputControl.value);
-  }
 }
