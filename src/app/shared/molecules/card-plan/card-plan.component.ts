@@ -3,6 +3,7 @@ import { Component, input } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ButtonComponent } from '../../atoms/button/button.component';
 import { MatIconModule } from '@angular/material/icon';
+import { LabelComponent } from '../../atoms/label/label.component';
 
 /**
  * Component representing a subscription plan card.
@@ -10,7 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 @Component({
   selector: 'app-card-plan',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule, ButtonComponent, MatIconModule],
+  imports: [CommonModule, FontAwesomeModule, ButtonComponent, MatIconModule, LabelComponent],
   templateUrl: './card-plan.component.html',
   styleUrl: './card-plan.component.scss',
 })
@@ -45,6 +46,18 @@ export class CardPlanComponent {
    * @param {string} textColor
    */
   readonly textColor = input<string>('#fff');
+
+  readonly color = input<
+    | 'black'
+    | 'blue-dark'
+    | 'blue-medium'
+    | 'blue-light'
+    | 'blue-lightest'
+    | 'blue-lighter'
+    | 'blue-faint'
+    | 'grey-light'
+    | 'white'
+  >('black');
 
   /**
    * Color of the background of the card-plan.
