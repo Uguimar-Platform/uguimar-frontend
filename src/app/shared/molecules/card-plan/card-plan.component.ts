@@ -88,6 +88,6 @@ export class CardPlanComponent {
   * Handles the button click event.
   */
   onButtonClick(): void {
-    //logica para seleccionar el plan
+    //logica para seleccionar el plan 
   }
 }
