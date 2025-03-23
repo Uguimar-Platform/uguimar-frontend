@@ -18,7 +18,7 @@ import { RoutesNavDynamicSelect } from '../../../core/interfaces/RoutesNavDynami
  * Directive for handling route links in Angular.
  */
 @Component({
-  selector: 'dynamic-select',
+  selector: 'dynamic-select-atom',
   imports: [RouterLink, CommonModule],
   templateUrl: './dynamic-select.component.html',
   styleUrl: './dynamic-select.component.scss',

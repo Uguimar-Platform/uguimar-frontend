@@ -1,5 +1,5 @@
 <div class="input-field-container flex flex-col w-full">
-  <app-input
+  <input-atom
     [type]="type()"
     [placeholder]="placeholder() ?? ''"
     [label]="label() ?? ''"
@@ -8,13 +8,17 @@
     [height]="height()"
     [customClass]="customClass() ?? ''"
     [labelIcon]="labelIcon() ?? null"
+    [labelColor]="labelColor()"
+    [labelSize]="labelSize()"
+    [labelFont]="labelFont()"
+    [labelAlignment]="labelAlignment()"
     [formControl]="control">
-  </app-input>
+  </input-atom>
 
   <div class="error-container mt-1">
     @if (hasError()) {
-      <app-error-message [message]="errorMessage" [customClass]="errorClass()">
-      </app-error-message>
+      <error-message-atom [message]="errorMessage" [customClass]="errorClass()">
+      </error-message-atom>
     }
   </div>
 </div>

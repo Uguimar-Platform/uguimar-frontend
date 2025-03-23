@@ -1,0 +1,39 @@
+<div class="bg-white rounded-2xl overflow-hidden w-80 shadow-md">
+  <div class="relative w-[240px] h-[135px] mx-auto">
+    <img
+      src="{{ courseImage() }}"
+      alt="{{ alt() }}"
+      class="w-full h-full object-cover p-4" />
+  </div>
+
+  <div class="p-4">
+    <label-atom
+      text="{{ courseName() }}"
+      forId="descriptionLabel"
+      class="font-bold text-xl"></label-atom>
+    <div class="flex items-center gap-3 mt-2 ml-4">
+      <p class="flex items-center gap-1 text-[#7096D1]">
+        <mat-icon>{{ userIcon }}</mat-icon> {{ teacher() }}
+      </p>
+      <p class="flex items-center gap-1 text-[#7096D1]">
+        <mat-icon>{{ chartIcon }}</mat-icon> {{ age() }}
+      </p>
+    </div>
+    <label-atom
+      text="S/.{{ price() }}"
+      forId="priceLabel"
+      color="black"></label-atom>
+    <div class="flex justify-end gap-3 mt-4">
+      <button-atom
+        label="{{ category() }}"
+        textColor="#F9FCFF"
+        customClass="bg-[#7096D1] hover:bg-[#334EAC] rounded-2xl px-6">
+      </button-atom>
+      <button-atom
+        label="Agregar"
+        textColor="#081F5C"
+        customClass="bg-[#D0E3FF] hover:bg-[#E7F1FF] rounded-2xl px-8">
+      </button-atom>
+    </div>
+  </div>
+</div>

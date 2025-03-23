@@ -1,0 +1,28 @@
+<div class="w-full rounded-lg overflow-hidden bg-[#E7F1FF]">
+  <div
+    (click)="toggleAccordion()"
+    (keydown.enter)="toggleAccordion()"
+    (keydown.space)="toggleAccordion(); $event.preventDefault()"
+    tabindex="0"
+    role="button"
+    [attr.aria-expanded]="isExpanded"
+    class="flex items-center justify-between cursor-pointer transition-colors outline-none">
+    <div class="flex items-center">
+      <span class="mr-2 text-xl">{{ isExpanded ? '−' : '+' }}</span>
+      <label-atom
+        [text]="title()"
+        fontFamily="font-sfProDisplay"
+        color="blue-dark"
+        class="font-bold"></label-atom>
+    </div>
+  </div>
+
+  <div
+    class="overflow-hidden transition-all duration-300 ease-in-out"
+    [ngClass]="{ 'max-h-0': !isExpanded, 'max-h-96': isExpanded }">
+    <label-atom
+      [text]="content()"
+      fontFamily="font-sfProDisplay"
+      color="blue-dark"></label-atom>
+  </div>
+</div>
