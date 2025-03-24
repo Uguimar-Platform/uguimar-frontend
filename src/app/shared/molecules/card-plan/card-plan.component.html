@@ -1,0 +1,51 @@
+<div
+  class="p-6 rounded-[40px] shadow-lg text-center w-72"
+  [style]="{ 'background-color': bgColor() }">
+  <div class="flex justify-center gap-2">
+    @for (icon of getUserIcons(); track $index) {
+      <div
+        class="w-12 h-12 rounded-full flex items-center justify-center overflow-hidden"
+        [style]="{ 'background-color': logoColor() }">
+        <img
+          [src]="logoImage()"
+          alt="Usuario"
+          class="w-8 h-8 object-cover rounded-full" />
+      </div>
+    }
+  </div>
+  <p class="mt-2 text-sm" [style]="{ color: textColor() }">
+    ({{ users() }} persona{{ users() > 1 ? 's' : '' }})
+  </p>
+  <div class="flex justify-center w-full">
+    <label-atom
+      [text]="plan()"
+      [color]="color()"
+      [fontFamily]="'font-poppins'"
+      class="text-2xl font-extrabold mt-2"
+      [style]="{ color: textColor() }">
+    </label-atom>
+  </div>
+  <p class="text-xl font-bold mt-2" [style]="{ color: textColor() }">
+    S/. {{ price() }} <span class="text-sm">/Anual</span>
+  </p>
+  <p class="mt-4 font-bold" [style]="{ color: textColor() }">Beneficios:</p>
+  <ul class="text-left font-semibold mt-2 space-y-2">
+    @for (benefit of benefits(); track $index) {
+      <li class="flex items-center" [style]="{ color: textColor() }">
+        <mat-icon class="mr-2" [style]="{ fontSize: iconSize }">
+          {{ icon() }}
+        </mat-icon>
+        {{ benefit }}
+      </li>
+    }
+  </ul>
+  <div class="flex justify-center w-full mt-10 px-6">
+    <button-atom
+      class="!rounded-full px-2 font-bold transition-all duration-300 hover:scale-95 active:scale-90"
+      [label]="'Adquirir'"
+      [textColor]="textColor()"
+      [style]="{ 'background-color': btnColor() }"
+      (buttonClick)="onButtonClick()">
+    </button-atom>
+  </div>
+</div>
