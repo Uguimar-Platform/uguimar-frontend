@@ -1,0 +1,16 @@
+<div
+  class="w-[380px] bg-[#F9FCFF] border border-[#334EAC] rounded-3xl p-6 py-8 shadow-md text-center">
+  <label-atom class="font-bold text-3xl text-left" [text]="title()" />
+  <label-atom
+    [text]="course()"
+    class="font-bold text-3xl text-left"
+    color="blue-medium"
+    fontFamily="font-poppins" />
+  <label-atom [text]="description()" class="text-left" />
+  <img class="w-48 mx-auto mt-3 mb-6" [src]="image()" alt="imagen" />
+  <a class="flex justify-center w-fit mx-auto" [routerLink]="buttonLink()">
+    <button-atom
+      customClass="bg-[#334EAC] rounded-3xl w-38"
+      [label]="buttonText()" />
+  </a>
+</div>
