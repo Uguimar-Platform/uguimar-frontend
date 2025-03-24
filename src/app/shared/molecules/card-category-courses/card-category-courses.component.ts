@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
  * Component that represents a course category card.
  */
 @Component({
-  selector: 'app-card-category-courses',
+  selector: 'card-category-courses-molecule',
   imports: [CommonModule, ButtonComponent, LabelComponent, RouterModule],
   templateUrl: './card-category-courses.component.html',
   styleUrl: './card-category-courses.component.scss',
