@@ -10,6 +10,7 @@ import {
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RoutesNavDynamicSelect } from '../../../core/interfaces/RoutesNavDynamicSelect';
+import { Router } from '@angular/router';
 
 /**
  * Component that represents a dynamic selector with search and navigation functionality.
@@ -19,6 +20,7 @@ import { RoutesNavDynamicSelect } from '../../../core/interfaces/RoutesNavDynami
  */
 @Component({
   selector: 'dynamic-select-atom',
+  standalone: true,
   imports: [RouterLink, CommonModule],
   templateUrl: './dynamic-select.component.html',
   styleUrl: './dynamic-select.component.scss',
@@ -48,7 +50,7 @@ export class DynamicSelectComponent {
   public placeholderColor = input<string>('');
   // Signal that stores the value entered by the user in the input field.
   protected routeInput = signal<string>('');
-
+  /* routes select by input */
   protected selectedRoute: RoutesNavDynamicSelect[] = [];
 
   /**
@@ -60,12 +62,35 @@ export class DynamicSelectComponent {
    * Gets the current value of `routeInput`.
    * Calls `eventInput` with the current value.
    */
-  constructor() {
+  constructor(private router: Router) {
     effect(() => {
       const valueInput = this.routeInput();
       this.eventInput(valueInput);
     });
   }
+
+  /* 
+    method for filter routes by event father
+      select the input value.
+      We check if it's empty to terminate the function.
+      We filter the routes.
+      If there are no matches, then the function ends.
+      If there are hidden routes, the first route, i.e., the closest one.
+    @param
+   */
+  eventNavigate = () => {
+    const valueInput = this.input().nativeElement.value;
+    if (!valueInput) {
+      return;
+    }
+    const filteredRoutes = this.arrayRoutes().filter(route =>
+      route.option.toLowerCase().includes(valueInput.toLowerCase())
+    );
+    if (filteredRoutes.length === 0) {
+      return;
+    }
+    this.router.navigate([filteredRoutes[0].value]);
+  };
 
   /**
    * Method that filters routes based on user input.
@@ -82,7 +107,7 @@ export class DynamicSelectComponent {
     }
 
     const filteredRoutes = this.arrayRoutes().filter(route =>
-      route.value.toLowerCase().includes(valueFilter.toLowerCase())
+      route.option.toLowerCase().includes(valueFilter.toLowerCase())
     );
 
     this.selectedRoute = filteredRoutes;
