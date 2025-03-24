@@ -1,0 +1,53 @@
+<section
+  class="bg-[#E7F1FF] min-h-screen flex justify-center items-center p-8 font-['Poppins']">
+  <div class="w-full max-w-[1200px] flex flex-col items-center">
+    <div class="text-center mb-0 -mt-25 pt-1">
+      <label-atom
+        text="Descubre tu ruta de"
+        class="block text-7xl font-bold text-center mb-2 font-['SF_Pro_Display']"
+        forId="LabelDescubre"
+        color="black"
+        fontFamily="font-sfProDisplay"></label-atom>
+    </div>
+
+    <div class="text-center mb-14 -mt-5">
+      <label-atom
+        text="aprendizaje personalizada"
+        class="block text-7xl font-bold text-center mb-1 pt-0 font-['SF_Pro_Display']"
+        forId="LabelAprendizaje"
+        color="blue-medium"
+        fontFamily="font-sfProDisplay"></label-atom>
+    </div>
+
+    <div class="w-full max-w-[650px] flex flex-col items-center relative">
+      <div class="flex flex-col items-center mr-60">
+        <div
+          class="bg-white rounded-4xl p-4 border border-black-200 shadow-md w-[730px] h-[140px]">
+          <label-atom
+            text="Crea tu ruta personalizada"
+            class="text-black font-bold text-xl -mt-5 px-40 text-center block mb-2"
+            forId="LabelCrearRuta"
+            color="black"
+            fontFamily="font-blackMango"></label-atom>
+          <input-field-molecule
+            label=" "
+            type="text"
+            placeholder="Ruta personalizada"
+            [required]="false">
+          </input-field-molecule>
+        </div>
+        <button-atom
+          label="Generar ruta"
+          customClass="mt-8 bg-blue-900 bg-blue-medium text-2xl text-white font-bold py-3 px-1  rounded-full shadow-md w-[260px] ">
+        </button-atom>
+      </div>
+
+      <div class="absolute -right-51 -top-5">
+        <img
+          src="assets/images/logoIzquierda.svg"
+          alt="Logo"
+          class="w-[270px] h-[270px] object-contain" />
+      </div>
+    </div>
+  </div>
+</section>
