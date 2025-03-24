@@ -13,12 +13,12 @@
       'border-white': theme() === 'dark',
     }" />
   <div class="flex flex-col">
-    <app-label
+    <label-atom
       [text]="name()"
       [color]="theme() === 'light' ? 'blue-dark' : 'white'"
       [fontFamily]="'font-poppins'"
       class="text-xl font-bold">
-    </app-label>
+    </label-atom>
     <p
       class="text-base leading-5"
       [ngClass]="{

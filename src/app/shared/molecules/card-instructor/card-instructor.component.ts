@@ -1,17 +1,17 @@
 import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LabelComponent } from '../label/label.component';
+import { LabelComponent } from '../../atoms/label/label.component';
 
 /**
  * @Component CardInstructorComponent
  * Represents an instructor's profile card with customizable theme styles.
  */
 @Component({
-  selector: 'app-card-instructor',
+  selector: 'card-instructor-molecule',
   standalone: true,
   templateUrl: './card-instructor.component.html',
   styleUrls: [],
-  imports: [CommonModule, LabelComponent], // ✅ Agregado CommonModule
+  imports: [CommonModule, LabelComponent],
 })
 export class CardInstructorComponent {
   /** The instructor's full name */
