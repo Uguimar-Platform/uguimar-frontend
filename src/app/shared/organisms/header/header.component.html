@@ -1,9 +1,15 @@
 <div class="flex item-center justify-center gap-5 mt-10 mb-12">
   <img src="assets/images/logo.svg" alt="" />
-  <app-create-dropdown></app-create-dropdown>
-  <app-navigation-menu></app-navigation-menu>
+  <create-dropdown-atom></create-dropdown-atom>
+  <navigation-menu-molecule></navigation-menu-molecule>
   <div class="flex gap-3">
-    <app-button label="Iniciar Sesión"></app-button>
-    <app-button label="Registro"></app-button>
+    <button-atom
+      label="Iniciar Sesión"
+      textColor="#F9FCFF"
+      customClass="bg-[#334EAC] rounded-2xl px-4"></button-atom>
+    <button-atom
+      label="Registro"
+      textColor="#F9FCFF"
+      customClass="bg-[#334EAC] rounded-2xl px-8"></button-atom>
   </div>
 </div>
