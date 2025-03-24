@@ -1,24 +1,15 @@
-<div class="w-[380px] bg-[#F9FCFF] border border-[#334EAC] rounded-3xl p-6 py-8 shadow-md text-center">
-  <h1 class="font-bold text-3xl text-left mb-2">
-      {{title()}} 
+<div
+  class="w-[380px] bg-[#F9FCFF] border border-[#334EAC] rounded-3xl p-6 py-8 shadow-md text-center">
+  <app-label class="font-bold text-3xl text-left mb-2">
+    {{ title() }}
     <app-label
-      text="{{course()}}"
+      text="{{ course() }}"
       color="blue-medium"
-      fontFamily="font-poppins"
-    />
-  </h1>
-  <p>{{description()}}</p>
-  <img
-    class="w-48 mx-auto mt-3 mb-6"
-    [src]="image()"
-    alt="imagen"
-  >
-  <a
-    class="flex justify-center"
-    [href]="buttonLink()" 
-  >
-    <app-button
-      label="{{buttonText()}}"
-    />
+      fontFamily="font-poppins" />
+  </app-label>
+  <app-label>{{ description() }}</app-label>
+  <img class="w-48 mx-auto mt-3 mb-6" [src]="image()" alt="imagen" />
+  <a class="flex justify-center" [href]="buttonLink()">
+    <app-button label="{{ buttonText() }}" />
   </a>
 </div>
